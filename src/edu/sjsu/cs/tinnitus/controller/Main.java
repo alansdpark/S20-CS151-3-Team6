@@ -1,6 +1,7 @@
 package controller;
 
-public class Main {
+public class Main 
+{
     /**
      * Run project.
      */

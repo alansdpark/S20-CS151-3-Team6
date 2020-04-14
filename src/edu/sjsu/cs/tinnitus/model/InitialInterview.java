@@ -4,7 +4,8 @@
  * After registering patient, initial interview takes place.
  * This is to gauge, diagnose, and quantify the patient's hearing problem. 
  */
-public class InitialInterview {
+public class InitialInterview 
+{
     Audiology audiology;
     MedicalHistory medHistory;
 
