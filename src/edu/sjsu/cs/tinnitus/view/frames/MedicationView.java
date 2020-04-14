@@ -1,5 +1,13 @@
 package edu.sjsu.cs.tinnitus.view.frames;
 
-//TODO
+/**
+ * Medication View
+ */
 public class MedicationView {
+    public MedicationView()
+    {
+
+    }
+
+    
 }

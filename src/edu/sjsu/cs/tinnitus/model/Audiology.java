@@ -1,6 +1,6 @@
 package edu.sjsu.cs.tinnitus.model;
 
-//TODO
+// Perform audiological evaluation and register medical history including pharmacology.
 public class Audiology {
     
 }
