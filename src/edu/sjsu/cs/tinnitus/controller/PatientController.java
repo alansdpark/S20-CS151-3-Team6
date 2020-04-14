@@ -7,12 +7,26 @@ public class PatientController
 
     }
 
+    /**
+     * Adding a new patient.
+     */
     public void newPatient()
     {
 
     }
 
+    /**
+     * Edit a patient.
+     */
     public void editPatient()
+    {
+
+    }
+
+    /**
+     * Logs a visit.
+     */
+    public void logVisit()
     {
 
     }
