@@ -1,8 +1,5 @@
 package edu.sjsu.cs.tinnitus.controller;
 
-/**
- * Controller interface used by all controllers.
- */
 public interface Controller {
 
     /**
