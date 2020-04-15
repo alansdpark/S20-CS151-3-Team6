@@ -5,9 +5,8 @@ import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
  * Controller for Navigation.
  * Should hold references to all other controllers.
  */
-public class NavigationController implements Controller{
-
-
+public class NavigationController implements Controller
+{
 
     public NavigationController(NavigationView nv)
     {

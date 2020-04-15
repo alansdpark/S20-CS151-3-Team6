@@ -2,13 +2,13 @@ package edu.sjsu.cs.tinnitus.model;
 
 import java.util.ArrayList;
 
-public class Patient {
+public class Patient 
+{
 
     /**
      * Default constructor
      */
-    public Patient() {
-    }
+    public Patient() {}
 
     /**
      *  Full Constructor
@@ -39,7 +39,8 @@ public class Patient {
                    String country, String birthday, String gender, String phoneNumber,
                    String ssn, String insuranceNo, String occupation, String workStatus,
                    String educationalDegree, int tinnitusCategory, int treatmentProtocol,
-                   String nextVisit, ArrayList<Visit> visitList, MedicalHistory medicalHistory) {
+                   String nextVisit, ArrayList<Visit> visitList, MedicalHistory medicalHistory) 
+    {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address1 = address1;
@@ -82,7 +83,8 @@ public class Patient {
     public Patient(String firstName, String lastName, String address1,
                    String address2, String city, String state, String zipCode,
                    String country, String birthday, String gender,
-                   String phoneNumber, String ssn, String insuranceNo) {
+                   String phoneNumber, String ssn, String insuranceNo) 
+    {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address1 = address1;
@@ -121,7 +123,8 @@ public class Patient {
                    String address2, String city, String state, String zipCode,
                    String country, String birthday, String gender, String phoneNumber,
                    String ssn, String insuranceNo, String occupation,
-                   String workStatus, String educationalDegree) {
+                   String workStatus, String educationalDegree) 
+    {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address1 = address1;
@@ -144,7 +147,8 @@ public class Patient {
      * getter for first name
      * @return - first name
      */
-    public String getFirstName() {
+    public String getFirstName() 
+    {
         return firstName;
     }
 
@@ -152,7 +156,8 @@ public class Patient {
      * setter for first name
      * @param firstName - first name
      */
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName) 
+    {
         this.firstName = firstName;
     }
 
@@ -160,7 +165,8 @@ public class Patient {
      * getter for last name
      * @return last name
      */
-    public String getLastName() {
+    public String getLastName() 
+    {
         return lastName;
     }
 
@@ -168,7 +174,8 @@ public class Patient {
      * setter for last name
      * @param lastName - last name
      */
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName) 
+    {
         this.lastName = lastName;
     }
 
@@ -176,7 +183,8 @@ public class Patient {
      * getter for first line of address
      * @return - address1
      */
-    public String getAddress1() {
+    public String getAddress1() 
+    {
         return address1;
     }
 
@@ -184,7 +192,8 @@ public class Patient {
      * setter for first line of address
      * @param address1 - address1
      */
-    public void setAddress1(String address1) {
+    public void setAddress1(String address1) 
+    {
         this.address1 = address1;
     }
 
@@ -192,7 +201,8 @@ public class Patient {
      * getter for second line of address
      * @return - address2
      */
-    public String getAddress2() {
+    public String getAddress2() 
+    {
         return address2;
     }
 
@@ -200,7 +210,8 @@ public class Patient {
      * setter for address2
      * @param address2 - address2
      */
-    public void setAddress2(String address2) {
+    public void setAddress2(String address2) 
+    {
         this.address2 = address2;
     }
 
@@ -208,7 +219,8 @@ public class Patient {
      * getter for city
      * @return - city
      */
-    public String getCity() {
+    public String getCity() 
+    {
         return city;
     }
 
@@ -216,7 +228,8 @@ public class Patient {
      * setter for city
      * @param city - city
      */
-    public void setCity(String city) {
+    public void setCity(String city) 
+    {
         this.city = city;
     }
 
@@ -224,7 +237,8 @@ public class Patient {
      * getter for state
      * @return - state
      */
-    public String getState() {
+    public String getState() 
+    {
         return state;
     }
 
@@ -232,7 +246,8 @@ public class Patient {
      * setter for state
      * @param state - state
      */
-    public void setState(String state) {
+    public void setState(String state) 
+    {
         this.state = state;
     }
 
@@ -240,7 +255,8 @@ public class Patient {
      * getter for zip code
      * @return - zip code
      */
-    public String getZipCode() {
+    public String getZipCode() 
+    {
         return zipCode;
     }
 
@@ -248,7 +264,8 @@ public class Patient {
      * setter for zip code
      * @param zipCode - zip code
      */
-    public void setZipCode(String zipCode) {
+    public void setZipCode(String zipCode) 
+    {
         this.zipCode = zipCode;
     }
 
@@ -256,7 +273,8 @@ public class Patient {
      * getter for country
      * @return - country
      */
-    public String getCountry() {
+    public String getCountry() 
+    {
         return country;
     }
 
@@ -264,7 +282,8 @@ public class Patient {
      * setter for country
      * @param country - country
      */
-    public void setCountry(String country) {
+    public void setCountry(String country) 
+    {
         this.country = country;
     }
 
@@ -272,7 +291,8 @@ public class Patient {
      * getter for birthday
      * @return - birthday
      */
-    public String getBirthday() {
+    public String getBirthday() 
+    {
         return birthday;
     }
 
@@ -280,7 +300,8 @@ public class Patient {
      * setter for birthday
      * @param birthday - birthday
      */
-    public void setBirthday(String birthday) {
+    public void setBirthday(String birthday) 
+    {
         this.birthday = birthday;
     }
 
@@ -288,7 +309,8 @@ public class Patient {
      * getter for gender
      * @return gender
      */
-    public String getGender() {
+    public String getGender() 
+    {
         return gender;
     }
 
@@ -296,7 +318,8 @@ public class Patient {
      * setter for gender
      * @param gender - gender
      */
-    public void setGender(String gender) {
+    public void setGender(String gender) 
+    {
         this.gender = gender;
     }
 
@@ -304,7 +327,8 @@ public class Patient {
      * getter for phone number
      * @return - phoneNumber
      */
-    public String getPhoneNumber() {
+    public String getPhoneNumber() 
+    {
         return phoneNumber;
     }
 
@@ -312,7 +336,8 @@ public class Patient {
      * setter for phoneNumber
      * @param phoneNumber
      */
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) 
+    {
         this.phoneNumber = phoneNumber;
     }
 
@@ -320,7 +345,8 @@ public class Patient {
      * getter for social security number
      * @return - ssn
      */
-    public String getSsn() {
+    public String getSsn() 
+    {
         return ssn;
     }
 
@@ -328,7 +354,8 @@ public class Patient {
      * setter for ssn
      * @param ssn - ssn
      */
-    public void setSsn(String ssn) {
+    public void setSsn(String ssn) 
+    {
         this.ssn = ssn;
     }
 
@@ -336,7 +363,8 @@ public class Patient {
      *  getter for insurance number
      * @return - insurance number
      */
-    public String getInsuranceNo() {
+    public String getInsuranceNo() 
+    {
         return insuranceNo;
     }
 
@@ -344,7 +372,8 @@ public class Patient {
      * setter for insurance number
      * @param insuranceNo
      */
-    public void setInsuranceNo(String insuranceNo) {
+    public void setInsuranceNo(String insuranceNo) 
+    {
         this.insuranceNo = insuranceNo;
     }
 
@@ -352,7 +381,8 @@ public class Patient {
      * getter for occupation
      * @return - occupation
      */
-    public String getOccupation() {
+    public String getOccupation() 
+    {
         return occupation;
     }
 
@@ -360,7 +390,8 @@ public class Patient {
      * setter for occupation
      * @param occupation - occupation
      */
-    public void setOccupation(String occupation) {
+    public void setOccupation(String occupation) 
+    {
         this.occupation = occupation;
     }
 
@@ -368,7 +399,8 @@ public class Patient {
      * getter for work status
      * @return - workStatus
      */
-    public String getWorkStatus() {
+    public String getWorkStatus() 
+    {
         return workStatus;
     }
 
@@ -376,7 +408,8 @@ public class Patient {
      * setter for work status
      * @param workStatus - work status
      */
-    public void setWorkStatus(String workStatus) {
+    public void setWorkStatus(String workStatus) 
+    {
         this.workStatus = workStatus;
     }
 
@@ -384,7 +417,8 @@ public class Patient {
      * getter for educational degree
      * @return - educationalDegree
      */
-    public String getEducationalDegree() {
+    public String getEducationalDegree() 
+    {
         return educationalDegree;
     }
 
@@ -392,7 +426,8 @@ public class Patient {
      * setter for educationalDegree
      * @param educationalDegree - educationalDegree
      */
-    public void setEducationalDegree(String educationalDegree) {
+    public void setEducationalDegree(String educationalDegree) 
+    {
         this.educationalDegree = educationalDegree;
     }
 
@@ -400,7 +435,8 @@ public class Patient {
      * getter for tinnitus category
      * @return tinnitus category
      */
-    public int getTinnitusCategory() {
+    public int getTinnitusCategory() 
+    {
         return tinnitusCategory;
     }
 
@@ -408,7 +444,8 @@ public class Patient {
      * setter for tinnitus category
      * @param tinnitusCategory - tinnitusCategory
      */
-    public void setTinnitusCategory(int tinnitusCategory) {
+    public void setTinnitusCategory(int tinnitusCategory) 
+    {
         this.tinnitusCategory = tinnitusCategory;
     }
 
@@ -416,7 +453,8 @@ public class Patient {
      * getter for treatment protocol
      * @return - treatmentProtocol
      */
-    public int getTreatmentProtocol() {
+    public int getTreatmentProtocol() 
+    {
         return treatmentProtocol;
     }
 
@@ -424,7 +462,8 @@ public class Patient {
      * setter for treatment protocol
      * @param treatmentProtocol - treatmentProtocol
      */
-    public void setTreatmentProtocol(int treatmentProtocol) {
+    public void setTreatmentProtocol(int treatmentProtocol) 
+    {
         this.treatmentProtocol = treatmentProtocol;
     }
 
@@ -432,7 +471,8 @@ public class Patient {
      * getter for date of next visit
      * @return - nextVisit
      */
-    public String getNextVisit() {
+    public String getNextVisit() 
+    {
         return nextVisit;
     }
 
@@ -440,7 +480,8 @@ public class Patient {
      * setter for nextVisit
      * @param nextVisit - nextVisit
      */
-    public void setNextVisit(String nextVisit) {
+    public void setNextVisit(String nextVisit) 
+    {
         this.nextVisit = nextVisit;
     }
 
@@ -448,7 +489,8 @@ public class Patient {
      * getter for visit list
      * @return - visitList
      */
-    public ArrayList<Visit> getVisitList() {
+    public ArrayList<Visit> getVisitList() 
+    {
         return visitList;
     }
 
@@ -456,7 +498,8 @@ public class Patient {
      * setter for visitList
      * @param visitList - visitList
      */
-    public void setVisitList(ArrayList<Visit> visitList) {
+    public void setVisitList(ArrayList<Visit> visitList) 
+    {
         this.visitList = visitList;
     }
 
@@ -464,7 +507,8 @@ public class Patient {
      * getter for medicalHistory
      * @return - medicalHistory
      */
-    public MedicalHistory getMedicalHistory() {
+    public MedicalHistory getMedicalHistory() 
+    {
         return medicalHistory;
     }
 
@@ -472,7 +516,8 @@ public class Patient {
      * setter for medicalHistory
      * @param medicalHistory - medicalHistory
      */
-    public void setMedicalHistory(MedicalHistory medicalHistory) {
+    public void setMedicalHistory(MedicalHistory medicalHistory) 
+    {
         this.medicalHistory = medicalHistory;
     }
 
@@ -480,7 +525,8 @@ public class Patient {
      * adds a visit to visit list
      * @param visit - visit to be added
      */
-    public void addVisit(Visit visit){
+    public void addVisit(Visit visit)
+    {
         visitList.add(visit);
     }
 
