@@ -1,6 +1,11 @@
 package edu.sjsu.cs.tinnitus;
 import javax.swing.JFrame;
 
+/**
+ * Main.
+ * CS 151 - Subtopic 3 - Team 6
+ * @author Team 6
+ */
 public class MainApp
 {
     /**
