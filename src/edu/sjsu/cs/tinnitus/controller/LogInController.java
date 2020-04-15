@@ -5,6 +5,9 @@ import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.model.Visit;
 import edu.sjsu.cs.tinnitus.view.frames.LogInView;
 
+/**
+ * Controller for the Log in of a Patient
+ */
 public class LogInController implements Controller {
 
 

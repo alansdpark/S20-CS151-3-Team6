@@ -5,6 +5,9 @@ import edu.sjsu.cs.tinnitus.model.MedicalHistory;
 import edu.sjsu.cs.tinnitus.model.Medication;
 import edu.sjsu.cs.tinnitus.view.frames.MedicationView;
 
+/**
+ * Controller that communicates with Medication and MedicationView
+ */
 public class MedicationController implements Controller
 {
     /**

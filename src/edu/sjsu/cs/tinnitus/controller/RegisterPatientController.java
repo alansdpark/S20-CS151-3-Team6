@@ -3,6 +3,9 @@ import edu.sjsu.cs.tinnitus.model.Patient;
 import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.view.frames.RegisterPatientView;
 
+/**
+ * Controller for communicating with RegisterPatientView and PatientTable
+ */
 public class RegisterPatientController implements Controller {
 
 

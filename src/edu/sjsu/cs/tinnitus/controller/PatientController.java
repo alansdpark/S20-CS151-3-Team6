@@ -4,6 +4,9 @@ import edu.sjsu.cs.tinnitus.model.Patient;
 import edu.sjsu.cs.tinnitus.model.Visit;
 import edu.sjsu.cs.tinnitus.view.frames.PatientView;
 
+/**
+ * Controller that communicates with Patient and PatientView
+ */
 public class PatientController implements Controller
 {
     /**

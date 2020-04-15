@@ -4,6 +4,9 @@ import edu.sjsu.cs.tinnitus.model.Patient;
 import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.view.frames.PatientListView;
 
+/**
+ * Controller for communicating with PatientTable and PatientListView
+ */
 public class PatientListController implements Controller {
 
 
