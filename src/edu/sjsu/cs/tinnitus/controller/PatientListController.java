@@ -1,6 +1,7 @@
 package edu.sjsu.cs.tinnitus.controller;
 
 import edu.sjsu.cs.tinnitus.model.Patient;
+import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.view.frames.PatientListView;
 
 public class PatientListController implements Controller {
@@ -8,11 +9,11 @@ public class PatientListController implements Controller {
 
     /**
      * Constructs a patient list controller
-     * @param system - System where patient list is stored
+     * @param patientTable - PatientTable where patient list is stored
      * @param patientListView - View for the patient list
      */
-    public PatientListController(System system, PatientListView patientListView) {
-        this.system = system;
+    public PatientListController(PatientTable patientTable, PatientListView patientListView) {
+        this.patientTable = patientTable;
         this.patientListView = patientListView;
     }
 
@@ -33,9 +34,9 @@ public class PatientListController implements Controller {
      * @param patient - patient whose page will be displayed
      */
     private void goToPatient(Patient patient){
-        
+
     }
 
-    private System system;
+    private PatientTable patientTable;
     private PatientListView patientListView;
 }
