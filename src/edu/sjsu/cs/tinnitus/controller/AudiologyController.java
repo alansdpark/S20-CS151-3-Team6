@@ -26,6 +26,9 @@ public class AudiologyController
         stage++;
     }
 
+    /**
+     * Performs test of selected stage. This is so the complete audiology test is modular (Patient will not have to retake entire exam to test in certain area).
+     */
     public void performTest(int stage)
     {
         switch (stage) {
