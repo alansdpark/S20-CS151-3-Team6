@@ -23,23 +23,23 @@ public class PatientTable
     }
 
     /**
-     * Getter for patientList
-     * @return - patientList
+     * Getter for all patients.
+     * @return - patients
      */
     public ArrayList<Patient> getPatientList() {
         return patients;
     }
 
     /**
-     * Setter for patientList
-     * @param patientList - patientList
+     * Setter for patients
+     * @param patientList - ArrayList<Patient>
      */
     public void setPatientList(ArrayList<Patient> patientList) {
         this.patients = patientList;
     }
 
     /**
-     * Adds a patient to the patientList
+     * Adds a patient to the arraylist of patients.
      */
     public void addPatient(Patient patient){
         patients.add(patient);

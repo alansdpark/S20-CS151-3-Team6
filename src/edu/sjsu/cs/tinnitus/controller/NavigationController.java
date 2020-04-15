@@ -50,7 +50,6 @@ public class NavigationController implements Controller
 
     }
 
-
     // Reference to navigation JPanel.
     private NavigationView navigationView;
 }
