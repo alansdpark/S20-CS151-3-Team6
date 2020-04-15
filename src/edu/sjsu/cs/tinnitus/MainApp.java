@@ -1,3 +1,4 @@
+package edu.sjsu.cs.tinnitus;
 import javax.swing.JFrame;
 
 public class MainApp
