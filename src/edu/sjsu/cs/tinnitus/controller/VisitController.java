@@ -6,4 +6,14 @@ public class VisitController
     {
         
     }
+
+    public void logVisit()
+    {
+
+    }
+
+    public void editVisit()
+    {
+        
+    }
 }
