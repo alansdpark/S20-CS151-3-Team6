@@ -1,7 +1,7 @@
 package edu.sjsu.cs.tinnitus.view.frames;
 import javax.swing.*;
 /**
- * Medication View
+ * This class allows for the user to see the GUI for adding a new medication
  */
 public class MedicationView extends JPanel {
 

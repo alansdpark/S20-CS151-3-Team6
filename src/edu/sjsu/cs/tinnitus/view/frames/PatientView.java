@@ -1,6 +1,9 @@
 package edu.sjsu.cs.tinnitus.view.frames;
 import javax.swing.*;
 
+/**
+ * This class allows for the user to View the information related to a Patient
+ */
 public class PatientView extends JPanel {
 
     /**

@@ -2,6 +2,9 @@ package edu.sjsu.cs.tinnitus.view.frames;
 
 import javax.swing.*;
 
+/**
+ * This class allows the user to view the list of patients controlled by PatientListController
+ */
 public class PatientListView {
 
 

@@ -1,6 +1,9 @@
 package edu.sjsu.cs.tinnitus.view.frames;
 import javax.swing.*;
 
+/**
+ * This class allows the user to view the information for registering a new patient
+ */
 public class RegisterPatientView extends JPanel
 {
 

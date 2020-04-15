@@ -1,6 +1,9 @@
 package edu.sjsu.cs.tinnitus.view.frames;
 import javax.swing.*;
 
+/**
+ * This class is the view for the default Navigation Page of the entire system
+ */
 public class NavigationView extends JPanel {
 
 

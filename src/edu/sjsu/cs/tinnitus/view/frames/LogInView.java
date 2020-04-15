@@ -2,6 +2,9 @@ package edu.sjsu.cs.tinnitus.view.frames;
 
 import javax.swing.*;
 
+/**
+ * This class allows for the user to view the GUI for logging in a patient
+ */
 public class LogInView {
 
 
