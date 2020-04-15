@@ -14,7 +14,7 @@ public class NavigationController implements Controller
     }
 
     /**
-     * Registers a new patient.
+     * Registers a new patient. Moves toward patient controller.
      */
     public void registerPatient()
     {
@@ -22,7 +22,7 @@ public class NavigationController implements Controller
     }
 
     /**
-     * Views patients.
+     * Views patients. Moves toward patient controller
      */
     public void viewPatients()
     {
@@ -30,7 +30,7 @@ public class NavigationController implements Controller
     }
 
     /**
-     * Logs a new visit.
+     * Logs a new visit. Moves toward visit controller.
      */
     public void logVisit()
     {
