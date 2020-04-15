@@ -5,6 +5,9 @@ package edu.sjsu.cs.tinnitus.controller;
  */
 public class VisitController implements Controller
 {
+    /**
+     * Constructor for this controller.
+     */
     public VisitController()
     {
         
