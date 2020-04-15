@@ -1,4 +1,4 @@
-package view;
+package edu.sjsu.cs.tinnitus.view.frames;
 import javax.swing.*;
 
 public class AudiologyView extends JPanel 

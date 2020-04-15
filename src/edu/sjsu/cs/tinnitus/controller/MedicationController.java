@@ -1,10 +1,11 @@
-package controller;
+package edu.sjsu.cs.tinnitus.controller;
 
+import edu.sjsu.cs.tinnitus.controller.Controller;
 import edu.sjsu.cs.tinnitus.model.MedicalHistory;
 import edu.sjsu.cs.tinnitus.model.Medication;
 import edu.sjsu.cs.tinnitus.view.frames.MedicationView;
 
-public class MedicationController
+public class MedicationController implements Controller
 {
     /**
      * Default constructor for medication controller

@@ -1,33 +1,60 @@
-package controller;
+package edu.sjsu.cs.tinnitus.controller;
 
-public class PatientController 
+import edu.sjsu.cs.tinnitus.model.Patient;
+import edu.sjsu.cs.tinnitus.model.Visit;
+import edu.sjsu.cs.tinnitus.view.frames.PatientView;
+
+public class PatientController implements Controller
 {
+    /**
+     * Default Constructor for Patient Controller
+     */
     public PatientController()
     {
 
     }
 
     /**
-     * Adding a new patient.
+     * Constructor for Patient Controller
+     * @param patient - patient model
+     * @param patientView - patient view
      */
-    public void newPatient()
+    public PatientController(Patient patient, PatientView patientView) {
+        this.patient = patient;
+        this.patientView = patientView;
+    }
+
+
+    /**
+     * Saves any edits made in the textFields to the patient
+     */
+    public void saveEdits()
     {
 
     }
 
     /**
-     * Edit a patient.
-     */
-    public void editPatient()
-    {
-
-    }
-
-    /**
-     * Logs a visit.
+     * Logs a new visit.
      */
     public void logVisit()
     {
 
     }
+
+    /**
+     * Opens frame to selected Visit
+     * @param visit - visit to be edited
+     */
+    public void editVisit(Visit visit){}
+
+
+    @Override
+    public void initController() {
+
+    }
+
+    private Patient patient;
+    private PatientView patientView;
+
+
 }

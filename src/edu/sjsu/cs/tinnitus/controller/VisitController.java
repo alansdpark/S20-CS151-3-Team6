@@ -1,6 +1,6 @@
-package controller;
+package edu.sjsu.cs.tinnitus.controller;
 
-public class VisitController 
+public class VisitController implements Controller
 {
     public VisitController()
     {
@@ -15,5 +15,10 @@ public class VisitController
     public void editVisit()
     {
         
+    }
+
+    @Override
+    public void initController() {
+
     }
 }

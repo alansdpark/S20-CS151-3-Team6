@@ -1,9 +1,11 @@
-package controller;
+package edu.sjsu.cs.tinnitus.controller;
+
+import edu.sjsu.cs.tinnitus.controller.Controller;
 
 /**
  * Controller for Audiology.
  */
-public class AudiologyController 
+public class AudiologyController implements Controller
 {
     /**
      * Stage of audiological exam.
@@ -57,5 +59,10 @@ public class AudiologyController
             default:
                 System.out.println("performTest() malfunctioned.");
         }
+    }
+
+    @Override
+    public void initController() {
+
     }
 }

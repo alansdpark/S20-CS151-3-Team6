@@ -10,6 +10,16 @@ public class Visit {
     }
 
     /**
+     * Constructor to create a new Visit without audiology information or visitNumber
+     * @param patient - patient
+     * @param date - date of the visit
+     */
+    public Visit(Patient patient, String date) {
+        this.patient = patient;
+        this.date = date;
+    }
+
+    /**
      * Constructor for Visit
      * @param audiology - audiology associated with the visist
      * @param patient - patient
@@ -22,6 +32,13 @@ public class Visit {
         this.date = date;
         this.visitNumber = visitNumber;
     }
+
+    /**
+     * sets the visit number by checking the patient and auto incrementing the number
+     * of the last visit
+     */
+    public void setVisitNumberFromPatient(){}
+
 
     /**
      * getter for audiology

@@ -1,13 +1,13 @@
-package controller;
+package edu.sjsu.cs.tinnitus.controller;
+import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
 
 /**
  * Controller for Navigation.
  * Should hold references to all other controllers.
  */
-public class NavigationController {
+public class NavigationController implements Controller{
 
-    // Reference to navigation JPanel.
-    private NavigationView navigationView;
+
 
     public NavigationController(NavigationView nv)
     {
@@ -45,4 +45,13 @@ public class NavigationController {
     {
 
     }
+
+    @Override
+    public void initController() {
+
+    }
+
+
+    // Reference to navigation JPanel.
+    private NavigationView navigationView;
 }
