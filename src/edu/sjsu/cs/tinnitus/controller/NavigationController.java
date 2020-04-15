@@ -1,9 +1,13 @@
 package controller;
 
 public class NavigationController {
-    public NavigationController()
-    {
 
+    // Reference to navigation JPanel.
+    private NavigationView navigationView;
+
+    public NavigationController(NavigationView nv)
+    {
+        navigationView = nv;
     }
 
     /**
@@ -11,7 +15,7 @@ public class NavigationController {
      */
     public void registerPatient()
     {
-        
+
     }
 
     /**
