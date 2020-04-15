@@ -1,6 +1,8 @@
 package view.frames;
+import javax.swing.*;
 
-public class PatientView {
+public class PatientView extends JPanel {
+
     public PatientView()
     {
 
