@@ -1,5 +1,6 @@
 package edu.sjsu.cs.tinnitus.controller;
 import edu.sjsu.cs.tinnitus.model.Patient;
+import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.view.frames.RegisterPatientView;
 
 public class RegisterPatientController implements Controller {
@@ -7,12 +8,12 @@ public class RegisterPatientController implements Controller {
 
     /**
      * Constructor for Register Patient View. Creates a new Patient object to later be added
-     * to system
-     * @param system - system that holds the list of patients
+     * to patientTable
+     * @param patientTable - patientTable that holds the list of patients
      * @param view - view of the register patient
      */
-    public RegisterPatientController(System system, RegisterPatientView view) {
-        this.system = system;
+    public RegisterPatientController(PatientTable patientTable, RegisterPatientView view) {
+        this.patientTable = patientTable;
         this.view = view;
     }
 
@@ -29,28 +30,28 @@ public class RegisterPatientController implements Controller {
     }
 
     /**
-     * Saves patient to the patientList in system
+     * Saves patient to the patientList in patientTable
      */
     public void savePatient(){
 
     }
 
     /**
-     * Getter for system
+     * Getter for patientTable
      *
-     * @return system
+     * @return patientTable
      */
-    public System getSystem() {
-        return system;
+    public PatientTable getPatientTable() {
+        return patientTable;
     }
 
     /**
-     * Setter for system
+     * Setter for patientTable
      *
-     * @param system - system
+     * @param patientTable - patientTable
      */
-    public void setSystem(System system) {
-        this.system = system;
+    public void setPatientTable(PatientTable patientTable) {
+        this.patientTable = patientTable;
     }
 
     /**
@@ -71,7 +72,7 @@ public class RegisterPatientController implements Controller {
         this.view = view;
     }
 
-    private System system;
+    private PatientTable patientTable;
     private RegisterPatientView view;
     private Patient patient;
 }

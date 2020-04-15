@@ -1,4 +1,8 @@
-package model;
+package edu.sjsu.cs.tinnitus.model;
+
+import edu.sjsu.cs.tinnitus.model.Patient;
+
+import java.util.ArrayList;
 
 public class PatientTable 
 {
@@ -11,7 +15,7 @@ public class PatientTable
     }
 
     /**
-     * Constructor for the System
+     * Constructor for the Patient Table
      * @param patientList - list of patients
      */
     public PatientTable(ArrayList<Patient> patientList) {

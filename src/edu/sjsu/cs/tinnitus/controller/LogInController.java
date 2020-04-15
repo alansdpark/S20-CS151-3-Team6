@@ -1,6 +1,7 @@
 package edu.sjsu.cs.tinnitus.controller;
 
 import edu.sjsu.cs.tinnitus.model.Patient;
+import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.model.Visit;
 import edu.sjsu.cs.tinnitus.view.frames.LogInView;
 
@@ -10,12 +11,12 @@ public class LogInController implements Controller {
     /**
      * Creates a LogInController Object
      * @param logInView - view for the log in screen
-     * @param system - system that stores the list of patients from which the
+     * @param patientTable - patientTable that stores the list of patients from which the
      *               patient id will be found
      */
-    public LogInController(LogInView logInView, System system) {
+    public LogInController(LogInView logInView, PatientTable patientTable) {
         this.logInView = logInView;
-        this.system = system;
+        this.patientTable = patientTable;
     }
 
     @Override
@@ -24,11 +25,11 @@ public class LogInController implements Controller {
     }
 
     /**
-     * Searches system for the patient related to patientId
+     * Searches patientTable for the patient related to patientId
      * @param patientId - patientId to be found
      * @return returns true if the patient is found
      */
-    public boolean retrievePatientFromSystem(String patientId){
+    public boolean retrievePatientFromPatientTable(String patientId){
         return false;
     }
 
@@ -43,6 +44,6 @@ public class LogInController implements Controller {
 
     private LogInView logInView;
     private Patient patient;
-    private System system;
+    private PatientTable patientTable;
     private Visit visit;
 }
