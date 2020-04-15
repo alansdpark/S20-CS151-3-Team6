@@ -1,5 +1,9 @@
 package controller;
 
+/**
+ * Controller for Navigation.
+ * Should hold references to all other controllers.
+ */
 public class NavigationController {
 
     // Reference to navigation JPanel.
