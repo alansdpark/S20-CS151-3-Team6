@@ -4,6 +4,9 @@ import edu.sjsu.cs.tinnitus.model.Patient;
 
 import java.util.ArrayList;
 
+/**
+ * Class that represents a full list of patients that have attended the clinic before
+ */
 public class PatientTable 
 {
     // Reference to all patients.

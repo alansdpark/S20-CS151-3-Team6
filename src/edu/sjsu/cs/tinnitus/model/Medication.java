@@ -1,5 +1,8 @@
 package edu.sjsu.cs.tinnitus.model;
 
+/**
+ * Class that represents one medication that a patient is taking, or has taken
+ */
 public class Medication {
 
     /**

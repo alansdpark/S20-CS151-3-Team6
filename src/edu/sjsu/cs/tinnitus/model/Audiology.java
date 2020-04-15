@@ -2,8 +2,10 @@ package edu.sjsu.cs.tinnitus.model;
 
 import java.util.ArrayList;
 
-// Perform audiological evaluation and register medical history including pharmacology.
-public class Audiology 
+/**
+ * Perform audiological evaluation and register medical history including pharmacology.
+ */
+public class Audiology
 {
     // Physician's discretionary comments regarding audiology.
     private ArrayList<String> comments;

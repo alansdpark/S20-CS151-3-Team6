@@ -1,5 +1,8 @@
 package edu.sjsu.cs.tinnitus.model;
 
+/**
+ * Class that represents a visit to the tinnitus clinic
+ */
 public class Visit {
 
     /**
@@ -21,7 +24,7 @@ public class Visit {
 
     /**
      * Constructor for Visit
-     * @param audiology - audiology associated with the visist
+     * @param audiology - audiology associated with the visit
      * @param patient - patient
      * @param date - date of the visit
      * @param visitNumber - visit number recorded in ascending order

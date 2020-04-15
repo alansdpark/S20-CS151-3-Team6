@@ -2,6 +2,9 @@ package edu.sjsu.cs.tinnitus.model;
 
 import java.util.ArrayList;
 
+/**
+ * Class that represents a Patient at the clinic
+ */
 public class Patient 
 {
 
