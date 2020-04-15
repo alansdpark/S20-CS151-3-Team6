@@ -723,6 +723,38 @@ public class PatientView extends JPanel {
         this.nextVisitField = nextVisitField;
     }
 
+    /**
+     * Setter for medical history button action listener
+     * @param listener
+     */
+    public void setMedicalHistoryButtonAction(ActionListener listener) {
+        medicalHistoryButton.setActionListener(listener);
+    }
+
+    /**
+     * Setter for medical save action listener
+     * @param listener
+     */
+    public void setSaveButtonAction(ActionListener listener) {
+        saveButton.setActionListener(listener);
+    }
+
+    /**
+     * Setter for cancel button action listener
+     * @param listener
+     */
+    public void setCancelButtonAction(ActionListener listener) {
+        cancelButton.setActionListener(listener);
+    }
+
+    /**
+     * Setter for medical history button action listener
+     * @param listener
+     */
+    public void setNewVisitButton(ActionListener listener) {
+        newVisitButton.setActionListener(listener);
+    }
+
     private JLabel firstNameLabel;
     private JLabel lastNameLabel;
     private JLabel address1Label;
@@ -766,4 +798,9 @@ public class PatientView extends JPanel {
     private JTextField nextVisitField;
 
     private JTable visitTable;
+
+    private JButton medicalHistoryButton;
+    private JButton newVisitButton;
+    private JButton saveButton;
+    private JButton cancelButton;
 }

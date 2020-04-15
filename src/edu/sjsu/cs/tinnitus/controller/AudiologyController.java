@@ -7,26 +7,12 @@ import edu.sjsu.cs.tinnitus.controller.Controller;
  */
 public class AudiologyController implements Controller
 {
-    /**
-     * Stage of audiological exam.
-     * 
-     * 1 = pure-tone audiogram
-     * 2 = loudness discomfort levels
-     * 3 = tinnitus pitch match and match type
-     * 4 = thresholds of hearing
-     * 5 = minimal masking levels for left and right ear.
-     */
-    private int stage; 
 
-    /**
-     * New Controller should be created for every test.
-     */
     public AudiologyController(Audiology data, AudiologyView aView, JFrame frame)
     {
-        if (!data.empty())
-            fillView(data);
         this.data = data;
         this.aView = aView;
+        load(); // loads data from audiology into data
         addActions();
         changeFrom(frame);
     }
@@ -38,16 +24,14 @@ public class AudiologyController implements Controller
      * @param frame
      */
     public void changeFrom(JFrame frame) {
-        frame.removeAll();
-        frame.add(aView);
-        frame.repaint();
+
     }
 
     /**
      * Sets the save and cancel action listener to the
      * Save and Cancel JButton in the AudiologyView
      */
-    public addActions() {
+    public void addActions() {
         ActionListener save = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -69,7 +53,7 @@ public class AudiologyController implements Controller
      * within their respective fields
      */
     public void save() {
-        String Comments = aView.getAdditionalComments();
+        /** String Comments = aView.getAdditionalComments();
         int[] hz_pureTone_left = new int[8];
             hz_pureTone_left[0] = Integer.parseInt(aView.getHz_250_field_pureTone_left());
             hz_pureTone_left[1] = Integer.parseInt(aView.getHz_500_field_pureTone_left());
@@ -116,6 +100,14 @@ public class AudiologyController implements Controller
         data.setMinMaskRight(Integer.parseInt(aView.getMinMaskRight_field()));
         data.setPitchMatch(Integer.parseInt(aView.getPitchMatch_field()));
         data.setMatchType(aView.getMatchType_field());
+         */
+    }
+
+    /**
+     * Loads already saved audiology data into the textfields of audiologyview
+     */
+    public void load() {
+
     }
 
     @Override

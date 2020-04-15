@@ -590,6 +590,24 @@ public class RegisterPatientView extends JPanel
         this.educationalDegreeLabel = educationalDegreeLabel;
     }
 
+    /**
+     * Setter for medical save action listener
+     * @param listener
+     */
+    public void setSaveButtonAction(ActionListener listener) {
+        saveButton.setActionListener(listener);
+    }
+
+    /**
+     * Setter for cancel button action listener
+     * @param listener
+     */
+    public void setCancelButtonAction(ActionListener listener) {
+        cancelButton.setActionListener(listener);
+    }
+    public void setVisitButtonAction(ActionListener listener) {
+        visitButton.setActionListener(listener);
+    }
     private JTextField firstNameField;
     private JTextField lastNameField;
     private JTextField address1Field;
@@ -623,5 +641,8 @@ public class RegisterPatientView extends JPanel
     private JLabel occupationLabel;
     private JLabel workStatusLabel;
     private JLabel educationalDegreeLabel;
-    
+
+    private JButton saveButton;
+    private JButton visitButton;
+    private JButton cancelButton;
 }

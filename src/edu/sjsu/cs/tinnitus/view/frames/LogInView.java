@@ -80,9 +80,27 @@ public class LogInView {
         this.currentDateField = currentDateField;
     }
 
+    /**
+     * Setter for save button action listener
+     * @param listener
+     */
+    public void setSaveButtonAction(ActionListener listener) {
+        saveButton.setActionListener(listener);
+    }
+
+    /**
+     * Setter for cancel button action listener
+     * @param listener
+     */
+    public void setCancelButton(ActionListener listener) {
+        cancelButton.setActionListener(listener);
+    }
     private JLabel patientIdLabel;
     private JLabel currentDateLabel;
 
     private JTextField patientIdField;
     private JTextField currentDateField;
+
+    private JButton saveButton;
+    private JButton cancelButton;
 }

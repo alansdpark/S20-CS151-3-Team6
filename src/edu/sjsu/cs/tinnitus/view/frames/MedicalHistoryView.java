@@ -6,11 +6,6 @@ import javax.swing.*;
  */
 public class MedicalHistoryView extends JPanel
 {
-    private JLabel medicalHistory;
-    private JLabel currentMedication;
-    // Edit buttons
-    private JButton editMedicalHistory;
-    private JButton editMedication;
 
     /**
      * Default Constructor
@@ -30,4 +25,36 @@ public class MedicalHistoryView extends JPanel
         medicalHistory = new JLabel(medHistory);
         currentMedication = new JLabel(currentMed);
     }
+
+    /**
+     * loads in data from the Medical History model to view
+     */
+    public load() {
+
+    }
+
+    /**
+     * sets actions listener to the edit medical history button
+     * through the controller
+     * @param listener
+     */
+    public void setEditMedicalHistory(AcionListener listener) {
+        editMedicalHistory.setActionListener(listener);
+    }
+
+    /**
+     * sets action listener to edit the medication through the controller
+     * @param listener
+     */
+    public void setEditMedication(ActionListener listener) {
+        editMedication.setActionListener(listener);
+    }
+
+    private MedicalHistory data;
+    private JLabel medicalHistory;
+    private JLabel currentMedication;
+    private JTextArea medHistory_area;
+    // Edit buttons
+    private JButton editMedicalHistory;
+    private JButton editMedication;
 }
