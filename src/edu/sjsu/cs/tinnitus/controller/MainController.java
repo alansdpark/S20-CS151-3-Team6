@@ -1,6 +1,8 @@
 package controller;
 
-public class Main 
+import javax.swing.JFrame;
+
+public class MainController
 {
     /**
      * Run project.
@@ -12,6 +14,9 @@ public class Main
      */
     public static void main(String[] args)
     {
-        JFrame window = new JFrame("Team 6 - Project 3");
+        JFrame window = new JFrame("Team 6 - Project 3 (Audiology)");
+        window.setSize(800, 600);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setVisible(true);
     }
 }

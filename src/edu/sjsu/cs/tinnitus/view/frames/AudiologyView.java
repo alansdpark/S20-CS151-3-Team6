@@ -5,6 +5,6 @@ public class AudiologyView extends JPanel {
 
     public AudiologyView()
     {
-
+        
     }
 }
