@@ -1,8 +1,6 @@
-package controller;
-
 import javax.swing.JFrame;
 
-public class MainController
+public class MainApp
 {
     /**
      * Run project.
@@ -14,7 +12,10 @@ public class MainController
      */
     public static void main(String[] args)
     {
+        // Starts with the navigation view.
         JFrame window = new JFrame("Team 6 - Project 3 (Audiology)");
+        NavigationView navigationView = new NavigationView();
+        window.setContentPane(navigationView);
         window.setSize(800, 600);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
