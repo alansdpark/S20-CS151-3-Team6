@@ -19,8 +19,8 @@ public class MedicalHistoryTable
 
     /**
      * Constructor with medication list and medical history.
-     * @param medList
-     * @param medHistoryDesc
+     * @param medList arraylist(medication)
+     * @param medHistoryDesc medical history description
      */
     public MedicalHistoryTable(ArrayList<Medication> medList, String medHistoryDesc)
     {
