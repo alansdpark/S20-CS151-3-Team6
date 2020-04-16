@@ -1,5 +1,6 @@
 package edu.sjsu.cs.tinnitus.view.frames;
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * The class allows the user to view Audiology
@@ -9,14 +10,14 @@ public class AudiologyView extends JPanel
     public AudiologyView()
     {
 
-        AudiologyView.setLayout(new BorderLayout());
+        //AudiologyView.setLayout(new BorderLayout());
         //north title
         title = new JLabel(BorderLayout.NORTH);
         title.setText("Audiogram Evaluation");
 
         //hz labels
         frequency = new JLabel();
-        frequency.setText("frequency (Hz)")
+        frequency.setText("frequency (Hz)");
         hz_250 = new JLabel();
         hz_250.setText("250Hz");
         hz_500 = new JLabel();
@@ -101,7 +102,7 @@ public class AudiologyView extends JPanel
         centerPanel.add(emptyLabel);
         centerPanel.add(hz_500);
         centerPanel.add(hz_500_field_pureTone_left);
-        centerPanel.add(hz_500_field_pureTone_right;
+        centerPanel.add(hz_500_field_pureTone_right);
         centerPanel.add(hz_500_field_ldl_left);
         centerPanel.add(hz_500_field_ldl_right);
         centerPanel.add(hz_1000);
@@ -140,7 +141,7 @@ public class AudiologyView extends JPanel
         return frequency;
     }
 
-    public JLabel getAdditionalCommnents() {
+    public JTextArea getAdditionalCommnents() {
         return additionalCommnents;
     }
     public JButton getSaveButton() {
@@ -361,7 +362,7 @@ public class AudiologyView extends JPanel
     private JLabel hz_7500;
     private JLabel hz_10000;
     private JLabel hz_12000;
-    private JLabel additionalCommnents;
+    private JTextArea additionalCommnents;
     private JLabel thresholdLeft;
     private JLabel thresholdRight;
     private JLabel minMaskLeft;
