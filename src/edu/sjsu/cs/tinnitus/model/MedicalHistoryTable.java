@@ -1,4 +1,8 @@
-package model;
+package edu.sjsu.cs.tinnitus.model;
+
+import edu.sjsu.cs.tinnitus.model.Medication;
+
+import java.util.ArrayList;
 
 /**
  * Similar to PatientTable.java
