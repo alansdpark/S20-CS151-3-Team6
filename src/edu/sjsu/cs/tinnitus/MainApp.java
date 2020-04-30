@@ -2,7 +2,7 @@ package edu.sjsu.cs.tinnitus;
 import javax.swing.JFrame;
 
 /**
- * Main.
+ * Main runtime file.
  * CS 151 - Subtopic 3 - Team 6
  * @author Team 6
  */
@@ -22,7 +22,8 @@ public class MainApp
         JFrame window = new JFrame("Team 6 - Project 3 (Audiology)");
         NavigationView navigationView = new NavigationView();
         window.setContentPane(navigationView);
-        window.setSize(800, 600);
+        window.setSize(1024, 748);
+		window.setResizable(false);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
     }

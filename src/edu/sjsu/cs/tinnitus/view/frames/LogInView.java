@@ -7,7 +7,9 @@ import javax.swing.*;
  */
 public class LogInView {
 
-
+	/**
+	 * Default Constructor
+	 */
     public LogInView() {
     }
 

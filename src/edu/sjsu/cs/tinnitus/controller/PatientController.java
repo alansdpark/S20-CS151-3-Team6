@@ -48,7 +48,10 @@ public class PatientController implements Controller
      * Opens frame to selected Visit
      * @param visit - visit to be edited
      */
-    public void editVisit(Visit visit){}
+    public void editVisit(Visit visit)
+	{
+
+	}
 
 
     @Override
