@@ -13,6 +13,9 @@ public class PatientListView {
      * constructs all GUI objects and places them
      */
     public PatientListView() {
+        initComponents();
+        addComponents();
+        panel.setVisible(true);
     }
 
     /**
@@ -51,6 +54,37 @@ public class PatientListView {
         this.patientTable = patientTable;
     }
 
+    /**
+     * Getter for panel
+     *
+     * @return panel
+     */
+    public JPanel getPanel() {
+        return panel;
+    }
+
+    /**
+     * Setter for panel
+     *
+     * @param panel - panel
+     */
+    public void setPanel(JPanel panel) {
+        this.panel = panel;
+    }
+
+    private void initComponents(){
+        panel = new JPanel();
+        patientTable = new JTable();
+        saveButton = new JButton("Save");
+    }
+
+    private void addComponents(){
+        JScrollPane scrollPane = new JScrollPane(patientTable);
+        panel.add(scrollPane);
+        panel.add(saveButton);
+    }
+
     private JButton saveButton;
     private JTable patientTable;
+    private JPanel panel;
 }

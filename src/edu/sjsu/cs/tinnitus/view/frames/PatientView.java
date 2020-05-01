@@ -900,8 +900,8 @@ public class PatientView extends JPanel {
         infoPanel.add(saveButton);
 
         panel.add(infoPanel);
-        panel.add(visitTable);
-
+        JScrollPane scrollPane = new JScrollPane(visitTable);
+        panel.add(scrollPane);
 
 
     }
