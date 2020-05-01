@@ -693,42 +693,45 @@ public class RegisterPatientView extends JPanel
 
     private void addComponents(){
 
-        panel.setLayout(new GridLayout(0,4, 10, 10));
-        panel.add(firstNameLabel);
-        panel.add(firstNameField);
-        panel.add(birthdayLabel);
-        panel.add(birthdayField);
-        panel.add(lastNameLabel);
-        panel.add(lastNameField);
-        panel.add(genderLabel);
-        panel.add(genderField);
-        panel.add(address1Label);
-        panel.add(address1Field);
-        panel.add(phoneNumberLabel);
-        panel.add(phoneNumberField);
-        panel.add(address2Label);
-        panel.add(address2Field);
-        panel.add(ssnLabel);
-        panel.add(ssnField);
-        panel.add(cityLabel);
-        panel.add(cityField);
-        panel.add(insuranceNoLabel);
-        panel.add(insuranceNoField);
-        panel.add(stateLabel);
-        panel.add(stateField);
-        panel.add(occupationLabel);
-        panel.add(occupationField);
-        panel.add(zipCodeLabel);
-        panel.add(zipCodeField);
-        panel.add(workStatusLabel);
-        panel.add(workStatusField);
-        panel.add(countryLabel);
-        panel.add(countryField);
-        panel.add(educationalDegreeLabel);
-        panel.add(educationalDegreeField);
+        JPanel infoPanel = new JPanel();
+        infoPanel.setLayout(new GridLayout(0,4, 10, 10));
+        infoPanel.add(firstNameLabel);
+        infoPanel.add(firstNameField);
+        infoPanel.add(birthdayLabel);
+        infoPanel.add(birthdayField);
+        infoPanel.add(lastNameLabel);
+        infoPanel.add(lastNameField);
+        infoPanel.add(genderLabel);
+        infoPanel.add(genderField);
+        infoPanel.add(address1Label);
+        infoPanel.add(address1Field);
+        infoPanel.add(phoneNumberLabel);
+        infoPanel.add(phoneNumberField);
+        infoPanel.add(address2Label);
+        infoPanel.add(address2Field);
+        infoPanel.add(ssnLabel);
+        infoPanel.add(ssnField);
+        infoPanel.add(cityLabel);
+        infoPanel.add(cityField);
+        infoPanel.add(insuranceNoLabel);
+        infoPanel.add(insuranceNoField);
+        infoPanel.add(stateLabel);
+        infoPanel.add(stateField);
+        infoPanel.add(occupationLabel);
+        infoPanel.add(occupationField);
+        infoPanel.add(zipCodeLabel);
+        infoPanel.add(zipCodeField);
+        infoPanel.add(workStatusLabel);
+        infoPanel.add(workStatusField);
+        infoPanel.add(countryLabel);
+        infoPanel.add(countryField);
+        infoPanel.add(educationalDegreeLabel);
+        infoPanel.add(educationalDegreeField);
 
-        panel.add(initialVisitButtion);
-        panel.add(saveButton);
+        infoPanel.add(initialVisitButtion);
+        infoPanel.add(saveButton);
+
+        panel.add(infoPanel);
 
 
 

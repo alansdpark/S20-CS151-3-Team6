@@ -1,5 +1,6 @@
 package edu.sjsu.cs.tinnitus.view.frames;
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * This class allows for the user to View the information related to a Patient
@@ -13,6 +14,9 @@ public class PatientView extends JPanel {
     public PatientView()
     {
 
+        initComponents();
+        addComponents();
+        panel.setVisible(true);
     }
 
     /**
@@ -726,6 +730,182 @@ public class PatientView extends JPanel {
         this.nextVisitField = nextVisitField;
     }
 
+    /**
+     * Getter for medicalHistoryButton
+     *
+     * @return medicalHistoryButton
+     */
+    public JButton getMedicalHistoryButton() {
+        return medicalHistoryButton;
+    }
+
+    /**
+     * Setter for medicalHistoryButton
+     *
+     * @param medicalHistoryButton - medicalHistoryButton
+     */
+    public void setMedicalHistoryButton(JButton medicalHistoryButton) {
+        this.medicalHistoryButton = medicalHistoryButton;
+    }
+
+    /**
+     * Getter for newVisitButton
+     *
+     * @return newVisitButton
+     */
+    public JButton getNewVisitButton() {
+        return newVisitButton;
+    }
+
+    /**
+     * Setter for newVisitButton
+     *
+     * @param newVisitButton - newVisitButton
+     */
+    public void setNewVisitButton(JButton newVisitButton) {
+        this.newVisitButton = newVisitButton;
+    }
+
+    /**
+     * Getter for saveButton
+     *
+     * @return saveButton
+     */
+    public JButton getSaveButton() {
+        return saveButton;
+    }
+
+    /**
+     * Setter for saveButton
+     *
+     * @param saveButton - saveButton
+     */
+    public void setSaveButton(JButton saveButton) {
+        this.saveButton = saveButton;
+    }
+
+    /**
+     * Getter for panel
+     *
+     * @return panel
+     */
+    public JPanel getPanel() {
+        return panel;
+    }
+
+    /**
+     * Setter for panel
+     *
+     * @param panel - panel
+     */
+    public void setPanel(JPanel panel) {
+        this.panel = panel;
+    }
+
+    private void initComponents(){
+        panel = new JPanel();
+
+        firstNameLabel = new JLabel("First Name", SwingConstants.RIGHT);
+        lastNameLabel = new JLabel("Last Name", SwingConstants.RIGHT);
+        address1Label = new JLabel("Address 1", SwingConstants.RIGHT);
+        address2Label = new JLabel("Address 2", SwingConstants.RIGHT);
+        cityLabel = new JLabel("City", SwingConstants.RIGHT);
+        stateLabel = new JLabel("State", SwingConstants.RIGHT);
+        zipCodeLabel = new JLabel("Zip Code", SwingConstants.RIGHT);
+        countryLabel = new JLabel("Country", SwingConstants.RIGHT);
+        birthdayLabel = new JLabel("Birthday", SwingConstants.RIGHT);
+        genderLabel = new JLabel("Gender", SwingConstants.RIGHT);
+        phoneNumberLabel = new JLabel("Phone Number", SwingConstants.RIGHT);
+        ssnLabel = new JLabel("SSN", SwingConstants.RIGHT);
+        insuranceNoLabel = new JLabel("Insurance No.", SwingConstants.RIGHT);
+        occupationLabel = new JLabel("Occupation", SwingConstants.RIGHT);
+        workStatusLabel = new JLabel("Work Status", SwingConstants.RIGHT);
+        educationalDegreeLabel = new JLabel("Educational Degree", SwingConstants.RIGHT);
+        
+        tinnitusCategoryLabel = new JLabel("Tinnitus Category", SwingConstants.RIGHT);
+        treatmentProtocolLabel = new JLabel("Treatment Protocol", SwingConstants.RIGHT);
+        nextVisitLabel = new JLabel("Next Visit", SwingConstants.RIGHT);
+
+
+        firstNameField = new JTextField(10);
+        lastNameField = new JTextField(10);
+        address1Field = new JTextField(10);
+        address2Field = new JTextField(10);
+        cityField = new JTextField(10);
+        stateField = new JTextField(10);
+        zipCodeField = new JTextField(10);
+        countryField = new JTextField(10);
+        birthdayField = new JTextField(10);
+        genderField = new JTextField(10);
+        phoneNumberField = new JTextField(10);
+        ssnField = new JTextField(10);
+        insuranceNoField = new JTextField(10);
+        occupationField = new JTextField(10);
+        workStatusField = new JTextField(10);
+        educationalDegreeField = new JTextField(10);
+
+        tinnitusCategoryField = new JTextField(10);
+        treatmentProtocolField = new JTextField(10);
+        nextVisitField = new JTextField(10);
+
+        saveButton = new JButton("Save");
+        newVisitButton = new JButton("New Visit");
+        medicalHistoryButton = new JButton("View Medical History");
+
+        visitTable = new JTable();
+        
+    }
+
+    private void addComponents(){
+        JPanel infoPanel = new JPanel(new GridLayout(0, 4, 10, 10));
+
+        infoPanel.add(firstNameLabel);
+        infoPanel.add(firstNameField);
+        infoPanel.add(phoneNumberLabel);
+        infoPanel.add(phoneNumberField);
+        infoPanel.add(lastNameLabel);
+        infoPanel.add(lastNameField);
+        infoPanel.add(ssnLabel);
+        infoPanel.add(ssnField);
+        infoPanel.add(address1Label);
+        infoPanel.add(address1Field);
+        infoPanel.add(insuranceNoLabel);
+        infoPanel.add(insuranceNoField);
+        infoPanel.add(cityLabel);
+        infoPanel.add(cityField);
+        infoPanel.add(occupationLabel);
+        infoPanel.add(occupationField);
+        infoPanel.add(stateLabel);
+        infoPanel.add(stateField);
+        infoPanel.add(workStatusLabel);
+        infoPanel.add(workStatusField);
+        infoPanel.add(zipCodeLabel);
+        infoPanel.add(zipCodeField);
+        infoPanel.add(educationalDegreeLabel);
+        infoPanel.add(educationalDegreeField);
+        infoPanel.add(countryLabel);
+        infoPanel.add(countryField);
+        infoPanel.add(tinnitusCategoryLabel);
+        infoPanel.add(tinnitusCategoryField);
+        infoPanel.add(birthdayLabel);
+        infoPanel.add(birthdayField);
+        infoPanel.add(treatmentProtocolLabel);
+        infoPanel.add(treatmentProtocolField);
+        infoPanel.add(genderLabel);
+        infoPanel.add(genderField);
+        infoPanel.add(nextVisitLabel);
+        infoPanel.add(nextVisitField);
+        infoPanel.add(medicalHistoryButton);
+        infoPanel.add(newVisitButton);
+        infoPanel.add(saveButton);
+
+        panel.add(infoPanel);
+        panel.add(visitTable);
+
+
+
+    }
+
     private JLabel firstNameLabel;
     private JLabel lastNameLabel;
     private JLabel address1Label;
@@ -769,4 +949,9 @@ public class PatientView extends JPanel {
     private JTextField nextVisitField;
 
     private JTable visitTable;
+    private JButton medicalHistoryButton;
+    private JButton newVisitButton;
+    private JButton saveButton;
+
+    private JPanel panel;
 }
