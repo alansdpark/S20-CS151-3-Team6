@@ -9,8 +9,7 @@ import java.util.ArrayList;
  */
 public class PatientTable 
 {
-    // Reference to all patients.
-    private ArrayList<Patient> patients;
+
 
     public PatientTable()
     {
@@ -47,4 +46,26 @@ public class PatientTable
     public void addPatient(Patient patient){
         patients.add(patient);
     }
+
+    public Patient findPatient(int patientId){
+        for(Patient patient: patients){
+            if(patient.getPatientId() == patientId){
+                return patient;
+            }
+        }
+        return null;
+    }
+
+    public int getHighestId(){
+        int max = -1;
+        for(Patient patient: patients){
+            if(patient.getPatientId() > max){
+                max = patient.getPatientId();
+            }
+        }
+        return max;
+    }
+
+    // Reference to all patients.
+    private ArrayList<Patient> patients;
 }

@@ -137,14 +137,16 @@ public class LogInView {
     }
 
     private void addComponents(){
-        panel.setLayout(new GridLayout(0,2, 10,10));
+        JPanel infoPanel = new JPanel(new GridLayout(0,2, 10,10));
 
-        panel.add(patientIdLabel);
-        panel.add(patientIdField);
-        panel.add(currentDateLabel);
-        panel.add(currentDateField);
+        infoPanel.add(patientIdLabel);
+        infoPanel.add(patientIdField);
+        infoPanel.add(currentDateLabel);
+        infoPanel.add(currentDateField);
 
-        panel.add(saveButton);
+        infoPanel.add(saveButton);
+
+        panel.add(infoPanel);
     }
 
     private JLabel patientIdLabel;

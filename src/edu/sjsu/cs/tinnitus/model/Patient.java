@@ -11,7 +11,9 @@ public class Patient
     /**
      * Default constructor
      */
-    public Patient() {}
+    public Patient() {
+        patientId = -1;
+    }
 
     /**
      *  Full Constructor
@@ -65,6 +67,7 @@ public class Patient
         this.nextVisit = nextVisit;
         this.visitList = visitList;
         this.medicalHistory = medicalHistory;
+        this.patientId = -1;
     }
 
     /**
@@ -533,6 +536,24 @@ public class Patient
         visitList.add(visit);
     }
 
+    /**
+     * Getter for patientId
+     *
+     * @return patientId
+     */
+    public int getPatientId() {
+        return patientId;
+    }
+
+    /**
+     * Setter for patientId
+     *
+     * @param patientId - patientId
+     */
+    public void setPatientId(int patientId) {
+        this.patientId = patientId;
+    }
+
     private String firstName;
     private String lastName;
     private String address1;
@@ -549,6 +570,7 @@ public class Patient
     private String occupation;
     private String workStatus;
     private String educationalDegree;
+    private int patientId;
 
     private int tinnitusCategory;
     private int treatmentProtocol;

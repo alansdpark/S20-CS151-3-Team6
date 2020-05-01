@@ -11,7 +11,7 @@ public class NavigationTesting {
     public static void main(String[] args){
         JFrame frame = new JFrame();
         NavigationView view = new NavigationView();
-        NavigationController controller = new NavigationController(view);
+        NavigationController controller = new NavigationController(view, frame);
         frame.add(view.getPanel());
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
