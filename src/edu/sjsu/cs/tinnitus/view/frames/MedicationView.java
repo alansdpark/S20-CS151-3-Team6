@@ -1,5 +1,7 @@
 package edu.sjsu.cs.tinnitus.view.frames;
 import javax.swing.*;
+import java.awt.*;
+
 /**
  * This class allows for the user to see the GUI for adding a new medication
  */
@@ -11,7 +13,9 @@ public class MedicationView extends JPanel {
      */
     public MedicationView()
     {
-
+        initComponents();
+        addComponents();
+        panel.setVisible(true);
     }
 
     /**
@@ -356,6 +360,76 @@ public class MedicationView extends JPanel {
         this.saveButton = saveButton;
     }
 
+    /**
+     * Getter for panel
+     *
+     * @return panel
+     */
+    public JPanel getPanel() {
+        return panel;
+    }
+
+    /**
+     * Setter for panel
+     *
+     * @param panel - panel
+     */
+    public void setPanel(JPanel panel) {
+        this.panel = panel;
+    }
+    
+    private void initComponents(){
+        panel = new JPanel();
+        nameField = new JTextField(10);
+        genericField = new JTextField(10);
+        doseField = new JTextField(10);
+        durationField = new JTextField(10);
+        chemicalCategoryField = new JTextField(10);
+        actionField = new JTextField(10);
+        applicationField = new JTextField(10);
+        usualDoseField = new JTextField(10);
+        inducesTinnitusField = new JTextField(10);
+
+        nameLabel = new JLabel("Name", SwingConstants.RIGHT);
+        genericLabel = new JLabel("Generic", SwingConstants.RIGHT);
+        doseLabel = new JLabel("Dose", SwingConstants.RIGHT);
+        durationLabel = new JLabel("Duration", SwingConstants.RIGHT);
+        chemicalCategoryLabel = new JLabel("Chemical Category", SwingConstants.RIGHT);
+        actionLabel = new JLabel("Action", SwingConstants.RIGHT);
+        applicationLabel = new JLabel("Application", SwingConstants.RIGHT);
+        usualDoseLabel = new JLabel("Usual Does", SwingConstants.RIGHT);
+        inducesTinnitusLabel = new JLabel("Induces Tinnitus", SwingConstants.RIGHT);
+
+        saveButton = new JButton("Save");
+    }
+    
+    private void addComponents(){
+        JPanel infoPanel = new JPanel(new GridLayout(0,2, 10, 10));
+
+        infoPanel.add(nameLabel);
+        infoPanel.add(nameField);
+        infoPanel.add(genericLabel);
+        infoPanel.add(genericField);
+        infoPanel.add(doseLabel);
+        infoPanel.add(doseField);
+        infoPanel.add(durationLabel);
+        infoPanel.add(durationField);
+        infoPanel.add(chemicalCategoryLabel);
+        infoPanel.add(chemicalCategoryField);
+        infoPanel.add(actionLabel);
+        infoPanel.add(actionField);
+        infoPanel.add(applicationLabel);
+        infoPanel.add(applicationField);
+        infoPanel.add(usualDoseLabel);
+        infoPanel.add(usualDoseField);
+        infoPanel.add(inducesTinnitusLabel);
+        infoPanel.add(inducesTinnitusField);
+
+        infoPanel.add(saveButton);
+
+        panel.add(infoPanel);
+    }
+
     private JTextField nameField;
     private JTextField genericField;
     private JTextField doseField;
@@ -377,4 +451,5 @@ public class MedicationView extends JPanel {
     private JLabel inducesTinnitusLabel;
 
     private JButton saveButton;
+    private JPanel panel;
 }
