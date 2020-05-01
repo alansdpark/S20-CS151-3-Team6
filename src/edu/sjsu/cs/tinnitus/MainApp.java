@@ -1,4 +1,6 @@
 package edu.sjsu.cs.tinnitus;
+import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
+
 import javax.swing.JFrame;
 
 /**
@@ -21,7 +23,7 @@ public class MainApp
         // Starts with the navigation view.
         JFrame window = new JFrame("Team 6 - Project 3 (Audiology)");
         NavigationView navigationView = new NavigationView();
-        window.setContentPane(navigationView);
+        window.setContentPane(navigationView.getPanel());
         window.setSize(1024, 748);
 		window.setResizable(false);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

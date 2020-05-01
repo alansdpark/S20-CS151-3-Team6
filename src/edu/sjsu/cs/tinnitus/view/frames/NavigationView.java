@@ -4,7 +4,7 @@ import javax.swing.*;
 /**
  * This class is the view for the default Navigation Page of the entire system
  */
-public class NavigationView extends JPanel {
+public class NavigationView {
 
 
 
@@ -17,7 +17,12 @@ public class NavigationView extends JPanel {
         viewPatients = new JButton("View all patients");
         logVisit = new JButton("Log a new visit");
         exit = new JButton("Exit");
+        panel = new JPanel();
+
+        addComponents();
     }
+
+
 
     /**
      * Getter for registerNewPatient
@@ -92,10 +97,39 @@ public class NavigationView extends JPanel {
     }
 
     /**
+     * Getter for panel
+     *
+     * @return panel
+     */
+    public JPanel getPanel() {
+        return panel;
+    }
+
+    /**
+     * Setter for panel
+     *
+     * @param panel - panel
+     */
+    public void setPanel(JPanel panel) {
+        this.panel = panel;
+    }
+
+
+    private void addComponents(){
+        panel.add(registerNewPatient);
+        panel.add(viewPatients);
+        panel.add(logVisit);
+        panel.add(exit);
+    }
+
+
+
+    /**
      * Navigation Buttons
      */
     private JButton registerNewPatient;
     private JButton viewPatients;
     private JButton logVisit;
     private JButton exit;
+    private JPanel panel;
 }

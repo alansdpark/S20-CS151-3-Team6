@@ -1,5 +1,6 @@
 package edu.sjsu.cs.tinnitus.view.frames;
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * This class allows the user to view the information for registering a new patient.
@@ -13,7 +14,9 @@ public class RegisterPatientView extends JPanel
      */
     public RegisterPatientView()
     {
-
+        initComponents();
+        addComponents();
+        panel.setVisible(true);
     }
 
 
@@ -593,6 +596,145 @@ public class RegisterPatientView extends JPanel
         this.educationalDegreeLabel = educationalDegreeLabel;
     }
 
+    /**
+     * Getter for panel
+     *
+     * @return panel
+     */
+    public JPanel getPanel() {
+        return panel;
+    }
+
+    /**
+     * Setter for panel
+     *
+     * @param panel - panel
+     */
+    public void setPanel(JPanel panel) {
+        this.panel = panel;
+    }
+
+    /**
+     * Getter for saveButton
+     *
+     * @return saveButton
+     */
+    public JButton getSaveButton() {
+        return saveButton;
+    }
+
+    /**
+     * Setter for saveButton
+     *
+     * @param saveButton - saveButton
+     */
+    public void setSaveButton(JButton saveButton) {
+        this.saveButton = saveButton;
+    }
+
+    /**
+     * Getter for initialVisitButtion
+     *
+     * @return initialVisitButtion
+     */
+    public JButton getInitialVisitButtion() {
+        return initialVisitButtion;
+    }
+
+    /**
+     * Setter for initialVisitButtion
+     *
+     * @param initialVisitButtion - initialVisitButtion
+     */
+    public void setInitialVisitButtion(JButton initialVisitButtion) {
+        this.initialVisitButtion = initialVisitButtion;
+    }
+
+    private void initComponents(){
+        panel = new JPanel();
+
+        firstNameField = new JTextField(10);
+        lastNameField = new JTextField(10);
+        address1Field = new JTextField(10);
+        address2Field = new JTextField(10);
+        cityField = new JTextField(10);
+        stateField = new JTextField(10);
+        zipCodeField = new JTextField(10);
+        countryField = new JTextField(10);
+        birthdayField = new JTextField(10);
+        genderField = new JTextField(10);
+        phoneNumberField = new JTextField(10);
+        ssnField = new JTextField(10);
+        insuranceNoField = new JTextField(10);
+        occupationField = new JTextField(10);
+        workStatusField = new JTextField(10);
+        educationalDegreeField = new JTextField(10);
+
+        firstNameLabel = new JLabel("First Name", SwingConstants.RIGHT);
+        lastNameLabel = new JLabel("Last Name", SwingConstants.RIGHT);
+        address1Label = new JLabel("Address 1", SwingConstants.RIGHT);
+        address2Label = new JLabel("Address 2", SwingConstants.RIGHT);
+        cityLabel = new JLabel("City",SwingConstants.RIGHT);
+        stateLabel = new JLabel("State", SwingConstants.RIGHT);
+        zipCodeLabel = new JLabel("Zip Code", SwingConstants.RIGHT);
+        countryLabel = new JLabel("Country", SwingConstants.RIGHT);
+        birthdayLabel = new JLabel("Date of Birth", SwingConstants.RIGHT);
+        genderLabel = new JLabel("Gender", SwingConstants.RIGHT);
+        phoneNumberLabel = new JLabel("Phone Number", SwingConstants.RIGHT);
+        ssnLabel = new JLabel("SSN", SwingConstants.RIGHT);
+        insuranceNoLabel = new JLabel("Insurance No.", SwingConstants.RIGHT);
+        occupationLabel = new JLabel("Occupation", SwingConstants.RIGHT);
+        workStatusLabel = new JLabel("Work Status",SwingConstants.RIGHT);
+        educationalDegreeLabel = new JLabel("Educational Degree", SwingConstants.RIGHT);
+
+        saveButton = new JButton("Save");
+        initialVisitButtion = new JButton("Initial Visit");
+    }
+
+    private void addComponents(){
+
+        panel.setLayout(new GridLayout(0,4, 10, 10));
+        panel.add(firstNameLabel);
+        panel.add(firstNameField);
+        panel.add(birthdayLabel);
+        panel.add(birthdayField);
+        panel.add(lastNameLabel);
+        panel.add(lastNameField);
+        panel.add(genderLabel);
+        panel.add(genderField);
+        panel.add(address1Label);
+        panel.add(address1Field);
+        panel.add(phoneNumberLabel);
+        panel.add(phoneNumberField);
+        panel.add(address2Label);
+        panel.add(address2Field);
+        panel.add(ssnLabel);
+        panel.add(ssnField);
+        panel.add(cityLabel);
+        panel.add(cityField);
+        panel.add(insuranceNoLabel);
+        panel.add(insuranceNoField);
+        panel.add(stateLabel);
+        panel.add(stateField);
+        panel.add(occupationLabel);
+        panel.add(occupationField);
+        panel.add(zipCodeLabel);
+        panel.add(zipCodeField);
+        panel.add(workStatusLabel);
+        panel.add(workStatusField);
+        panel.add(countryLabel);
+        panel.add(countryField);
+        panel.add(educationalDegreeLabel);
+        panel.add(educationalDegreeField);
+
+        panel.add(initialVisitButtion);
+        panel.add(saveButton);
+
+
+
+    }
+
+
     private JTextField firstNameField;
     private JTextField lastNameField;
     private JTextField address1Field;
@@ -626,5 +768,9 @@ public class RegisterPatientView extends JPanel
     private JLabel occupationLabel;
     private JLabel workStatusLabel;
     private JLabel educationalDegreeLabel;
+
+    private JPanel panel;
+    private JButton saveButton;
+    private JButton initialVisitButtion;
     
 }

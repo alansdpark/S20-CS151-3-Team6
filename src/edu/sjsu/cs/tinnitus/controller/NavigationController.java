@@ -11,6 +11,7 @@ public class NavigationController implements Controller
     public NavigationController(NavigationView nv)
     {
         navigationView = nv;
+        initController();
     }
 
     /**
@@ -42,12 +43,14 @@ public class NavigationController implements Controller
      */
     public void exit()
     {
-
+        navigationView.getPanel().setVisible(false);
     }
 
     @Override
     public void initController() {
-
+        navigationView.getExit().addActionListener(e ->{
+            exit();
+        });
     }
 
     // Reference to navigation JPanel.
