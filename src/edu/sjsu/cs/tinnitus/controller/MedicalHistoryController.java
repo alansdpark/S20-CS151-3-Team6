@@ -3,6 +3,8 @@ package edu.sjsu.cs.tinnitus.controller;
 import edu.sjsu.cs.tinnitus.model.MedicalHistory;
 import edu.sjsu.cs.tinnitus.view.frames.MedicalHistoryView;
 
+import javax.swing.*;
+
 public class MedicalHistoryController implements Controller {
 
 
@@ -11,9 +13,10 @@ public class MedicalHistoryController implements Controller {
      * @param medicalHistoryView - view that is being controlled
      * @param medicalHistory - model
      */
-    public MedicalHistoryController(MedicalHistoryView medicalHistoryView, MedicalHistory medicalHistory) {
+    public MedicalHistoryController(MedicalHistoryView medicalHistoryView, MedicalHistory medicalHistory, JFrame frame) {
         this.medicalHistoryView = medicalHistoryView;
         this.medicalHistory = medicalHistory;
+        this.frame = frame;
     }
 
     @Override
@@ -70,6 +73,25 @@ public class MedicalHistoryController implements Controller {
         this.medicalHistory = medicalHistory;
     }
 
+    /**
+     * Getter for frame
+     *
+     * @return frame
+     */
+    public JFrame getFrame() {
+        return frame;
+    }
+
+    /**
+     * Setter for frame
+     *
+     * @param frame - frame
+     */
+    public void setFrame(JFrame frame) {
+        this.frame = frame;
+    }
+
     private MedicalHistoryView medicalHistoryView;
     private MedicalHistory medicalHistory;
+    private JFrame frame;
 }

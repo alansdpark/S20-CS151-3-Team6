@@ -12,7 +12,7 @@ public class MedicalHistory {
      */
     public MedicalHistory()
     {
-
+        medHistoryTable = new MedicalHistoryTable();
     }
 
     // Reference to medical history table.

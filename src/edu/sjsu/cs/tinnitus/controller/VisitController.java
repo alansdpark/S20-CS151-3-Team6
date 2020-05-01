@@ -2,6 +2,7 @@ package edu.sjsu.cs.tinnitus.controller;
 
 import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.model.Visit;
+import edu.sjsu.cs.tinnitus.view.frames.MedicalHistoryView;
 import edu.sjsu.cs.tinnitus.view.frames.VisitView;
 
 import javax.swing.*;
@@ -12,33 +13,62 @@ import javax.swing.*;
 public class VisitController implements Controller
 {
 
-    public VisitController(Visit visit, VisitView visitView, JFrame jFrame, PatientTable patientTable) {
+    public VisitController(Visit visit, VisitView visitView, JFrame frame, PatientTable patientTable) {
         this.visit = visit;
         this.visitView = visitView;
-        this.jFrame = jFrame;
+        this.frame = frame;
         this.patientTable = patientTable;
         initController();
     }
 
-    /**
-     * Logs a new visit.
-     */
-    public void logVisit()
-    {
+
+    public void editMedicalHistory(){
+        frame.remove(visitView.getPanel());
+        MedicalHistoryView medicalHistoryView = new MedicalHistoryView();
+        MedicalHistoryController medicalHistoryController =
+                new MedicalHistoryController(medicalHistoryView, visit.getPatient().getMedicalHistory(), frame);
+        frame.add(medicalHistoryView.getPanel());
+        frame.validate();
+        frame.repaint();
+    }
+
+    public void editAudiologicalEvaluation(){
 
     }
 
-    /**
-     * Edits a visit.
-     */
-    public void editVisit()
-    {
+    public void save(){
         
+    }
+
+    public void notImplemented(){
+        //TODO ADD AN ALERT BOX TO ALERT USER THIS BUTTON IS NOT IMPLEMENTED
     }
 
     @Override
     public void initController() {
+        visitView.getSaveButton().addActionListener(e ->{
+            save();
+        });
 
+        visitView.getAudiologicalEvaluationButton().addActionListener(e -> {
+            editAudiologicalEvaluation();
+        });
+
+        visitView.getMedicalHistoryButton().addActionListener(e ->{
+            editMedicalHistory();
+        });
+
+        visitView.getQuestionarreButton().addActionListener(e ->{
+            notImplemented();
+        });
+
+        visitView.getRegisterTreatmentButton().addActionListener(e ->{
+            notImplemented();
+        });
+
+        visitView.getTreatmentButton().addActionListener(e ->{
+            notImplemented();
+        });
     }
 
     /**
@@ -78,21 +108,21 @@ public class VisitController implements Controller
     }
 
     /**
-     * Getter for jFrame
+     * Getter for frame
      *
-     * @return jFrame
+     * @return frame
      */
-    public JFrame getjFrame() {
-        return jFrame;
+    public JFrame getframe() {
+        return frame;
     }
 
     /**
-     * Setter for jFrame
+     * Setter for frame
      *
-     * @param jFrame - jFrame
+     * @param frame - frame
      */
-    public void setjFrame(JFrame jFrame) {
-        this.jFrame = jFrame;
+    public void setframe(JFrame frame) {
+        this.frame = frame;
     }
 
     /**
@@ -115,6 +145,6 @@ public class VisitController implements Controller
 
     Visit visit;
     VisitView visitView;
-    JFrame jFrame;
+    JFrame frame;
     PatientTable patientTable;
 }

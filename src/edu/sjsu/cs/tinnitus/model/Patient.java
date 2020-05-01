@@ -13,6 +13,8 @@ public class Patient
      */
     public Patient() {
         patientId = -1;
+        medicalHistory = new MedicalHistory();
+
     }
 
     /**

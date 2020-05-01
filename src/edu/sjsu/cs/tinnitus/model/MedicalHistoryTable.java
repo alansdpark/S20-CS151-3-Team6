@@ -18,7 +18,8 @@ public class MedicalHistoryTable
      */
     public MedicalHistoryTable()
     {
-
+        medicationList = new ArrayList<>();
+        medicalHistoryDescription = "";
     }
 
     /**
