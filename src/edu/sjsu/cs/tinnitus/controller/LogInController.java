@@ -4,9 +4,12 @@ import edu.sjsu.cs.tinnitus.model.Patient;
 import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.model.Visit;
 import edu.sjsu.cs.tinnitus.view.frames.LogInView;
+import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
 import edu.sjsu.cs.tinnitus.view.frames.VisitView;
+import edu.sjsu.cs.tinnitus.view.frames.util.AlertBox;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 /**
  * Controller for the Log in of a Patient
@@ -32,27 +35,54 @@ public class LogInController implements Controller {
         logInView.getSaveButton().addActionListener(e -> {
             save();
         });
+
+        logInView.getBackButton().addActionListener(e ->{
+            back();
+        });
     }
 
     public void save(){
-        //TODO create visit
         Visit visit = createVisit();
+        if(visit == null){
+            // Create an Alert Box
+            ArrayList<String> errMsgs = new ArrayList<>();
+            errMsgs.add("Invalid Patient ID");
+            AlertBox alertBox = new AlertBox(errMsgs);
+        }
+        else{
+            frame.remove(logInView.getPanel());
+            VisitView visitView = new VisitView();
+            VisitController visitController =
+                    new VisitController(visit, visitView, frame, patientTable);
+            frame.add(visitView.getPanel());
+            frame.validate();
+            frame.repaint();
+        }
+    }
+
+    public void back(){
         frame.remove(logInView.getPanel());
-        VisitView visitView = new VisitView();
-        VisitController visitController =
-                new VisitController(visit, visitView, frame, patientTable);
-        frame.add(visitView.getPanel());
+        NavigationView navigationView = new NavigationView();
+        NavigationController navigationController =
+                new NavigationController(navigationView, frame, patientTable);
+        frame.add(navigationView.getPanel());
         frame.validate();
         frame.repaint();
     }
 
     public Visit createVisit(){
-        int patientId = Integer.parseInt(logInView.getPatientIdField().getText());
-        String date = logInView.getCurrentDateField().getText();
-        //TODO VALIDATE INPUTS
+        Visit visit = null;
+        int patientId = -1;
+        if(logInView.getPatientIdField().getText().length() != 0){
+            patientId = Integer.parseInt(logInView.getPatientIdField().getText());
+        }
 
+        String date = logInView.getCurrentDateField().getText();
         Patient patient = patientTable.findPatient(patientId);
-        Visit visit = new Visit(patient, date);
+
+        if(patient != null){
+            visit = new Visit(patient, date);
+        }
         return visit;
     }
 

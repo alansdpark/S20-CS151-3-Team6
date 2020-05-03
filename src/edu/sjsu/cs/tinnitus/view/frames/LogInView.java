@@ -125,6 +125,24 @@ public class LogInView {
         this.panel = panel;
     }
 
+    /**
+     * Getter for backButton
+     *
+     * @return backButton
+     */
+    public JButton getBackButton() {
+        return backButton;
+    }
+
+    /**
+     * Setter for backButton
+     *
+     * @param backButton - backButton
+     */
+    public void setBackButton(JButton backButton) {
+        this.backButton = backButton;
+    }
+
     private void initComponents(){
         patientIdLabel = new JLabel("Patient ID No.", SwingConstants.RIGHT);
         currentDateLabel = new JLabel("Current Date", SwingConstants.RIGHT);
@@ -133,6 +151,7 @@ public class LogInView {
         currentDateField = new JTextField(10);
 
         saveButton = new JButton("Save");
+        backButton = new JButton("Back");
         panel = new JPanel();
     }
 
@@ -144,7 +163,9 @@ public class LogInView {
         infoPanel.add(currentDateLabel);
         infoPanel.add(currentDateField);
 
+        infoPanel.add(backButton);
         infoPanel.add(saveButton);
+
 
         panel.add(infoPanel);
     }
@@ -156,5 +177,6 @@ public class LogInView {
     private JTextField currentDateField;
 
     private JButton saveButton;
+    private JButton backButton;
     private JPanel panel;
 }
