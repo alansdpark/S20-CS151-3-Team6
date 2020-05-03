@@ -2,6 +2,7 @@ package edu.sjsu.cs.tinnitus.controller;
 
 import edu.sjsu.cs.tinnitus.model.Patient;
 import edu.sjsu.cs.tinnitus.model.PatientTable;
+import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
 import edu.sjsu.cs.tinnitus.view.frames.PatientListView;
 
 import javax.swing.*;
@@ -21,18 +22,28 @@ public class PatientListController implements Controller {
         this.patientTable = patientTable;
         this.patientListView = patientListView;
         this.frame = frame;
+        initController();
     }
 
     @Override
     public void initController() {
 
+        patientListView.getSaveButton().addActionListener(e ->{
+            save();
+        });
     }
 
     /**
      * returns to the navigation page
      */
     private void save(){
-
+        frame.remove(patientListView.getPanel());
+        NavigationView navigationView = new NavigationView();
+        NavigationController navigationController =
+                new NavigationController(navigationView, frame, patientTable);
+        frame.add(navigationView.getPanel());
+        frame.validate();
+        frame.repaint();
     }
 
     /**

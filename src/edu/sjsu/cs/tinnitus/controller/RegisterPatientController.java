@@ -34,6 +34,19 @@ public class RegisterPatientController implements Controller {
         view.getInitialVisitButtion().addActionListener(e ->{
             createNewVisit();
         });
+        view.getBackButton().addActionListener(e -> {
+            back();
+        });
+    }
+
+    public void back(){
+        frame.remove(view.getPanel());
+        NavigationView navigationView = new NavigationView();
+        NavigationController navigationController =
+                new NavigationController(navigationView, frame, patientTable);
+        frame.add(navigationView.getPanel());
+        frame.validate();
+        frame.repaint();
     }
 
     /**

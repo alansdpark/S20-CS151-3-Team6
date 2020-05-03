@@ -3,6 +3,7 @@ package edu.sjsu.cs.tinnitus.controller;
 import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.model.Visit;
 import edu.sjsu.cs.tinnitus.view.frames.MedicalHistoryView;
+import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
 import edu.sjsu.cs.tinnitus.view.frames.VisitView;
 
 import javax.swing.*;
@@ -26,7 +27,7 @@ public class VisitController implements Controller
         frame.remove(visitView.getPanel());
         MedicalHistoryView medicalHistoryView = new MedicalHistoryView();
         MedicalHistoryController medicalHistoryController =
-                new MedicalHistoryController(medicalHistoryView, visit.getPatient().getMedicalHistory(), frame);
+                new MedicalHistoryController(medicalHistoryView, visit.getPatient().getMedicalHistory(), frame, visit, patientTable);
         frame.add(medicalHistoryView.getPanel());
         frame.validate();
         frame.repaint();
@@ -37,7 +38,13 @@ public class VisitController implements Controller
     }
 
     public void save(){
-        
+        frame.remove(visitView.getPanel());
+        NavigationView navigationView = new NavigationView();
+        NavigationController navigationController =
+                new NavigationController(navigationView, frame, patientTable);
+        frame.add(navigationView.getPanel());
+        frame.validate();
+        frame.repaint();
     }
 
     public void notImplemented(){

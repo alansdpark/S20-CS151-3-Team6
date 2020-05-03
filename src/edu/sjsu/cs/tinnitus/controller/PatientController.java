@@ -1,8 +1,11 @@
 package edu.sjsu.cs.tinnitus.controller;
 
 import edu.sjsu.cs.tinnitus.model.Patient;
+import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.model.Visit;
 import edu.sjsu.cs.tinnitus.view.frames.PatientView;
+
+import javax.swing.*;
 
 /**
  * Controller that communicates with Patient and PatientView
@@ -22,7 +25,7 @@ public class PatientController implements Controller
      * @param patient - patient model
      * @param patientView - patient view
      */
-    public PatientController(Patient patient, PatientView patientView) {
+    public PatientController(Patient patient, PatientView patientView, JFrame frame, PatientTable patientTable) {
         this.patient = patient;
         this.patientView = patientView;
     }

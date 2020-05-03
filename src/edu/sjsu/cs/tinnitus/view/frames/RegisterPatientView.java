@@ -650,6 +650,24 @@ public class RegisterPatientView extends JPanel
         this.initialVisitButtion = initialVisitButtion;
     }
 
+    /**
+     * Getter for backButton
+     *
+     * @return backButton
+     */
+    public JButton getBackButton() {
+        return backButton;
+    }
+
+    /**
+     * Setter for backButton
+     *
+     * @param backButton - backButton
+     */
+    public void setBackButton(JButton backButton) {
+        this.backButton = backButton;
+    }
+
     private void initComponents(){
         panel = new JPanel();
 
@@ -689,6 +707,7 @@ public class RegisterPatientView extends JPanel
 
         saveButton = new JButton("Save");
         initialVisitButtion = new JButton("Initial Visit");
+        backButton = new JButton("Back");
     }
 
     private void addComponents(){
@@ -730,6 +749,7 @@ public class RegisterPatientView extends JPanel
 
         infoPanel.add(initialVisitButtion);
         infoPanel.add(saveButton);
+        infoPanel.add(backButton);
 
         panel.add(infoPanel);
 
@@ -775,5 +795,6 @@ public class RegisterPatientView extends JPanel
     private JPanel panel;
     private JButton saveButton;
     private JButton initialVisitButtion;
+    private JButton backButton;
     
 }
