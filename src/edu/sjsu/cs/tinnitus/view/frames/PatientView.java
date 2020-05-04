@@ -802,6 +802,24 @@ public class PatientView extends JPanel {
         this.panel = panel;
     }
 
+    /**
+     * Getter for scrollPane
+     *
+     * @return scrollPane
+     */
+    public JScrollPane getScrollPane() {
+        return scrollPane;
+    }
+
+    /**
+     * Setter for scrollPane
+     *
+     * @param scrollPane - scrollPane
+     */
+    public void setScrollPane(JScrollPane scrollPane) {
+        this.scrollPane = scrollPane;
+    }
+
     private void initComponents(){
         panel = new JPanel();
 
@@ -900,7 +918,7 @@ public class PatientView extends JPanel {
         infoPanel.add(saveButton);
 
         panel.add(infoPanel);
-        JScrollPane scrollPane = new JScrollPane(visitTable);
+        scrollPane = new JScrollPane(visitTable);
         panel.add(scrollPane);
 
 
@@ -954,4 +972,5 @@ public class PatientView extends JPanel {
     private JButton saveButton;
 
     private JPanel panel;
+    private JScrollPane scrollPane;
 }

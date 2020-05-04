@@ -38,6 +38,7 @@ public class VisitController implements Controller
     }
 
     public void save(){
+        visit.getPatient().addVisit(visit);
         frame.remove(visitView.getPanel());
         NavigationView navigationView = new NavigationView();
         NavigationController navigationController =

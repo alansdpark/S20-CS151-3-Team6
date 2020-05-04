@@ -4,6 +4,7 @@ import edu.sjsu.cs.tinnitus.model.Patient;
 import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
 import edu.sjsu.cs.tinnitus.view.frames.PatientListView;
+import edu.sjsu.cs.tinnitus.view.frames.PatientView;
 
 import javax.swing.*;
 
@@ -22,7 +23,9 @@ public class PatientListController implements Controller {
         this.patientTable = patientTable;
         this.patientListView = patientListView;
         this.frame = frame;
+        initTable();
         initController();
+
     }
 
     @Override
@@ -31,12 +34,18 @@ public class PatientListController implements Controller {
         patientListView.getSaveButton().addActionListener(e ->{
             save();
         });
+
+        patientListView.getPatientTable().getSelectionModel().addListSelectionListener( e->{
+            int row = e.getFirstIndex();
+            goToPatient(patientTable.getPatientList().get(row));
+
+        });
     }
 
     /**
      * returns to the navigation page
      */
-    private void save(){
+    public void save(){
         frame.remove(patientListView.getPanel());
         NavigationView navigationView = new NavigationView();
         NavigationController navigationController =
@@ -50,7 +59,34 @@ public class PatientListController implements Controller {
      * Proceeds to go to the Patient Info page of the patient
      * @param patient - patient whose page will be displayed
      */
-    private void goToPatient(Patient patient){
+    public void goToPatient(Patient patient){
+        frame.remove(patientListView.getPanel());
+        PatientView patientView = new PatientView();
+        PatientController patientController = new PatientController(patient, patientView, frame, patientTable);
+        frame.add(patientView.getPanel());
+        frame.validate();
+        frame.repaint();
+    }
+
+    private void initTable(){
+        Object[][] data = new Object[patientTable.getPatientList().size()][2];
+        String[] columnNames = {"Patient ID", "Patient Name"};
+        int i = 0;
+        for(Patient patient : patientTable.getPatientList()){
+            data[i][0] = patient.getPatientId();
+            data[i][1] = patient.getFirstName() + " " + patient.getLastName();
+            i++;
+        }
+        //TODO CANT FIGURE OUT WHY USING THE SETTER IS NECESSARY
+        //TODO MAKE ROWS NOT EDITABLE
+
+        JTable table = new JTable(data, columnNames);
+        patientListView.setPatientTable(table);
+        JScrollPane scrollPane = new JScrollPane(table);
+        patientListView.setScrollPane(scrollPane);
+        frame.validate();
+        frame.repaint();
+
 
     }
 

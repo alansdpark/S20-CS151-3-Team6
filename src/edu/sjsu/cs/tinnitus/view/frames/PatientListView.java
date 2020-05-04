@@ -76,10 +76,32 @@ public class PatientListView {
         panel = new JPanel();
         patientTable = new JTable();
         saveButton = new JButton("Save");
+        scrollPane = new JScrollPane(patientTable);
     }
 
     private void addComponents(){
-        JScrollPane scrollPane = new JScrollPane(patientTable);
+        //panel.add(scrollPane);
+        //panel.add(saveButton);
+        //TODO FIGURE OUT WHY THIS NEEDS TO BE UPDATED THROUGH THE SETTER
+    }
+
+
+    /**
+     * Getter for scrollPane
+     *
+     * @return scrollPane
+     */
+    public JScrollPane getScrollPane() {
+        return scrollPane;
+    }
+
+    /**
+     * Setter for scrollPane
+     *
+     * @param scrollPane - scrollPane
+     */
+    public void setScrollPane(JScrollPane scrollPane) {
+        this.scrollPane = scrollPane;
         panel.add(scrollPane);
         panel.add(saveButton);
     }
@@ -87,4 +109,5 @@ public class PatientListView {
     private JButton saveButton;
     private JTable patientTable;
     private JPanel panel;
+    private JScrollPane scrollPane;
 }
