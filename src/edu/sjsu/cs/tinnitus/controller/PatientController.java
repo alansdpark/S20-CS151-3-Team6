@@ -79,6 +79,19 @@ public class PatientController implements Controller
         frame.repaint();
     }
 
+    public void goToVisit(Visit visit){
+        JFrame frame = clinicController.getFrame();
+        savePatientInfo();
+        frame.remove(patientView.getPanel());
+        VisitView visitView = new VisitView();
+        VisitController visitController =
+                new VisitController(visit, visitView, clinicController);
+        frame.add(visitView.getPanel());
+        frame.validate();
+        frame.repaint();
+
+    }
+
     public void addPatientInfo(){
         patientView.getFirstNameField().setText(patient.getFirstName());
         //TODO REPEAT FOR ALL FIELDS
@@ -88,15 +101,6 @@ public class PatientController implements Controller
         patient.setFirstName(patientView.getFirstNameField().getText());
         //TODO REPEAT FOR ALL FIELDS
     }
-
-    /**
-     * Opens frame to selected Visit
-     * @param visit - visit to be edited
-     */
-    public void editVisit(Visit visit)
-	{
-
-	}
 
 	public void initTable(){
         Object[][] data = new Object[patient.getVisitList().size()][2];
@@ -131,6 +135,12 @@ public class PatientController implements Controller
 
         patientView.getNewVisitButton().addActionListener( e -> {
             logVisit();
+        });
+
+        patientView.getVisitTable().getSelectionModel().addListSelectionListener( e->{
+            int row = e.getFirstIndex();
+            goToVisit(patient.getVisitList().get(row));
+
         });
     }
 
