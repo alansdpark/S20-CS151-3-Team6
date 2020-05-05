@@ -20,13 +20,11 @@ public class LogInController implements Controller {
     /**
      * Creates a LogInController Object
      * @param logInView - view for the log in screen
-     * @param patientTable - patientTable that stores the list of patients from which the
-     *               patient id will be found
+     * @param clinicController - clinicController
      */
-    public LogInController(LogInView logInView, PatientTable patientTable, JFrame frame) {
+    public LogInController(LogInView logInView, ClinicController clinicController) {
         this.logInView = logInView;
-        this.patientTable = patientTable;
-        this.frame = frame;
+        this.clinicController = clinicController;
         initController();
     }
 
@@ -42,6 +40,7 @@ public class LogInController implements Controller {
     }
 
     public void save(){
+        JFrame frame = clinicController.getFrame();
         Visit visit = createVisit();
         if(visit == null){
             // Create an Alert Box
@@ -53,7 +52,7 @@ public class LogInController implements Controller {
             frame.remove(logInView.getPanel());
             VisitView visitView = new VisitView();
             VisitController visitController =
-                    new VisitController(visit, visitView, frame, patientTable);
+                    new VisitController(visit, visitView, clinicController);
             frame.add(visitView.getPanel());
             frame.validate();
             frame.repaint();
@@ -61,10 +60,11 @@ public class LogInController implements Controller {
     }
 
     public void back(){
+        JFrame frame = clinicController.getFrame();
         frame.remove(logInView.getPanel());
         NavigationView navigationView = new NavigationView();
         NavigationController navigationController =
-                new NavigationController(navigationView, frame, patientTable);
+                new NavigationController(navigationView, clinicController);
         frame.add(navigationView.getPanel());
         frame.validate();
         frame.repaint();
@@ -78,7 +78,7 @@ public class LogInController implements Controller {
         }
 
         String date = logInView.getCurrentDateField().getText();
-        Patient patient = patientTable.findPatient(patientId);
+        Patient patient = clinicController.getPatientTable().findPatient(patientId);
 
         if(patient != null){
             visit = new Visit(patient, date);
@@ -96,17 +96,79 @@ public class LogInController implements Controller {
     }
 
     /**
-     * Creates a new Visit from patient and date, then proceeds to
-     * VisitController
+     * Getter for logInView
+     *
+     * @return logInView
      */
-    public void goToVisit(){
-
+    public LogInView getLogInView() {
+        return logInView;
     }
 
+    /**
+     * Setter for logInView
+     *
+     * @param logInView - logInView
+     */
+    public void setLogInView(LogInView logInView) {
+        this.logInView = logInView;
+    }
+
+    /**
+     * Getter for patient
+     *
+     * @return patient
+     */
+    public Patient getPatient() {
+        return patient;
+    }
+
+    /**
+     * Setter for patient
+     *
+     * @param patient - patient
+     */
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+    /**
+     * Getter for clinicController
+     *
+     * @return clinicController
+     */
+    public ClinicController getClinicController() {
+        return clinicController;
+    }
+
+    /**
+     * Setter for clinicController
+     *
+     * @param clinicController - clinicController
+     */
+    public void setClinicController(ClinicController clinicController) {
+        this.clinicController = clinicController;
+    }
+
+    /**
+     * Getter for visit
+     *
+     * @return visit
+     */
+    public Visit getVisit() {
+        return visit;
+    }
+
+    /**
+     * Setter for visit
+     *
+     * @param visit - visit
+     */
+    public void setVisit(Visit visit) {
+        this.visit = visit;
+    }
 
     private LogInView logInView;
     private Patient patient;
-    private PatientTable patientTable;
+    private ClinicController clinicController;
     private Visit visit;
-    private JFrame frame;
 }

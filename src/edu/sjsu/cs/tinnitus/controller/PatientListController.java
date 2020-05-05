@@ -16,13 +16,12 @@ public class PatientListController implements Controller {
 
     /**
      * Constructs a patient list controller
-     * @param patientTable - PatientTable where patient list is stored
      * @param patientListView - View for the patient list
+     * @param clinicController - clinicController
      */
-    public PatientListController(PatientTable patientTable, PatientListView patientListView, JFrame frame) {
-        this.patientTable = patientTable;
+    public PatientListController(PatientListView patientListView, ClinicController clinicController) {
         this.patientListView = patientListView;
-        this.frame = frame;
+        this.clinicController = clinicController;
         initTable();
         initController();
 
@@ -37,7 +36,7 @@ public class PatientListController implements Controller {
 
         patientListView.getPatientTable().getSelectionModel().addListSelectionListener( e->{
             int row = e.getFirstIndex();
-            goToPatient(patientTable.getPatientList().get(row));
+            goToPatient(clinicController.getPatientTable().getPatientList().get(row));
 
         });
     }
@@ -46,10 +45,11 @@ public class PatientListController implements Controller {
      * returns to the navigation page
      */
     public void save(){
+        JFrame frame = clinicController.getFrame();
         frame.remove(patientListView.getPanel());
         NavigationView navigationView = new NavigationView();
         NavigationController navigationController =
-                new NavigationController(navigationView, frame, patientTable);
+                new NavigationController(navigationView, clinicController);
         frame.add(navigationView.getPanel());
         frame.validate();
         frame.repaint();
@@ -60,15 +60,17 @@ public class PatientListController implements Controller {
      * @param patient - patient whose page will be displayed
      */
     public void goToPatient(Patient patient){
+        JFrame frame = clinicController.getFrame();
         frame.remove(patientListView.getPanel());
         PatientView patientView = new PatientView();
-        PatientController patientController = new PatientController(patient, patientView, frame, patientTable);
+        PatientController patientController = new PatientController(patient, patientView, clinicController);
         frame.add(patientView.getPanel());
         frame.validate();
         frame.repaint();
     }
 
     private void initTable(){
+        PatientTable patientTable = clinicController.getPatientTable();
         Object[][] data = new Object[patientTable.getPatientList().size()][2];
         String[] columnNames = {"Patient ID", "Patient Name"};
         int i = 0;
@@ -84,28 +86,10 @@ public class PatientListController implements Controller {
         patientListView.setPatientTable(table);
         JScrollPane scrollPane = new JScrollPane(table);
         patientListView.setScrollPane(scrollPane);
-        frame.validate();
-        frame.repaint();
+        clinicController.getFrame().validate();
+        clinicController.getFrame().repaint();
 
 
-    }
-
-    /**
-     * Getter for patientTable
-     *
-     * @return patientTable
-     */
-    public PatientTable getPatientTable() {
-        return patientTable;
-    }
-
-    /**
-     * Setter for patientTable
-     *
-     * @param patientTable - patientTable
-     */
-    public void setPatientTable(PatientTable patientTable) {
-        this.patientTable = patientTable;
     }
 
     /**
@@ -127,24 +111,23 @@ public class PatientListController implements Controller {
     }
 
     /**
-     * Getter for frame
+     * Getter for clinicController
      *
-     * @return frame
+     * @return clinicController
      */
-    public JFrame getFrame() {
-        return frame;
+    public ClinicController getClinicController() {
+        return clinicController;
     }
 
     /**
-     * Setter for frame
+     * Setter for clinicController
      *
-     * @param frame - frame
+     * @param clinicController - clinicController
      */
-    public void setFrame(JFrame frame) {
-        this.frame = frame;
+    public void setClinicController(ClinicController clinicController) {
+        this.clinicController = clinicController;
     }
 
-    private PatientTable patientTable;
     private PatientListView patientListView;
-    JFrame frame;
+    private ClinicController clinicController;
 }

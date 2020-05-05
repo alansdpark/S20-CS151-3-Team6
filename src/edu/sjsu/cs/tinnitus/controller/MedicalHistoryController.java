@@ -19,25 +19,23 @@ public class MedicalHistoryController implements Controller {
      * @param medicalHistory - model
      */
     public MedicalHistoryController(MedicalHistoryView medicalHistoryView, MedicalHistory medicalHistory,
-                                    JFrame frame, Visit visit, PatientTable patientTable) {
+                                     Visit visit, ClinicController clinicController) {
         this.medicalHistoryView = medicalHistoryView;
         this.medicalHistory = medicalHistory;
-        this.frame = frame;
         this.visit = visit;
-        this.patientTable = patientTable;
         this.patient = null;
+        this.clinicController = clinicController;
         initController();
 
     }
 
     public MedicalHistoryController(MedicalHistoryView medicalHistoryView, MedicalHistory medicalHistory,
-                                    JFrame frame, Patient patient,PatientTable patientTable) {
+                                     Patient patient, ClinicController clinicController) {
         this.medicalHistoryView = medicalHistoryView;
         this.medicalHistory = medicalHistory;
-        this.frame = frame;
         this.visit = null;
         this.patient = patient;
-        this.patientTable = patientTable;
+        this.clinicController = clinicController;
         initController();
 
     }
@@ -59,18 +57,20 @@ public class MedicalHistoryController implements Controller {
 
     public void returnToPatient(){
         // TODO TESTING
+        JFrame frame = clinicController.getFrame();
         frame.remove(medicalHistoryView.getPanel());
         PatientView view = new PatientView();
-        PatientController patientController = new PatientController(patient, view, frame, patientTable);
+        PatientController patientController = new PatientController(patient, view, clinicController);
         frame.add(view.getPanel());
         frame.validate();
         frame.repaint();
     }
 
     public void returnToVisit(){
+        JFrame frame = clinicController.getFrame();
         frame.remove(medicalHistoryView.getPanel());
         VisitView view = new VisitView();
-        VisitController visitController = new VisitController(visit, view, frame, patientTable);
+        VisitController visitController = new VisitController(visit, view, clinicController);
         frame.add(view.getPanel());
         frame.validate();
         frame.repaint();
@@ -127,39 +127,21 @@ public class MedicalHistoryController implements Controller {
     }
 
     /**
-     * Getter for frame
+     * Getter for clinicController
      *
-     * @return frame
+     * @return clinicController
      */
-    public JFrame getFrame() {
-        return frame;
+    public ClinicController getClinicController() {
+        return clinicController;
     }
 
     /**
-     * Setter for frame
+     * Setter for clinicController
      *
-     * @param frame - frame
+     * @param clinicController - clinicController
      */
-    public void setFrame(JFrame frame) {
-        this.frame = frame;
-    }
-
-    /**
-     * Getter for patientTable
-     *
-     * @return patientTable
-     */
-    public PatientTable getPatientTable() {
-        return patientTable;
-    }
-
-    /**
-     * Setter for patientTable
-     *
-     * @param patientTable - patientTable
-     */
-    public void setPatientTable(PatientTable patientTable) {
-        this.patientTable = patientTable;
+    public void setClinicController(ClinicController clinicController) {
+        this.clinicController = clinicController;
     }
 
     /**
@@ -200,8 +182,7 @@ public class MedicalHistoryController implements Controller {
 
     private MedicalHistoryView medicalHistoryView;
     private MedicalHistory medicalHistory;
-    private PatientTable patientTable;
-    private JFrame frame;
+    private ClinicController clinicController;
     private Visit visit;
     private Patient patient;
 }

@@ -16,13 +16,12 @@ public class RegisterPatientController implements Controller {
     /**
      * Constructor for Register Patient View. Creates a new Patient object to later be added
      * to patientTable
-     * @param patientTable - patientTable that holds the list of patients
+     * @param clinicController - clinicController
      * @param view - view of the register patient
      */
-    public RegisterPatientController(PatientTable patientTable, RegisterPatientView view, JFrame frame) {
-        this.patientTable = patientTable;
+    public RegisterPatientController(ClinicController clinicController, RegisterPatientView view) {
+        this.clinicController = clinicController;
         this.view = view;
-        this.frame = frame;
         initController();
     }
 
@@ -40,10 +39,11 @@ public class RegisterPatientController implements Controller {
     }
 
     public void back(){
+        JFrame frame = clinicController.getFrame();
         frame.remove(view.getPanel());
         NavigationView navigationView = new NavigationView();
         NavigationController navigationController =
-                new NavigationController(navigationView, frame, patientTable);
+                new NavigationController(navigationView, clinicController);
         frame.add(navigationView.getPanel());
         frame.validate();
         frame.repaint();
@@ -54,9 +54,10 @@ public class RegisterPatientController implements Controller {
      */
     public void createNewVisit(){
         addPatient();
+        JFrame frame = clinicController.getFrame();
         frame.remove(view.getPanel());
         LogInView logInView = new LogInView();
-        LogInController logInController = new LogInController(logInView, patientTable, frame);
+        LogInController logInController = new LogInController(logInView, clinicController);
         frame.add(logInView.getPanel());
         frame.validate();
         frame.repaint();
@@ -67,10 +68,11 @@ public class RegisterPatientController implements Controller {
      */
     public void savePatient(){
         addPatient();
+        JFrame frame = clinicController.getFrame();
         frame.remove(view.getPanel());
         NavigationView navigationView = new NavigationView();
         NavigationController navigationController =
-                new NavigationController(navigationView, frame, patientTable);
+                new NavigationController(navigationView, clinicController);
         frame.add(navigationView.getPanel());
         frame.validate();
         frame.repaint();
@@ -112,29 +114,13 @@ public class RegisterPatientController implements Controller {
         patient.setWorkStatus(workStatus);
         patient.setEducationalDegree(educationalDegree);
 
-        patient.setPatientId(patientTable.getHighestId() + 1);
+        patient.setPatientId(clinicController.getPatientTable().getHighestId() + 1);
 
-        patientTable.addPatient(patient);
+        clinicController.getPatientTable().addPatient(patient);
         return true;
     }
 
-    /**
-     * Getter for patientTable
-     *
-     * @return patientTable
-     */
-    public PatientTable getPatientTable() {
-        return patientTable;
-    }
-
-    /**
-     * Setter for patientTable
-     *
-     * @param patientTable - patientTable
-     */
-    public void setPatientTable(PatientTable patientTable) {
-        this.patientTable = patientTable;
-    }
+    
 
     /**
      * Getter for view
@@ -154,8 +140,25 @@ public class RegisterPatientController implements Controller {
         this.view = view;
     }
 
-    private PatientTable patientTable;
+    /**
+     * Getter for clinicController
+     *
+     * @return clinicController
+     */
+    public ClinicController getClinicController() {
+        return clinicController;
+    }
+
+    /**
+     * Setter for clinicController
+     *
+     * @param clinicController - clinicController
+     */
+    public void setClinicController(ClinicController clinicController) {
+        this.clinicController = clinicController;
+    }
+
+    private ClinicController clinicController;
     private RegisterPatientView view;
-    private Patient patient;
-    private JFrame frame;
+
 }

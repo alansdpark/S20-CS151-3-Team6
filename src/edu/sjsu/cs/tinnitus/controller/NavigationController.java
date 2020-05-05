@@ -14,35 +14,27 @@ import javax.swing.*;
 public class NavigationController implements Controller
 {
 
-    public NavigationController(NavigationView nv, JFrame frame)
+    public NavigationController(NavigationView nv, ClinicController clinicController)
     {
         navigationView = nv;
-        this.frame = frame;
-        this.patientTable = new PatientTable();
+        this.clinicController = clinicController;
         initController();
 
     }
-
-    public NavigationController(NavigationView nv, JFrame frame, PatientTable patientTable)
-    {
-        navigationView = nv;
-        this.frame = frame;
-        this.patientTable = patientTable;
-        initController();
-    }
+    
 
     /**
      * Registers a new patient. Moves toward patient controller.
      */
     public void registerPatient()
     {
-        frame.remove(navigationView.getPanel());
+        clinicController.getFrame().remove(navigationView.getPanel());
         RegisterPatientView registerPatientView = new RegisterPatientView();
         RegisterPatientController registerPatientController =
-                new RegisterPatientController(patientTable,registerPatientView,  frame);
-        frame.add(registerPatientView.getPanel());
-        frame.validate();
-        frame.repaint();
+                new RegisterPatientController(clinicController, registerPatientView);
+        clinicController.getFrame().add(registerPatientView.getPanel());
+        clinicController.getFrame().validate();
+        clinicController.getFrame().repaint();
     }
 
     /**
@@ -50,13 +42,13 @@ public class NavigationController implements Controller
      */
     public void viewPatients()
     {
-        frame.remove(navigationView.getPanel());
+        clinicController.getFrame().remove(navigationView.getPanel());
         PatientListView patientListView = new PatientListView();
         PatientListController patientListController =
-                new PatientListController(patientTable, patientListView, frame);
-        frame.add(patientListView.getPanel());
-        frame.validate();
-        frame.repaint();
+                new PatientListController(patientListView, clinicController);
+        clinicController.getFrame().add(patientListView.getPanel());
+        clinicController.getFrame().validate();
+        clinicController.getFrame().repaint();
     }
 
     /**
@@ -64,12 +56,13 @@ public class NavigationController implements Controller
      */
     public void logVisit()
     {
-        frame.remove(navigationView.getPanel());
+        clinicController.getFrame().remove(navigationView.getPanel());
         LogInView logInView = new LogInView();
-        LogInController logInController = new LogInController(logInView, patientTable, frame);
-        frame.add(logInView.getPanel());
-        frame.validate();
-        frame.repaint();
+        LogInController logInController = 
+                new LogInController(logInView, clinicController);
+        clinicController.getFrame().add(logInView.getPanel());
+        clinicController.getFrame().validate();
+        clinicController.getFrame().repaint();
 
     }
 
@@ -78,7 +71,7 @@ public class NavigationController implements Controller
      */
     public void exit()
     {
-        frame.dispose();
+        clinicController.getFrame().dispose();
     }
 
     @Override
@@ -119,43 +112,24 @@ public class NavigationController implements Controller
     }
 
     /**
-     * Getter for frame
+     * Getter for clinicController
      *
-     * @return frame
+     * @return clinicController
      */
-    public JFrame getFrame() {
-        return frame;
+    public ClinicController getClinicController() {
+        return clinicController;
     }
 
     /**
-     * Setter for frame
+     * Setter for clinicController
      *
-     * @param frame - frame
+     * @param clinicController - clinicController
      */
-    public void setFrame(JFrame frame) {
-        this.frame = frame;
-    }
-
-    /**
-     * Getter for patientTable
-     *
-     * @return patientTable
-     */
-    public PatientTable getPatientTable() {
-        return patientTable;
-    }
-
-    /**
-     * Setter for patientTable
-     *
-     * @param patientTable - patientTable
-     */
-    public void setPatientTable(PatientTable patientTable) {
-        this.patientTable = patientTable;
+    public void setClinicController(ClinicController clinicController) {
+        this.clinicController = clinicController;
     }
 
     // Reference to navigation JPanel.
     private NavigationView navigationView;
-    private JFrame frame;
-    private PatientTable patientTable;
+    private ClinicController clinicController;
 }
