@@ -1,11 +1,12 @@
 package edu.sjsu.cs.tinnitus.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Perform audiological evaluation and register medical history including pharmacology.
  */
-public class Audiology
+public class Audiology implements Serializable
 {
     // Physician's discretionary comments regarding audiology.
     private ArrayList<String> comments;

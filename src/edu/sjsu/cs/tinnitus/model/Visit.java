@@ -1,9 +1,11 @@
 package edu.sjsu.cs.tinnitus.model;
 
+import java.io.Serializable;
+
 /**
  * Class that represents a visit to the tinnitus clinic
  */
-public class Visit {
+public class Visit implements Serializable {
 
     /**
      * Default Constructor for visit

@@ -2,13 +2,14 @@ package edu.sjsu.cs.tinnitus.model;
 
 import edu.sjsu.cs.tinnitus.model.Medication;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Similar to PatientTable.java
  * Acts as object to hold medical history.
  */
-public class MedicalHistoryTable 
+public class MedicalHistoryTable implements Serializable
 {
 
     private ArrayList<Medication> medicationList;

@@ -1,9 +1,11 @@
 package edu.sjsu.cs.tinnitus.model;
 
+import java.io.Serializable;
+
 /**
  * Class that represents one medication that a patient is taking, or has taken
  */
-public class Medication {
+public class Medication implements Serializable {
 
     /**
      * Default Constructor

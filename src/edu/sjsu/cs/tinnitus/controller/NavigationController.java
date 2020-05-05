@@ -71,6 +71,7 @@ public class NavigationController implements Controller
      */
     public void exit()
     {
+        clinicController.saveAllData();
         clinicController.getFrame().dispose();
     }
 
