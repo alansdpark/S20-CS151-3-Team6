@@ -32,8 +32,8 @@ public class PatientController implements Controller
         this.patientView = patientView;
         this.clinicController = clinicController;
         addPatientInfo();
+        initTable();
         initController();
-        //initTable(); TODO
     }
 
 
@@ -114,7 +114,7 @@ public class PatientController implements Controller
         patientView.setVisitTable(table);
         JScrollPane scrollPane = new JScrollPane(table);
         patientView.setScrollPane(scrollPane);
-        initController();           // must call init controller again to update the table
+        //initController();           // must call init controller again to update the table
         clinicController.getFrame().validate();
         clinicController.getFrame().repaint();
     }

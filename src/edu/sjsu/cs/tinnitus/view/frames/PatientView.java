@@ -817,7 +817,9 @@ public class PatientView extends JPanel {
      * @param scrollPane - scrollPane
      */
     public void setScrollPane(JScrollPane scrollPane) {
+        panel.remove(this.scrollPane);
         this.scrollPane = scrollPane;
+        panel.add(scrollPane);
     }
 
     private void initComponents(){

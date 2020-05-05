@@ -14,6 +14,7 @@ public class Patient
     public Patient() {
         patientId = -1;
         medicalHistory = new MedicalHistory();
+        visitList = new ArrayList<>();
 
     }
 
@@ -149,6 +150,7 @@ public class Patient
         this.occupation = occupation;
         this.workStatus = workStatus;
         this.educationalDegree = educationalDegree;
+        visitList = new ArrayList<>();
     }
 
     /**
