@@ -54,7 +54,6 @@ public class VisitController implements Controller
     }
 
     public void notImplemented(){
-        //TODO ADD AN ALERT BOX TO ALERT USER THIS BUTTON IS NOT IMPLEMENTED
         ArrayList<String> errMsgs = new ArrayList<>();
         errMsgs.add("Feature Not Yet Implemented");
         AlertBox alertBox = new AlertBox(errMsgs);

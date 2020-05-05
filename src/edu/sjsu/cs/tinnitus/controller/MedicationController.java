@@ -22,11 +22,10 @@ public class MedicationController implements Controller
      * @param medicationView  - GUI view of the medication
      * @param medication - medication that can be edited
      */
-    public MedicationController(MedicalHistory medicalHistory, MedicationView medicationView, Medication medication, JFrame frame, Visit visit) {
+    public MedicationController(MedicalHistory medicalHistory, MedicationView medicationView, Medication medication, ClinicController clinicController) {
         this.medicalHistory = medicalHistory;
         this.medicationView = medicationView;
-        this.medication = medication;
-        this.frame = frame;
+        this.clinicController = clinicController;
     }
 
     /**
@@ -53,6 +52,6 @@ public class MedicationController implements Controller
     private MedicalHistory medicalHistory;
     private MedicationView medicationView;
     private Medication medication;
-    private JFrame frame;
+    private ClinicController clinicController;
     
 }

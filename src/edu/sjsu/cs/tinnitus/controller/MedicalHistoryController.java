@@ -1,10 +1,8 @@
 package edu.sjsu.cs.tinnitus.controller;
 
-import edu.sjsu.cs.tinnitus.model.MedicalHistory;
-import edu.sjsu.cs.tinnitus.model.Patient;
-import edu.sjsu.cs.tinnitus.model.PatientTable;
-import edu.sjsu.cs.tinnitus.model.Visit;
+import edu.sjsu.cs.tinnitus.model.*;
 import edu.sjsu.cs.tinnitus.view.frames.MedicalHistoryView;
+import edu.sjsu.cs.tinnitus.view.frames.MedicationView;
 import edu.sjsu.cs.tinnitus.view.frames.PatientView;
 import edu.sjsu.cs.tinnitus.view.frames.VisitView;
 
@@ -80,7 +78,15 @@ public class MedicalHistoryController implements Controller {
      * adds a new medication to the model
      */
     public void addMedication(){
-        //TODO
+        JFrame frame = clinicController.getFrame();
+        frame.remove(medicalHistoryView.getPanel());
+        Medication medication = new Medication();
+        MedicationView medicationView = new MedicationView();
+        MedicationController medicationController =
+                new MedicationController(medicalHistory, medicationView, medication, clinicController);
+        frame.add(medicationView.getPanel());
+        frame.validate();
+        frame.repaint();
     }
 
     /**
