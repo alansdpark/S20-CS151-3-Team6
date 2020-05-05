@@ -11,6 +11,7 @@ public class AlertBox {
         addComponents();
         frame.pack();
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
     }

@@ -1,5 +1,6 @@
 package edu.sjsu.cs.tinnitus.view.frames;
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * View for Medical History Page.
@@ -145,8 +146,8 @@ public class MedicalHistoryView extends JPanel
 
     private void initComponents(){
         panel = new JPanel();
-        medicalHistory = new JLabel("Medical History");
-        currentMedication = new JLabel(" Current Medication");
+        medicalHistory = new JLabel("Medical History", SwingConstants.RIGHT);
+        currentMedication = new JLabel(" Current Medication", SwingConstants.RIGHT);
 
         medicationTable = new JTable();
         medicalHistoryArea = new JTextArea();
@@ -157,6 +158,7 @@ public class MedicalHistoryView extends JPanel
 
     private void addComponents(){
         panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
+       // panel.setLayout(new GridLayout(0,1,10,10));
         panel.add(medicalHistory);
         panel.add(medicalHistoryArea);
         panel.add(currentMedication);

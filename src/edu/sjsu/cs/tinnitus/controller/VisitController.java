@@ -5,8 +5,10 @@ import edu.sjsu.cs.tinnitus.model.Visit;
 import edu.sjsu.cs.tinnitus.view.frames.MedicalHistoryView;
 import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
 import edu.sjsu.cs.tinnitus.view.frames.VisitView;
+import edu.sjsu.cs.tinnitus.view.frames.util.AlertBox;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 /**
  * Controller for Visit.
@@ -39,7 +41,9 @@ public class VisitController implements Controller
 
     public void save(){
         JFrame frame = clinicController.getFrame();
-        visit.getPatient().addVisit(visit);
+        if(!visit.getPatient().getVisitList().contains(visit)){
+            visit.getPatient().addVisit(visit);
+        }
         frame.remove(visitView.getPanel());
         NavigationView navigationView = new NavigationView();
         NavigationController navigationController =
@@ -51,6 +55,9 @@ public class VisitController implements Controller
 
     public void notImplemented(){
         //TODO ADD AN ALERT BOX TO ALERT USER THIS BUTTON IS NOT IMPLEMENTED
+        ArrayList<String> errMsgs = new ArrayList<>();
+        errMsgs.add("Feature Not Yet Implemented");
+        AlertBox alertBox = new AlertBox(errMsgs);
     }
 
     @Override
