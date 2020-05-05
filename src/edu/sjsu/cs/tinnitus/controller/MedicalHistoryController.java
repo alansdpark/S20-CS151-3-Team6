@@ -24,6 +24,7 @@ public class MedicalHistoryController implements Controller {
         this.patient = null;
         this.clinicController = clinicController;
         initController();
+        initMedHistory();
 
     }
 
@@ -35,6 +36,7 @@ public class MedicalHistoryController implements Controller {
         this.patient = patient;
         this.clinicController = clinicController;
         initController();
+        initMedHistory();
 
     }
 
@@ -54,7 +56,7 @@ public class MedicalHistoryController implements Controller {
     }
 
     public void returnToPatient(){
-        // TODO TESTING
+        updateMedication();
         JFrame frame = clinicController.getFrame();
         frame.remove(medicalHistoryView.getPanel());
         PatientView view = new PatientView();
@@ -65,6 +67,7 @@ public class MedicalHistoryController implements Controller {
     }
 
     public void returnToVisit(){
+        updateMedication();
         JFrame frame = clinicController.getFrame();
         frame.remove(medicalHistoryView.getPanel());
         VisitView view = new VisitView();
@@ -89,11 +92,24 @@ public class MedicalHistoryController implements Controller {
         frame.repaint();
     }
 
+    public void initTable(){
+        //TODO
+    }
+
+    public void initMedHistory(){
+        medicalHistoryView.getMedicalHistoryArea().setText(medicalHistory.getMedHistoryTable().getMedHistoryDescription());
+    }
+
     /**
      * Save any updates to the medical information from textFields in View
      */
     public void updateMedication(){
-        //TODO
+        //save medical History Description
+        medicalHistory.getMedHistoryTable().setMedHistoryDescription(
+                medicalHistoryView.getMedicalHistoryArea().getText()
+        );
+
+        //TODO save table
     }
 
     /**

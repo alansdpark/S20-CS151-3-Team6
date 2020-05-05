@@ -16,6 +16,24 @@ public class MedicalHistory implements Serializable {
         medHistoryTable = new MedicalHistoryTable();
     }
 
+    /**
+     * Getter for medHistoryTable
+     *
+     * @return medHistoryTable
+     */
+    public MedicalHistoryTable getMedHistoryTable() {
+        return medHistoryTable;
+    }
+
+    /**
+     * Setter for medHistoryTable
+     *
+     * @param medHistoryTable - medHistoryTable
+     */
+    public void setMedHistoryTable(MedicalHistoryTable medHistoryTable) {
+        this.medHistoryTable = medHistoryTable;
+    }
+
     // Reference to medical history table.
     private MedicalHistoryTable medHistoryTable;
 }
