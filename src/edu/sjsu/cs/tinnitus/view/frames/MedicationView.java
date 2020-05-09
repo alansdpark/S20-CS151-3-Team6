@@ -11,7 +11,39 @@ public class MedicationView extends JPanel {
      */
     public MedicationView()
     {
+        setLayout(new Borderlayout());
+        JPanel eastPanel = new JPanel();
+        eastPanel.setLayout(new GridLayout(0, 2));
+        add(eastPanel);
+        //drug name
+        eastPanel.add(nameField);
+        eastPanel.add(nameLabel);
+        //generic name
+        eastPanel.add(genericField);
+        eastPanel.add(genericLabel);
+        //dose
+        eastPanel.add(doseField);
+        eastPanel.add(doseLabel);
+        //duration of treatment
+        eastPanel.add(durationField);
+        eastPanel.add(durationLabel);
+        //chemical category
+        eastPanel.add(chemicalCategoryField);
+        eastPanel.add(chemicalCategoryLabel);
+        //action
+        eastPanel.add(actionField);
+        eastPanel.add(actionLabel);
+        //application
+        eastPanel.add(applicationField);
+        eastPanel.add(applicationLabel);
+        //usual dose
+        eastPanel.add(usualDoseField);
+        eastPanel.add(usualDoseLabel);
+        //induces tinnitus
+        eastPanel.add(inducesTinnitusField);
+        eastPanel.add(inducesTinnitusLabel);
 
+        add(saveButton, BorderLayout.SOUTH);
     }
 
     /**
