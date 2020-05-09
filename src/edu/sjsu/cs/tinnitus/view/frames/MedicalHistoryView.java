@@ -11,50 +11,38 @@ public class MedicalHistoryView extends JPanel
      * Default Constructor
      */
     public MedicalHistoryView() {
-        medicalHistory = new JLabel();
-        currentMedication = new JLabel();
-    }
+        screenTitle = new JLabel("MEDICAL HISTORY");
+        columnTitle = new Vector<String>();
+        rowMedication = new Vector<Vector>();
 
-    /**
-     * Constructor with medical history and current medication already created.
-     * @param medHistory
-     * @param currentMed
-     */
-    public MedicalHistoryView(String medHistory, String currentMed)
-    {
-        medicalHistory = new JLabel(medHistory);
-        currentMedication = new JLabel(currentMed);
-    }
+        columnTitle.add("Name");
+        columnTitle.add("Generic");
+        columnTitle.add("Dose");
+        columnTitle.add("Duration");
+        columnTitle.add("Chemical Category");
+        columnTitle.add("Action");
+        columnTitle.add("Application");
+        columnTitle.add("Usual Dose");
+        columnTitle.add("Induces Tinnitus");
 
-    /**
-     * loads in data from the Medical History model to view
-     */
-    public load() {
+        medicalHistoryTable = new JTable(rowMedication,);
 
     }
 
     /**
-     * sets actions listener to the edit medical history button
-     * through the controller
-     * @param listener
+     *
+     * @param action
      */
-    public void setEditMedicalHistory(AcionListener listener) {
-        editMedicalHistory.setActionListener(listener);
+    public void setAddMedicationAction(ActionListener action) {
+        addMedication.setActionListener(action);
     }
-
-    /**
-     * sets action listener to edit the medication through the controller
-     * @param listener
-     */
-    public void setEditMedication(ActionListener listener) {
-        editMedication.setActionListener(listener);
-    }
-
-    private MedicalHistory data;
-    private JLabel medicalHistory;
-    private JLabel currentMedication;
-    private JTextArea medHistory_area;
-    // Edit buttons
-    private JButton editMedicalHistory;
-    private JButton editMedication;
+    public void addMed
+    private JLabel screenTitle;
+    //Vectors for table
+    private Vector<String> columnTitle;
+    private Vector<Vector> rowMedication;
+    //Table
+    private JTable medicalHistoryTable;
+    //Buttons
+    private JButton addMedication;
 }
