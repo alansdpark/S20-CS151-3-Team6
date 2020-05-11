@@ -10,97 +10,7 @@ public class RegisterPatientView extends JPanel
      */
     public RegisterPatientView()
     {
-        //Labels
-        screenTitle = new JLabel("REGISTERING NEW PATIENT");
-        firstNameLabel = new JLabel("First Name");
-        lastNameLabel = new JLabel("Last Name");
-        address1Label = new JLabel("Street Address #1");
-        address2Label = new JLabel("Street Address #2");
-        cityLabel = new JLabel("City");
-        stateLabel = new JLabel("State");
-        zipCodeLabel = new JLabel("Zip Code");
-        countryLabel = new JLabel("Country");
-        birthdayLabel = new JLabel("Birthdate");
-        genderLabel = new JLabel("Gender");
-        phoneNumberLabel = new JLabel("Phone Number \nFormat: (123)456-7890");
-        ssnLabel = new JLabel("Social Security \nFormat: 123-456-789");
-        insuranceNoLabel = new JLabel("Insurance Number");
-        occupationLabel = new JLabel("Occupation (optional)");
-        workStatusLabel = new JLabel("Work Status (optional)");
-        educationalDegreeLabel = new JLabel("Education (optional)");
-        //Text Fields
-        firstNameField = new JTextField();
-        lastNameField = new JTextField();
-        address1Field = new JTextField();
-        address2Field = new JTextField();
-        cityField = new JTextField();
-        stateField = new JTextField();
-        zipCodeField = new JTextField();
-        countryField = new JTextField();
-        birthdayField = new JTextField();
-        genderField = new JTextField();
-        phoneNumberField = new JTextField();
-        ssnField = new JTextField();
-        insuranceNoField = new JTextField();
-        occupationField = new JTextField();
-        workStatusField = new JTextField();
-        educationalDegreeField = new JTextField();
-        //Layout
-        setLayout(new BorderLayout());
-        JPanel eastPanel = new JPanel(new GridLayout(0,4));
-        add(eastPanel, BorderLayout.EAST);
-        //first name
-        eastPanel.add(firstNameLabel);
-        eastPanel.add(firstNameField);
-        //lasst name
-        eastPanel.add(lastNameLabel);
-        eastPanel.add(lastNameField);
-        //address 1
-        eastPanel.add(address1Label);
-        eastPanel.add(address1Field);
-        //address 2
-        eastPanel.add(address2Label);
-        eastPanel.add(address2Field);
-        //city
-        eastPanel.add(cityLabel);
-        eastPanel.add(cityField);
-        //state
-        eastPanel.add(stateLabel);
-        eastPanel.add(stateField);
-        //zip
-        eastPanel.add(zipCodeLabel);
-        eastPanel.add(zipCodeField);
-        //country
-        eastPanel.add(countryLabel);
-        eastPanel.add(countryField);
-        //birthday
-        eastPanel.add(birthdayLabel);
-        eastPanel.add(birthdayField);
-        //gender
-        eastPanel.add(genderLabel);
-        eastPanel.add(genderField);
-        //phone
-        eastPanel.add(phoneNumberLabel);
-        eastPanel.add(phoneNumberField);
-        //ssn
-        eastPanel.add(ssnLabel);
-        eastPanel.add(ssnField);
-        //insurance
-        eastPanel.add(insuranceNoLabel);
-        eastPanel.add(insuranceNoField);
-        //occupation
-        eastPanel.add(occupationLabel);
-        eastPanel.add(occupationField);
-        //work
-        eastPanel.add(workStatusLabel);
-        eastPanel.add(workStatusField);
-        //educational
-        eastPanel.add(educationalDegreeLabel);
-        eastPanel.add(educationalDegreeField);
-        //buttons
-        add(newVisitButton, BorderLayout.SOUTH);
-        add(saveButton, BorderLayout.SOUTH);
-        add(cancelButton, BorderLayout.SOUTH);
+
     }
 
 
@@ -698,9 +608,6 @@ public class RegisterPatientView extends JPanel
     public void setVisitButtonAction(ActionListener listener) {
         visitButton.setActionListener(listener);
     }
-
-    private JLabel screenTitle;
-
     private JTextField firstNameField;
     private JTextField lastNameField;
     private JTextField address1Field;

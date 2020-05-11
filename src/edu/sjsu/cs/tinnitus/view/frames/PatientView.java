@@ -9,48 +9,7 @@ public class PatientView extends JPanel {
      */
     public PatientView()
     {
-        //Labels
-        screenTitle = new JLabel("REGISTERING NEW PATIENT");
-        firstNameLabel = new JLabel("First Name");
-        lastNameLabel = new JLabel("Last Name");
-        address1Label = new JLabel("Street Address #1");
-        address2Label = new JLabel("Street Address #2");
-        cityLabel = new JLabel("City");
-        stateLabel = new JLabel("State");
-        zipCodeLabel = new JLabel("Zip Code");
-        countryLabel = new JLabel("Country");
-        birthdayLabel = new JLabel("Birthdate");
-        genderLabel = new JLabel("Gender");
-        phoneNumberLabel = new JLabel("Phone Number \nFormat: (123)456-7890");
-        ssnLabel = new JLabel("Social Security \nFormat: 123-456-789");
-        insuranceNoLabel = new JLabel("Insurance Number");
-        occupationLabel = new JLabel("Occupation (optional)");
-        workStatusLabel = new JLabel("Work Status (optional)");
-        educationalDegreeLabel = new JLabel("Education (optional)");
-        tinnitusCategoryLabel = new JLabel("Tinnitus Category");
-        treatmentProtocolLabel = new JLabel("Treatment");
-        nextVisitLabel = new JLabel("Next Visit");
-        //Text Fields
-        firstNameField = new JTextField();
-        lastNameField = new JTextField();
-        address1Field = new JTextField();
-        address2Field = new JTextField();
-        cityField = new JTextField();
-        stateField = new JTextField();
-        zipCodeField = new JTextField();
-        countryField = new JTextField();
-        birthdayField = new JTextField();
-        genderField = new JTextField();
-        phoneNumberField = new JTextField();
-        ssnField = new JTextField();
-        insuranceNoField = new JTextField();
-        occupationField = new JTextField();
-        workStatusField = new JTextField();
-        educationalDegreeField = new JTextField();
-        tinnitusCategoryField = new JTextField();
-        treatmentProtocolField = new JTextField();
-        nextVisitField = new JTextField();
-        //layouts
+        //Label
         setLayout(new BorderLayout());
         JPanel eastPanel = new JPanel(new GridLayout(0,4));
         add(eastPanel, BorderLayout.EAST);
