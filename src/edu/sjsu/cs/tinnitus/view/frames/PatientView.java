@@ -9,74 +9,7 @@ public class PatientView extends JPanel {
      */
     public PatientView()
     {
-        //Label
-        setLayout(new BorderLayout());
-        JPanel eastPanel = new JPanel(new GridLayout(0,4));
-        add(eastPanel, BorderLayout.EAST);
-        //first name
-        eastPanel.add(firstNameLabel);
-        eastPanel.add(firstNameField);
-        //lasst name
-        eastPanel.add(lastNameLabel);
-        eastPanel.add(lastNameField);
-        //address 1
-        eastPanel.add(address1Label);
-        eastPanel.add(address1Field);
-        //address 2
-        eastPanel.add(address2Label);
-        eastPanel.add(address2Field);
-        //city
-        eastPanel.add(cityLabel);
-        eastPanel.add(cityField);
-        //state
-        eastPanel.add(stateLabel);
-        eastPanel.add(stateField);
-        //zip
-        eastPanel.add(zipCodeLabel);
-        eastPanel.add(zipCodeField);
-        //country
-        eastPanel.add(countryLabel);
-        eastPanel.add(countryField);
-        //birthday
-        eastPanel.add(birthdayLabel);
-        eastPanel.add(birthdayField);
-        //gender
-        eastPanel.add(genderLabel);
-        eastPanel.add(genderField);
-        //phone
-        eastPanel.add(phoneNumberLabel);
-        eastPanel.add(phoneNumberField);
-        //ssn
-        eastPanel.add(ssnLabel);
-        eastPanel.add(ssnField);
-        //insurance
-        eastPanel.add(insuranceNoLabel);
-        eastPanel.add(insuranceNoField);
-        //occupation
-        eastPanel.add(occupationLabel);
-        eastPanel.add(occupationField);
-        //work
-        eastPanel.add(workStatusLabel);
-        eastPanel.add(workStatusField);
-        //educational
-        eastPanel.add(educationalDegreeLabel);
-        eastPanel.add(educationalDegreeField);
-        //tinnitus
-        eastPanel.add(tinnitusCategoryLabel);
-        eastPanel.add(tinnitusCategoryField);
-        //protocol
-        eastPanel.add(treatmentProtocolLabel);
-        eastPanel.add(treatmentProtocolField);
-        //next visit
-        eastPanel.add(nextVisitLabel);
-        eastPanel.add(nextVisitField);
 
-        add(visitTable, BorderLayout.WEST);
-
-        add(medicalHistoryButton, BorderLayout.SOUTH);
-        add(newVisitButton, BorderLayout.SOUTH);
-        add(saveButton, BorderLayout.SOUTH);
-        add(cancelButton, BorderLayout.SOUTH);
     }
 
     /**

@@ -4,23 +4,8 @@ import javax.swing.*;
 
 public class LogInView {
 
-    /**
-     * Constructor for log in view
-     */
-    public LogInView() {
-        setLayout(new BorderLayout);
-        JPanel eastPanel = new JPanel();
-        eastPanel.setLayout(new GridLayout(0,2));
 
-        //patient ID
-        eastPanel.add(patientIdLabel);
-        eastPanel.add(patientIdField);
-        //Current Date for visit
-        eastPanel.add(currentDateLabel);
-        eastPanel.add(currentDateField);
-        //Buttons
-        add(saveButton, BorderLayout.SOUTH);
-        add(cancelButton, BorderLayout.SOUTH);
+    public LogInView() {
     }
 
     /**
@@ -110,7 +95,6 @@ public class LogInView {
     public void setCancelButton(ActionListener listener) {
         cancelButton.setActionListener(listener);
     }
-
     private JLabel patientIdLabel;
     private JLabel currentDateLabel;
 
