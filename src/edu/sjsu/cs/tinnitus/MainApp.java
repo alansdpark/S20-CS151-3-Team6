@@ -1,4 +1,5 @@
 package edu.sjsu.cs.tinnitus;
+import edu.sjsu.cs.tinnitus.controller.ClinicController;
 import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
 
 import javax.swing.JFrame;
@@ -20,6 +21,7 @@ public class MainApp
      */
     public static void main(String[] args)
     {
+        /**
         // Starts with the navigation view.
         JFrame window = new JFrame("Team 6 - Project 3 (Audiology)");
         NavigationView navigationView = new NavigationView();
@@ -28,5 +30,7 @@ public class MainApp
 		window.setResizable(false);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
+         */
+        ClinicController clinic = new ClinicController();
     }
 }
