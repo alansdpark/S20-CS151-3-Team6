@@ -33,7 +33,6 @@ public class MedicalHistory {
         return medicationList;
     }
 
-<<<<<<< HEAD
     /**
      * setter for medicationList
      * @param medicationList - medicationList
@@ -52,8 +51,4 @@ public class MedicalHistory {
 
     private String medicalHistoryDescription;
     private ArrayList<Medication> medicationList;
-=======
-    // Reference to medical history table.
-    private MedicalHistoryTable medHistoryTable;
->>>>>>> parent of d1d66e4... Implemented Saving for the medical history description
 }
