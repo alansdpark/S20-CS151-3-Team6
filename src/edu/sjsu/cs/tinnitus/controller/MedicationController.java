@@ -8,8 +8,11 @@ import edu.sjsu.cs.tinnitus.model.Visit;
 import edu.sjsu.cs.tinnitus.view.frames.MedicalHistoryView;
 import edu.sjsu.cs.tinnitus.view.frames.MedicationView;
 import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
+import edu.sjsu.cs.tinnitus.view.frames.util.AlertBox;
+import javafx.scene.control.Alert;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 /**
  * Controller that communicates with Medication and MedicationView
@@ -67,7 +70,9 @@ public class MedicationController implements Controller
      * Updates the fields in medication with the current information
      * stored in the respective jTextFields..
      */
-    public void saveInfoToMedication(){
+    public boolean saveInfoToMedication(){
+        ArrayList<String> errMsgs = new ArrayList<>();
+
         String name = medicationView.getNameField().getText();
         String generic = medicationView.getGenericField().getText();
         String dose = medicationView.getDoseField().getText();
@@ -78,8 +83,47 @@ public class MedicationController implements Controller
         String usualDose = medicationView.getUsualDoseField().getText();
         String inducesTinnitus = medicationView.getInducesTinnitusField().getText();
 
-        //TODO VALIDATE INPUT
+        // Input Validation
+        if(name.length() == 0){
+            errMsgs.add("Name must not be blank");
+        }
+        if(generic.length() == 0){
+            errMsgs.add("Generic Name must not be blank");
+        }
+        try{
+            Double doseDouble = Double.parseDouble(dose);
+        } catch( NumberFormatException e){
+            errMsgs.add("Dose must be a number");
+        }
+        try{
+            Double durationDouble = Double.parseDouble(duration);
+        } catch( NumberFormatException e){
+            errMsgs.add("Duration must be a number");
+        }
+        if (chemicalCategory.length() == 0) {
+            errMsgs.add("Chemical Category must not be blank");
+        }
+        if(action.length() == 0){
+            errMsgs.add("Action must not be blank");
+        }
+        if(application.length() == 0){
+            errMsgs.add("Application must not be blank");
+        }
+        try{
+            Double usualDoseDouble = Double.parseDouble(usualDose);
+        } catch( NumberFormatException e){
+            errMsgs.add("Usual Dose must be a number");
+        }
+        try{
+            Boolean inducesTinnitusBoolean = Boolean.parseBoolean(inducesTinnitus);
+        } catch( Exception e){
+            errMsgs.add("Induces Tinnitus must be true / false");
+        }
 
+        if(errMsgs.size() != 0){
+            AlertBox alertBox = new AlertBox(errMsgs);
+            return false;
+        }
         medication.setName(name);
         medication.setGenericName(generic);
         medication.setDose(Double.parseDouble(dose));
@@ -89,6 +133,7 @@ public class MedicationController implements Controller
         medication.setApplication(application);
         medication.setUsualDose(Double.parseDouble(usualDose));
         medication.setInducesTinnitus(Boolean.parseBoolean(inducesTinnitus));       // may not work
+        return true;
 
         //medicalHistory.getMedHistoryTable().addToMedicationList(medication);
     }
@@ -97,9 +142,10 @@ public class MedicationController implements Controller
      * Adds current medication to the MedicalHistory
      */
     public void saveAndReturn(){
-        saveInfoToMedication();
-        medicalHistoryController.initTable();
-        medicationView.getFrame().dispose();
+        if(saveInfoToMedication()){
+            medicalHistoryController.initTable();
+            medicationView.getFrame().dispose();
+        }
 
     }
 

@@ -95,6 +95,10 @@ public class PatientController implements Controller
 
     }
 
+    /**
+     * Loads all the currently stored information in patient to the
+     * JTextFields
+     */
     public void addPatientInfo(){
         patientView.getFirstNameField().setText(patient.getFirstName());
         patientView.getLastNameField().setText(patient.getLastName());
@@ -116,7 +120,7 @@ public class PatientController implements Controller
         patientView.getTreatmentProtocolField().setText(patient.getTinnitusCategory().toString());
         patientView.getNextVisitField().setText(patient.getNextVisit());
         patientView.getPatientIdField().setText(patient.getPatientId().toString());
-        //TODO REPEAT FOR ALL FIELDS
+
     }
 
     public void savePatientInfo(){
