@@ -15,6 +15,11 @@ import java.awt.*;
 public class NavigationController implements Controller
 {
 
+    /**
+     * Constructor for NavigationController
+     * @param nv - navigation view
+     * @param clinicController - clinic Controller
+     */
     public NavigationController(NavigationView nv, ClinicController clinicController)
     {
         navigationView = nv;

@@ -18,13 +18,6 @@ import java.util.ArrayList;
  */
 public class PatientController implements Controller
 {
-    /**
-     * Default Constructor for Patient Controller
-     */
-    public PatientController()
-    {
-
-    }
 
     /**
      * Constructor for Patient Controller

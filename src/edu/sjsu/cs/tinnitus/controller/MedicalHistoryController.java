@@ -32,6 +32,13 @@ public class MedicalHistoryController implements Controller {
         clinicController.setHeaderContent("Medical History");
     }
 
+    /**
+     * Constructs a MedicalHistoryController that is associated with a patient
+     * @param medicalHistoryView - medical history view
+     * @param medicalHistory - medical history
+     * @param patient - patient
+     * @param clinicController - clinic controller
+     */
     public MedicalHistoryController(MedicalHistoryView medicalHistoryView, MedicalHistory medicalHistory,
                                      Patient patient, ClinicController clinicController) {
         this.medicalHistoryView = medicalHistoryView;
@@ -66,12 +73,19 @@ public class MedicalHistoryController implements Controller {
         });
     }
 
+    /**
+     * Creates a Medication Frame to add a medication
+     * @param medication
+     */
     public void goToMedication(Medication medication){
         MedicationView medicationView = new MedicationView();
         MedicationController medicationController =
                 new MedicationController(medicalHistory, medicationView, medication, this);
     }
 
+    /**
+     * Switches control to PatientController
+     */
     public void returnToPatient(){
         updateMedication();
         JFrame frame = clinicController.getFrame();
@@ -83,6 +97,9 @@ public class MedicalHistoryController implements Controller {
         frame.repaint();
     }
 
+    /**
+     * Switches Control to VisitController
+     */
     public void returnToVisit(){
         updateMedication();
         JFrame frame = clinicController.getFrame();
@@ -105,8 +122,10 @@ public class MedicalHistoryController implements Controller {
         medicalHistory.getMedHistoryTable().addToMedicationList(medication);
     }
 
+    /**
+     * Initializes the Table with information from medicalHistoryTable
+     */
     public void initTable(){
-        //TODO
         ArrayList<Medication> medicationList = medicalHistory.getMedHistoryTable().getMedicationList();
         Object[][] data = new Object[medicationList.size()][9];
         String [] columnNames = {"Name","Generic Name", "Dose", "Duration", "Chemical Category",
@@ -125,7 +144,6 @@ public class MedicalHistoryController implements Controller {
             i++;
         }
 
-        // TODO
         JTable table = new JTable(data, columnNames);
         medicalHistoryView.setMedicationTable(table);
         JScrollPane scrollPane = new JScrollPane(table);
@@ -135,6 +153,9 @@ public class MedicalHistoryController implements Controller {
         clinicController.getFrame().repaint();
     }
 
+    /**
+     * Initializes the medicalHistory text area
+     */
     public void initMedHistory(){
         medicalHistoryView.getMedicalHistoryArea().setText(medicalHistory.getMedHistoryTable().getMedHistoryDescription());
     }
@@ -148,7 +169,6 @@ public class MedicalHistoryController implements Controller {
                 medicalHistoryView.getMedicalHistoryArea().getText()
         );
 
-        //TODO save table
     }
 
     /**

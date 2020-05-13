@@ -10,6 +10,9 @@ import java.io.*;
 
 public class ClinicController {
 
+    /**
+     * Constructor for clinic Controller
+     */
     public ClinicController() {
         patientTable = new PatientTable();
         getAllData();
@@ -24,6 +27,10 @@ public class ClinicController {
         frame.setVisible(true);
     }
 
+    /**
+     * Constructor for Clinic Controller
+     * @param patientTable - patient Table to be loaded
+     */
     public ClinicController(PatientTable patientTable) {
         this.patientTable = patientTable;
         frame = new JFrame();
@@ -37,6 +44,9 @@ public class ClinicController {
         frame.setVisible(true);
     }
 
+    /**
+     * Creates a JLabel for the header of the Frame
+     */
     public void createHeader(){
         header = new JLabel();
         header.setHorizontalAlignment(SwingConstants.CENTER);
@@ -44,6 +54,10 @@ public class ClinicController {
         frame.add(header, BorderLayout.NORTH);
     }
 
+    /**
+     * Sets the header content
+     * @param content - content to be added to the header
+     */
     public void setHeaderContent(String content){
         header.setText(content);
     }

@@ -71,6 +71,9 @@ public class PatientListController implements Controller {
         frame.repaint();
     }
 
+    /**
+     * Initializes a table with all information stored in PatientTable
+     */
     private void initTable(){
         PatientTable patientTable = clinicController.getPatientTable();
         Object[][] data = new Object[patientTable.getPatientList().size()][2];

@@ -18,6 +18,12 @@ import java.util.ArrayList;
 public class VisitController implements Controller
 {
 
+    /**
+     * Constructor for visit controller
+     * @param visit - visit model
+     * @param visitView - visit view
+     * @param clinicController - clinic controller
+     */
     public VisitController(Visit visit, VisitView visitView, ClinicController clinicController) {
         this.visit = visit;
         this.visitView = visitView;
@@ -26,7 +32,9 @@ public class VisitController implements Controller
         clinicController.setHeaderContent("Visit");
     }
 
-
+    /**
+     * Switches control to medicalHistoryController
+     */
     public void editMedicalHistory(){
         JFrame frame = clinicController.getFrame();
         frame.remove(visitView.getPanel());
@@ -42,6 +50,10 @@ public class VisitController implements Controller
         //TODO
     }
 
+    /**
+     * Saves all information and switches control to
+     * Navigation Controller
+     */
     public void save(){
         JFrame frame = clinicController.getFrame();
         if(!visit.getPatient().getVisitList().contains(visit)){
@@ -56,6 +68,10 @@ public class VisitController implements Controller
         frame.repaint();
     }
 
+    /**
+     * Creates an Alert Box alerting the user that the feature
+     * is not implemented
+     */
     public void notImplemented(){
         ArrayList<String> errMsgs = new ArrayList<>();
         errMsgs.add("Feature Not Yet Implemented");

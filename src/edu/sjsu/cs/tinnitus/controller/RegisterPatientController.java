@@ -43,6 +43,9 @@ public class RegisterPatientController implements Controller {
         });
     }
 
+    /**
+     * Switchs control back to NavigationController
+     */
     public void back(){
         JFrame frame = clinicController.getFrame();
         frame.remove(view.getPanel());
@@ -88,7 +91,12 @@ public class RegisterPatientController implements Controller {
             frame.repaint();
         }
     }
-    
+
+    /**
+     * Adds inputted information to a patient
+     * Validates all input
+     * @return - returns true of the patient is successfully created
+     */
     public boolean addPatient(){
         Patient patient = new Patient();
         //get inputs

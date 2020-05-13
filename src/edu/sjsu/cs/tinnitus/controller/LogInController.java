@@ -41,6 +41,10 @@ public class LogInController implements Controller {
         });
     }
 
+    /**
+     * Saves information and creates a Visit
+     * Switches Control to VisitController
+     */
     public void save(){
         JFrame frame = clinicController.getFrame();
         Visit visit = createVisit();
@@ -61,6 +65,9 @@ public class LogInController implements Controller {
         }
     }
 
+    /**
+     * Switches control to Navigation Controller without saving anything
+     */
     public void back(){
         JFrame frame = clinicController.getFrame();
         frame.remove(logInView.getPanel());
@@ -72,6 +79,11 @@ public class LogInController implements Controller {
         frame.repaint();
     }
 
+    /**
+     * Creates a visit from the patient Id Field and current date field
+     * @return - returns the visit that is creates. Returns null if visit was not able to be
+     *  created
+     */
     public Visit createVisit(){
         Visit visit = null;
         int patientId = -1;
