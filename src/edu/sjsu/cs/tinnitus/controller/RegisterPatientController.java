@@ -4,10 +4,12 @@ import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.view.frames.LogInView;
 import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
 import edu.sjsu.cs.tinnitus.view.frames.RegisterPatientView;
+import edu.sjsu.cs.tinnitus.view.frames.util.AlertBox;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * Controller for communicating with RegisterPatientView and PatientTable
@@ -70,19 +72,26 @@ public class RegisterPatientController implements Controller {
      * Saves patient to the patientList in patientTable
      */
     public void savePatient(){
-        addPatient();
-        JFrame frame = clinicController.getFrame();
-        frame.remove(view.getPanel());
-        NavigationView navigationView = new NavigationView();
-        NavigationController navigationController =
-                new NavigationController(navigationView, clinicController);
-        frame.add(navigationView.getPanel(), BorderLayout.CENTER);
-        frame.validate();
-        frame.repaint();
+        if(!addPatient()){
+            ArrayList<String> errMsgs = new ArrayList<>();
+            errMsgs.add("Please fill in all required fields");
+            AlertBox alertBox = new AlertBox(errMsgs);
+        }
+        else {
+            JFrame frame = clinicController.getFrame();
+            frame.remove(view.getPanel());
+            NavigationView navigationView = new NavigationView();
+            NavigationController navigationController =
+                    new NavigationController(navigationView, clinicController);
+            frame.add(navigationView.getPanel(), BorderLayout.CENTER);
+            frame.validate();
+            frame.repaint();
+        }
     }
     
     public boolean addPatient(){
         Patient patient = new Patient();
+        //get inputs
          String firstName = view.getFirstNameField().getText();
          String lastName = view.getLastNameField().getText();
          String address1 = view.getAddress1Field().getText();
@@ -99,7 +108,43 @@ public class RegisterPatientController implements Controller {
          String occupation = view.getOccupationField().getText();
          String workStatus = view.getWorkStatusField().getText();
          String educationalDegree = view.getEducationalDegreeField().getText();
-         //TODO VALIDATE INPUT - RETURN FALSE IF INPUT IS NOT CORRECT
+
+         //Validate Inputs
+        if(firstName.length() == 0){
+            return false;
+        }
+        if(lastName.length() == 0){
+            return false;
+        }
+        if(address1.length() == 0){
+            return false;
+        }
+        if(city.length() == 0){
+            return false;
+        }
+        if(state.length() == 0){
+            return false;
+        }
+        if(zipCode.length() == 0){
+            return false;
+        }
+        if(country.length() == 0){
+            return false;
+        }
+        if(birthday.length() == 0){
+            return false;
+        }
+        if(gender.length() == 0){
+            return false;
+        }
+        if(phoneNumber.length() == 0){
+            return false;
+        }
+        if(insuranceNo.length() == 0){
+            return false;
+        }
+
+        // save inputs
         patient.setFirstName(firstName);
         patient.setLastName(lastName);
         patient.setAddress1(address1);

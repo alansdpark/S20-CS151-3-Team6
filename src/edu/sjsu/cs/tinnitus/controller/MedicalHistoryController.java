@@ -58,6 +58,18 @@ public class MedicalHistoryController implements Controller {
         medicalHistoryView.getAddMedication().addActionListener(e->{
             addMedication();
         });
+        //TODO this only works once
+        medicalHistoryView.getMedicationTable().getSelectionModel().addListSelectionListener( e->{
+            int row = e.getFirstIndex();
+            goToMedication(medicalHistory.getMedHistoryTable().getMedicationList().get(row));
+
+        });
+    }
+
+    public void goToMedication(Medication medication){
+        MedicationView medicationView = new MedicationView();
+        MedicationController medicationController =
+                new MedicationController(medicalHistory, medicationView, medication, this);
     }
 
     public void returnToPatient(){
@@ -90,6 +102,7 @@ public class MedicalHistoryController implements Controller {
         MedicationView medicationView = new MedicationView();
         MedicationController medicationController =
                 new MedicationController(medicalHistory, medicationView, medication, this);
+        medicalHistory.getMedHistoryTable().addToMedicationList(medication);
     }
 
     public void initTable(){

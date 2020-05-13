@@ -97,6 +97,24 @@ public class PatientController implements Controller
 
     public void addPatientInfo(){
         patientView.getFirstNameField().setText(patient.getFirstName());
+        patientView.getLastNameField().setText(patient.getLastName());
+        patientView.getAddress1Field().setText(patient.getAddress1());
+        patientView.getAddress2Field().setText(patient.getAddress2());
+        patientView.getCityField().setText(patient.getCity());
+        patientView.getStateField().setText(patient.getState());
+        patientView.getZipCodeField().setText(patient.getZipCode());
+        patientView.getCountryField().setText(patient.getCountry());
+        patientView.getBirthdayField().setText(patient.getBirthday());
+        patientView.getGenderField().setText(patient.getGender());
+        patientView.getPhoneNumberField().setText(patient.getPhoneNumber());
+        patientView.getSsnField().setText(patient.getSsn());
+        patientView.getInsuranceNoField().setText(patient.getInsuranceNo());
+        patientView.getOccupationField().setText(patient.getOccupation());
+        patientView.getWorkStatusField().setText(patient.getWorkStatus());
+        patientView.getEducationalDegreeField().setText(patient.getEducationalDegree());
+        patientView.getTinnitusCategoryField().setText(patient.getTinnitusCategory().toString());
+        patientView.getTreatmentProtocolField().setText(patient.getTinnitusCategory().toString());
+        patientView.getNextVisitField().setText(patient.getNextVisit());
         //TODO REPEAT FOR ALL FIELDS
     }
 

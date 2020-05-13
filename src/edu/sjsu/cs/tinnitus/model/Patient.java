@@ -17,6 +17,28 @@ public class Patient implements Serializable
         medicalHistory = new MedicalHistory();
         visitList = new ArrayList<>();
 
+        firstName = "";
+        lastName = "";
+        address1 = "";
+        address2 = "";
+        city = "";
+        state = "";
+        zipCode = "";
+        country = "";
+        birthday = "";
+        gender = "";
+        phoneNumber = "";
+        ssn = "";
+        insuranceNo = "";
+        occupation = "";
+        workStatus = "";
+        educationalDegree = "";
+        patientId = -1;
+
+        tinnitusCategory = -1;
+        treatmentProtocol = -1;
+        nextVisit = "";
+        
     }
 
     /**
@@ -446,7 +468,7 @@ public class Patient implements Serializable
      * getter for tinnitus category
      * @return tinnitus category
      */
-    public int getTinnitusCategory() 
+    public Integer getTinnitusCategory()
     {
         return tinnitusCategory;
     }
@@ -464,7 +486,7 @@ public class Patient implements Serializable
      * getter for treatment protocol
      * @return - treatmentProtocol
      */
-    public int getTreatmentProtocol() 
+    public Integer getTreatmentProtocol()
     {
         return treatmentProtocol;
     }
@@ -546,7 +568,7 @@ public class Patient implements Serializable
      *
      * @return patientId
      */
-    public int getPatientId() {
+    public Integer getPatientId() {
         return patientId;
     }
 
@@ -575,10 +597,10 @@ public class Patient implements Serializable
     private String occupation;
     private String workStatus;
     private String educationalDegree;
-    private int patientId;
+    private Integer patientId;
 
-    private int tinnitusCategory;
-    private int treatmentProtocol;
+    private Integer tinnitusCategory;
+    private Integer treatmentProtocol;
     private String nextVisit;
 
     private ArrayList<Visit> visitList;

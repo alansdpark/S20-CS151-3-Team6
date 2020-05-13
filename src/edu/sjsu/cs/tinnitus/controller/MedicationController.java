@@ -90,7 +90,7 @@ public class MedicationController implements Controller
         medication.setUsualDose(Double.parseDouble(usualDose));
         medication.setInducesTinnitus(Boolean.parseBoolean(inducesTinnitus));       // may not work
 
-        medicalHistory.getMedHistoryTable().addToMedicationList(medication);
+        //medicalHistory.getMedHistoryTable().addToMedicationList(medication);
     }
 
     /**
