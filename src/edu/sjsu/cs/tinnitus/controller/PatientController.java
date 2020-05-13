@@ -73,6 +73,9 @@ public class PatientController implements Controller
         frame.repaint();
     }
 
+    /**
+     * Switches control to medicalHistoryController
+     */
     public void viewMedicalHistory(){
         JFrame frame = clinicController.getFrame();
         if(savePatientInfo()) {
@@ -86,6 +89,10 @@ public class PatientController implements Controller
         }
     }
 
+    /**
+     * Switches control to the Visit Controller of visit
+     * @param visit - visit to switch to
+     */
     public void goToVisit(Visit visit){
         JFrame frame = clinicController.getFrame();
         if(savePatientInfo()) {
@@ -128,6 +135,13 @@ public class PatientController implements Controller
 
     }
 
+    /**
+     * Saves all new information to the patient.
+     * Also does validation for the information and creates an AlertBox
+     * if there is problems
+     * @return - returns true if the info is successfully saved
+     * otherwise returns false
+     */
     public boolean savePatientInfo(){
         ArrayList<String> errMsgs = new ArrayList<>();
 
@@ -225,10 +239,13 @@ public class PatientController implements Controller
         patient.setTreatmentProtocol(Integer.parseInt(treatmentProtocol));
         patient.setNextVisit(nextVisit);
         patient.setPatientId(Integer.parseInt(patientId));
-        //TODO REPEAT FOR ALL FIELDS
         return true;
     }
 
+    /**
+     * Creates the table will all information currently stored in patient's
+     * visit List
+     */
 	public void initTable(){
         Object[][] data = new Object[patient.getVisitList().size()][2];
         String [] columnNames = {"Visit ID", "Date"};
@@ -240,7 +257,6 @@ public class PatientController implements Controller
             i++;
         }
 
-        // TODO
         JTable table = new JTable(data, columnNames);
         patientView.setVisitTable(table);
         JScrollPane scrollPane = new JScrollPane(table);

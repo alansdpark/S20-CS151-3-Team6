@@ -3,12 +3,19 @@ package edu.sjsu.cs.tinnitus.view.frames.util;
 import javax.swing.*;
 import java.util.ArrayList;
 
+/**
+ * Creates an alert box to notify users of whatever messages are passed in
+ */
 public class AlertBox {
 
+    /**
+     * Creates an alert box to notify users of whatever messages are passed in
+     */
     public AlertBox(ArrayList<String> message) {
         this.message = message;
         initComponents();
         addComponents();
+        frame.setTitle("Errors");
         frame.pack();
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
@@ -16,6 +23,9 @@ public class AlertBox {
 
     }
 
+    /**
+     * Initializes the components
+     */
     public void initComponents(){
         frame = new JFrame();
         closeButton = new JButton("Continue");
@@ -25,6 +35,9 @@ public class AlertBox {
         });
     }
 
+    /**
+     * Adds the components to the frame
+     */
     public void addComponents(){
         frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.PAGE_AXIS));
         for(String mes : message){
