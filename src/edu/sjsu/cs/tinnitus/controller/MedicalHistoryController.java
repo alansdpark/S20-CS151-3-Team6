@@ -7,6 +7,7 @@ import edu.sjsu.cs.tinnitus.view.frames.PatientView;
 import edu.sjsu.cs.tinnitus.view.frames.VisitView;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class MedicalHistoryController implements Controller {
 
@@ -35,6 +36,7 @@ public class MedicalHistoryController implements Controller {
         this.visit = null;
         this.patient = patient;
         this.clinicController = clinicController;
+        initTable();
         initController();
         initMedHistory();
 
@@ -89,6 +91,32 @@ public class MedicalHistoryController implements Controller {
 
     public void initTable(){
         //TODO
+        ArrayList<Medication> medicationList = medicalHistory.getMedHistoryTable().getMedicationList();
+        Object[][] data = new Object[medicationList.size()][9];
+        String [] columnNames = {"Name","Generic Name", "Dose", "Duration", "Chemical Category",
+                                "Action", "Application", "Usual Dose", "Induces Tinnitus?"};
+        int i = 0;
+        for(Medication medication: medicationList){
+            data[i][0] = medication.getName();
+            data[i][1] = medication.getGenericName();
+            data[i][2] = medication.getDose();
+            data[i][3] = medication.getDuration();
+            data[i][4] = medication.getChemicalCategory();
+            data[i][5] = medication.getAction();
+            data[i][6] = medication.getApplication();
+            data[i][7] = medication.getUsualDose();
+            data[i][8] = medication.inducesTinnitus();
+            i++;
+        }
+
+        // TODO
+        JTable table = new JTable(data, columnNames);
+        medicalHistoryView.setMedicationTable(table);
+        JScrollPane scrollPane = new JScrollPane(table);
+        medicalHistoryView.setScrollPane(scrollPane);
+        //initController();           // must call init controller again to update the table
+        clinicController.getFrame().validate();
+        clinicController.getFrame().repaint();
     }
 
     public void initMedHistory(){

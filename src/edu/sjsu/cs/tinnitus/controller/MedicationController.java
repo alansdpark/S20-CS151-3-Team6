@@ -77,7 +77,7 @@ public class MedicationController implements Controller
         String usualDose = medicationView.getUsualDoseField().getText();
         String inducesTinnitus = medicationView.getInducesTinnitusField().getText();
 
-        //TODO VALIDATE
+        //TODO VALIDATE INPUT
 
         medication.setName(name);
         medication.setGenericName(generic);

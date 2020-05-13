@@ -17,6 +17,12 @@ public class MedicalHistoryView extends JPanel
         panel.setVisible(true);
     }
 
+    public void setScrollPane(JScrollPane scrollPane) {
+        panel.remove(this.scrollPane);
+        this.scrollPane = scrollPane;
+        panel.add(scrollPane);
+    }
+
 
     /**
      * Getter for medicalHistory
@@ -162,7 +168,7 @@ public class MedicalHistoryView extends JPanel
         panel.add(medicalHistory);
         panel.add(medicalHistoryArea);
         panel.add(currentMedication);
-        JScrollPane scrollPane = new JScrollPane(medicationTable);
+        scrollPane = new JScrollPane(medicationTable);
         panel.add(scrollPane);
         panel.add(addMedication);
         panel.add(saveButton);
@@ -177,4 +183,6 @@ public class MedicalHistoryView extends JPanel
     private JButton addMedication;
     private JButton saveButton;
     private JPanel panel;
+
+    private JScrollPane scrollPane;
 }
