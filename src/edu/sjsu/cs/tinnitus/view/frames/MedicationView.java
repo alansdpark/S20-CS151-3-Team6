@@ -16,6 +16,8 @@ public class MedicationView extends JPanel {
         initComponents();
         addComponents();
         frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
     }
 

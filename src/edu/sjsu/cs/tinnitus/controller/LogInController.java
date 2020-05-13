@@ -85,6 +85,7 @@ public class LogInController implements Controller {
         if(patient != null){
             visit = new Visit(patient, date);
         }
+        visit.setVisitNumber(patient.getVisitList().size());
         return visit;
     }
 
