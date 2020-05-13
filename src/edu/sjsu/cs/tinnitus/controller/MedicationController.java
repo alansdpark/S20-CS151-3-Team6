@@ -27,6 +27,8 @@ public class MedicationController implements Controller
         this.medicalHistory = medicalHistory;
         this.medicationView = medicationView;
         this.clinicController = clinicController;
+        this.medication = medication;
+        initFields();
         initController();
     }
 
@@ -40,11 +42,31 @@ public class MedicationController implements Controller
     }
 
     /**
+     * Initializes the fields with the values from medication
+     * Used when editing a medication
+     */
+    public void initFields(){
+        Double dose = medication.getDose();
+        Double duration = medication.getDuration();
+        Double usualDose = medication.getUsualDose();
+        Boolean inducesTinnitus = medication.inducesTinnitus();
+
+        medicationView.getNameField().setText(medication.getName());
+        medicationView.getGenericField().setText(medication.getGenericName());
+        medicationView.getDoseField().setText(dose.toString());
+        medicationView.getDurationField().setText(duration.toString());
+        medicationView.getChemicalCategoryField().setText(medication.getChemicalCategory());
+        medicationView.getActionField().setText(medication.getAction());
+        medicationView.getApplicationField().setText(medication.getApplication());
+        medicationView.getUsualDoseField().setText(usualDose.toString());
+        medicationView.getInducesTinnitusField().setText(inducesTinnitus.toString());
+    }
+
+    /**
      * Updates the fields in medication with the current information
      * stored in the respective jTextFields..
      */
     public void saveInfoToMedication(){
-        Medication medication = new Medication();
         String name = medicationView.getNameField().getText();
         String generic = medicationView.getGenericField().getText();
         String dose = medicationView.getDoseField().getText();
@@ -66,6 +88,8 @@ public class MedicationController implements Controller
         medication.setApplication(application);
         medication.setUsualDose(Double.parseDouble(usualDose));
         medication.setInducesTinnitus(Boolean.parseBoolean(inducesTinnitus));       // may not work
+
+        medicalHistory.getMedHistoryTable().addToMedicationList(medication);
     }
 
     /**
