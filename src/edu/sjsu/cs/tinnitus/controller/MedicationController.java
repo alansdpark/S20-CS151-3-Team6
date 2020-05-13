@@ -23,11 +23,12 @@ public class MedicationController implements Controller
      * @param medicationView  - GUI view of the medication
      * @param medication - medication that can be edited
      */
-    public MedicationController(MedicalHistory medicalHistory, MedicationView medicationView, Medication medication, ClinicController clinicController) {
+    public MedicationController(MedicalHistory medicalHistory, MedicationView medicationView,
+                                Medication medication, MedicalHistoryController medicalHistoryController) {
         this.medicalHistory = medicalHistory;
         this.medicationView = medicationView;
-        this.clinicController = clinicController;
         this.medication = medication;
+        this.medicalHistoryController = medicalHistoryController;
         initFields();
         initController();
     }
@@ -97,14 +98,86 @@ public class MedicationController implements Controller
      */
     public void saveAndReturn(){
         saveInfoToMedication();
+        medicalHistoryController.initTable();
         medicationView.getFrame().dispose();
 
     }
 
+    /**
+     * Getter for medicalHistory
+     *
+     * @return medicalHistory
+     */
+    public MedicalHistory getMedicalHistory() {
+        return medicalHistory;
+    }
+
+    /**
+     * Setter for medicalHistory
+     *
+     * @param medicalHistory - medicalHistory
+     */
+    public void setMedicalHistory(MedicalHistory medicalHistory) {
+        this.medicalHistory = medicalHistory;
+    }
+
+    /**
+     * Getter for medicationView
+     *
+     * @return medicationView
+     */
+    public MedicationView getMedicationView() {
+        return medicationView;
+    }
+
+    /**
+     * Setter for medicationView
+     *
+     * @param medicationView - medicationView
+     */
+    public void setMedicationView(MedicationView medicationView) {
+        this.medicationView = medicationView;
+    }
+
+    /**
+     * Getter for medication
+     *
+     * @return medication
+     */
+    public Medication getMedication() {
+        return medication;
+    }
+
+    /**
+     * Setter for medication
+     *
+     * @param medication - medication
+     */
+    public void setMedication(Medication medication) {
+        this.medication = medication;
+    }
+
+    /**
+     * Getter for medicalHistoryController
+     *
+     * @return medicalHistoryController
+     */
+    public MedicalHistoryController getMedicalHistoryController() {
+        return medicalHistoryController;
+    }
+
+    /**
+     * Setter for medicalHistoryController
+     *
+     * @param medicalHistoryController - medicalHistoryController
+     */
+    public void setMedicalHistoryController(MedicalHistoryController medicalHistoryController) {
+        this.medicalHistoryController = medicalHistoryController;
+    }
 
     private MedicalHistory medicalHistory;
     private MedicationView medicationView;
     private Medication medication;
-    private ClinicController clinicController;
+    private MedicalHistoryController medicalHistoryController;
     
 }

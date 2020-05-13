@@ -24,6 +24,7 @@ public class MedicalHistoryController implements Controller {
         this.visit = visit;
         this.patient = null;
         this.clinicController = clinicController;
+        initTable();
         initController();
         initMedHistory();
 
@@ -86,7 +87,7 @@ public class MedicalHistoryController implements Controller {
         Medication medication = new Medication();
         MedicationView medicationView = new MedicationView();
         MedicationController medicationController =
-                new MedicationController(medicalHistory, medicationView, medication, clinicController);
+                new MedicationController(medicalHistory, medicationView, medication, this);
     }
 
     public void initTable(){
