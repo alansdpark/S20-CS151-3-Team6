@@ -5,11 +5,13 @@ import edu.sjsu.cs.tinnitus.model.Patient;
 import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.model.Visit;
 import edu.sjsu.cs.tinnitus.view.frames.*;
+import edu.sjsu.cs.tinnitus.view.frames.util.AlertBox;
 import sun.rmi.runtime.Log;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * Controller that communicates with Patient and PatientView
@@ -46,13 +48,14 @@ public class PatientController implements Controller
     public void saveEdits()
     {
         JFrame frame = clinicController.getFrame();
-        savePatientInfo();
-        frame.remove(patientView.getPanel());
-        NavigationView navigationView = new NavigationView();
-        NavigationController navigationController = new NavigationController(navigationView, clinicController);
-        frame.add(navigationView.getPanel(), BorderLayout.CENTER);
-        frame.validate();
-        frame.repaint();
+        if(savePatientInfo()) {
+            frame.remove(patientView.getPanel());
+            NavigationView navigationView = new NavigationView();
+            NavigationController navigationController = new NavigationController(navigationView, clinicController);
+            frame.add(navigationView.getPanel(), BorderLayout.CENTER);
+            frame.validate();
+            frame.repaint();
+        }
     }
 
     /**
@@ -72,26 +75,28 @@ public class PatientController implements Controller
 
     public void viewMedicalHistory(){
         JFrame frame = clinicController.getFrame();
-        savePatientInfo();
-        frame.remove(patientView.getPanel());
-        MedicalHistoryView medicalHistoryView = new MedicalHistoryView();
-        MedicalHistoryController medicalHistoryController =
-                new MedicalHistoryController(medicalHistoryView, patient.getMedicalHistory(), patient, clinicController);
-        frame.add(medicalHistoryView.getPanel(), BorderLayout.CENTER);
-        frame.validate();
-        frame.repaint();
+        if(savePatientInfo()) {
+            frame.remove(patientView.getPanel());
+            MedicalHistoryView medicalHistoryView = new MedicalHistoryView();
+            MedicalHistoryController medicalHistoryController =
+                    new MedicalHistoryController(medicalHistoryView, patient.getMedicalHistory(), patient, clinicController);
+            frame.add(medicalHistoryView.getPanel(), BorderLayout.CENTER);
+            frame.validate();
+            frame.repaint();
+        }
     }
 
     public void goToVisit(Visit visit){
         JFrame frame = clinicController.getFrame();
-        savePatientInfo();
-        frame.remove(patientView.getPanel());
-        VisitView visitView = new VisitView();
-        VisitController visitController =
-                new VisitController(visit, visitView, clinicController);
-        frame.add(visitView.getPanel(), BorderLayout.CENTER);
-        frame.validate();
-        frame.repaint();
+        if(savePatientInfo()) {
+            frame.remove(patientView.getPanel());
+            VisitView visitView = new VisitView();
+            VisitController visitController =
+                    new VisitController(visit, visitView, clinicController);
+            frame.add(visitView.getPanel(), BorderLayout.CENTER);
+            frame.validate();
+            frame.repaint();
+        }
 
     }
 
@@ -123,9 +128,105 @@ public class PatientController implements Controller
 
     }
 
-    public void savePatientInfo(){
-        patient.setFirstName(patientView.getFirstNameField().getText());
+    public boolean savePatientInfo(){
+        ArrayList<String> errMsgs = new ArrayList<>();
+
+        // input collection
+        String firstName = patientView.getFirstNameField().getText();
+        String lastName = patientView.getLastNameField().getText();
+        String address1 = patientView.getAddress1Field().getText();
+        String address2 = patientView.getAddress2Field().getText();
+        String city = patientView.getCityField().getText();
+        String zipCode = patientView.getZipCodeField().getText();
+        String country = patientView.getCountryField().getText();
+        String birthday = patientView.getBirthdayField().getText();
+        String gender = patientView.getGenderField().getText();
+        String phoneNumber = patientView.getPhoneNumberField().getText();
+        String ssn = patientView.getSsnField().getText();
+        String insuranceNo = patientView.getInsuranceNoField().getText();
+        String occupation = patientView.getOccupationField().getText();
+        String workStatus = patientView.getWorkStatusField().getText();
+        String educationalDegree = patientView.getEducationalDegreeField().getText();
+        String tinnitusCategory = patientView.getTinnitusCategoryField().getText();
+        String treatmentProtocol = patientView.getTreatmentProtocolField().getText();
+        String nextVisit = patientView.getNextVisitField().getText();
+        String patientId = patientView.getPatientIdField().getText();
+
+        // input validation
+        if(firstName.length() == 0){
+            errMsgs.add("First Name must not be blank");
+        }
+        if(lastName.length() == 0){
+            errMsgs.add("Last Name must not be blank");
+        }
+        if(address1.length() == 0){
+            errMsgs.add("Address1 must not be blank");
+        }
+        if(city.length() == 0){
+            errMsgs.add("City must not be blank");
+        }
+        if(zipCode.length() == 0){
+            errMsgs.add("Zip Code must not be blank");
+        }
+        if(country.length() == 0){
+            errMsgs.add("Country must not be blank");
+        }
+        if(birthday.length() == 0){
+            errMsgs.add("Birthday must not be blank");
+        }
+        if(gender.length() == 0){
+            errMsgs.add("Gender must not be blank");
+        }
+        if(phoneNumber.length() == 0){
+            errMsgs.add("Phone Number must not be blank");
+        }
+        if(ssn.length() == 0){
+            errMsgs.add("SSN must not be blank");
+        }
+        if(insuranceNo.length() == 0){
+            errMsgs.add("Insurance No. must not be blank");
+        }
+        try{
+            Integer in = Integer.parseInt(tinnitusCategory);
+        } catch( NumberFormatException e){
+            errMsgs.add("Tinnitus Category must be an integer.");
+        }
+        try{
+            Integer in = Integer.parseInt(treatmentProtocol);
+        } catch( NumberFormatException e){
+            errMsgs.add("Treatment Protocol must be an integer.");
+        }
+        try{
+            Integer in = Integer.parseInt(patientId);
+        } catch( NumberFormatException e){
+            errMsgs.add("Patient ID must be an integer.");
+        }
+
+        if(errMsgs.size() != 0){
+            AlertBox alertBox = new AlertBox(errMsgs);
+            return false;
+        }
+
+        // save all info to patient
+        patient.setFirstName(firstName);
+        patient.setLastName(lastName);
+        patient.setAddress1(address1);
+        patient.setAddress2(address2);
+        patient.setCity(city);
+        patient.setZipCode(zipCode);
+        patient.setCountry(country);
+        patient.setBirthday(birthday);
+        patient.setGender(gender);
+        patient.setPhoneNumber(phoneNumber);
+        patient.setOccupation(occupation);
+        patient.setWorkStatus(workStatus);
+        patient.setEducationalDegree(educationalDegree);
+        patient.setTinnitusCategory(Integer.parseInt(tinnitusCategory));
+        patient.setTreatmentProtocol(Integer.parseInt(treatmentProtocol));
+        patient.setNextVisit(nextVisit);
+        patient.setPatientId(Integer.parseInt(patientId));
         //TODO REPEAT FOR ALL FIELDS
+        return true;
     }
 
 	public void initTable(){
