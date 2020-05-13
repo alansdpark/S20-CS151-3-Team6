@@ -19,6 +19,7 @@ public class MedicationView extends JPanel {
         frame.setVisible(true);
     }
 
+
     /**
      * Getter for nameField
      *
@@ -401,6 +402,11 @@ public class MedicationView extends JPanel {
         usualDoseLabel = new JLabel("Usual Does", SwingConstants.RIGHT);
         inducesTinnitusLabel = new JLabel("Induces Tinnitus", SwingConstants.RIGHT);
 
+        header = new JLabel("Medication");
+        header.setHorizontalAlignment(SwingConstants.CENTER);
+        header.setFont(new Font("Arial", Font.BOLD, 24));
+
+
         saveButton = new JButton("Save");
     }
     
@@ -428,7 +434,8 @@ public class MedicationView extends JPanel {
 
         infoPanel.add(saveButton);
 
-        frame.add(infoPanel);
+        frame.add(header, BorderLayout.NORTH);
+        frame.add(infoPanel, BorderLayout.CENTER);
     }
 
     private JTextField nameField;
@@ -450,6 +457,7 @@ public class MedicationView extends JPanel {
     private JLabel applicationLabel;
     private JLabel usualDoseLabel;
     private JLabel inducesTinnitusLabel;
+    private JLabel header;
 
     private JButton saveButton;
     private JFrame frame;

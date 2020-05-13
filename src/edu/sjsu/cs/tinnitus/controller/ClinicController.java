@@ -14,6 +14,7 @@ public class ClinicController {
         patientTable = new PatientTable();
         getAllData();
         frame = new JFrame();
+        createHeader();
         NavigationView view = new NavigationView();
         NavigationController controller = new NavigationController(view, this);
         frame.add(view.getPanel());
@@ -26,13 +27,25 @@ public class ClinicController {
     public ClinicController(PatientTable patientTable) {
         this.patientTable = patientTable;
         frame = new JFrame();
+        createHeader();
         NavigationView view = new NavigationView();
         NavigationController controller = new NavigationController(view, this);
-        frame.add(view.getPanel());
+        frame.add(view.getPanel(), BorderLayout.CENTER);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
         frame.setVisible(true);
+    }
+
+    public void createHeader(){
+        header = new JLabel();
+        header.setHorizontalAlignment(SwingConstants.CENTER);
+        header.setFont(new Font( "Arial", Font.BOLD, 28));
+        frame.add(header, BorderLayout.NORTH);
+    }
+
+    public void setHeaderContent(String content){
+        header.setText(content);
     }
 
     /**
@@ -135,6 +148,7 @@ public class ClinicController {
 
     private PatientTable patientTable;
     private JFrame frame;
+    private JLabel header;
     private final String FILE_PATH = "./save_data/save.txt";
 }
 

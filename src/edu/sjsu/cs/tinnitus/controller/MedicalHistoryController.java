@@ -7,6 +7,8 @@ import edu.sjsu.cs.tinnitus.view.frames.PatientView;
 import edu.sjsu.cs.tinnitus.view.frames.VisitView;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 import java.util.ArrayList;
 
 public class MedicalHistoryController implements Controller {
@@ -27,7 +29,7 @@ public class MedicalHistoryController implements Controller {
         initTable();
         initController();
         initMedHistory();
-
+        clinicController.setHeaderContent("Medical History");
     }
 
     public MedicalHistoryController(MedicalHistoryView medicalHistoryView, MedicalHistory medicalHistory,
@@ -40,7 +42,7 @@ public class MedicalHistoryController implements Controller {
         initTable();
         initController();
         initMedHistory();
-
+        clinicController.setHeaderContent("Medical History");
     }
 
     @Override
@@ -64,7 +66,7 @@ public class MedicalHistoryController implements Controller {
         frame.remove(medicalHistoryView.getPanel());
         PatientView view = new PatientView();
         PatientController patientController = new PatientController(patient, view, clinicController);
-        frame.add(view.getPanel());
+        frame.add(view.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }
@@ -75,7 +77,7 @@ public class MedicalHistoryController implements Controller {
         frame.remove(medicalHistoryView.getPanel());
         VisitView view = new VisitView();
         VisitController visitController = new VisitController(visit, view, clinicController);
-        frame.add(view.getPanel());
+        frame.add(view.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }

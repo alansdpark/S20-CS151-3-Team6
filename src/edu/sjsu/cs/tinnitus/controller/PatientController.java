@@ -8,6 +8,8 @@ import edu.sjsu.cs.tinnitus.view.frames.*;
 import sun.rmi.runtime.Log;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 
 /**
  * Controller that communicates with Patient and PatientView
@@ -34,6 +36,7 @@ public class PatientController implements Controller
         addPatientInfo();
         initTable();
         initController();
+        clinicController.setHeaderContent("Patient");
     }
 
 
@@ -47,7 +50,7 @@ public class PatientController implements Controller
         frame.remove(patientView.getPanel());
         NavigationView navigationView = new NavigationView();
         NavigationController navigationController = new NavigationController(navigationView, clinicController);
-        frame.add(navigationView.getPanel());
+        frame.add(navigationView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }
@@ -62,7 +65,7 @@ public class PatientController implements Controller
         frame.remove(patientView.getPanel());
         LogInView logInView = new LogInView();
         LogInController logInController = new LogInController(logInView, clinicController);
-        frame.add(logInView.getPanel());
+        frame.add(logInView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }
@@ -74,7 +77,7 @@ public class PatientController implements Controller
         MedicalHistoryView medicalHistoryView = new MedicalHistoryView();
         MedicalHistoryController medicalHistoryController =
                 new MedicalHistoryController(medicalHistoryView, patient.getMedicalHistory(), patient, clinicController);
-        frame.add(medicalHistoryView.getPanel());
+        frame.add(medicalHistoryView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }
@@ -86,7 +89,7 @@ public class PatientController implements Controller
         VisitView visitView = new VisitView();
         VisitController visitController =
                 new VisitController(visit, visitView, clinicController);
-        frame.add(visitView.getPanel());
+        frame.add(visitView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
 

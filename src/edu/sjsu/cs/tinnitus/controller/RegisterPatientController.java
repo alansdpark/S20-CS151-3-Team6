@@ -6,6 +6,8 @@ import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
 import edu.sjsu.cs.tinnitus.view.frames.RegisterPatientView;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 
 /**
  * Controller for communicating with RegisterPatientView and PatientTable
@@ -23,6 +25,7 @@ public class RegisterPatientController implements Controller {
         this.clinicController = clinicController;
         this.view = view;
         initController();
+        clinicController.setHeaderContent("Register Patient");
     }
 
     @Override
@@ -44,7 +47,7 @@ public class RegisterPatientController implements Controller {
         NavigationView navigationView = new NavigationView();
         NavigationController navigationController =
                 new NavigationController(navigationView, clinicController);
-        frame.add(navigationView.getPanel());
+        frame.add(navigationView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }
@@ -58,7 +61,7 @@ public class RegisterPatientController implements Controller {
         frame.remove(view.getPanel());
         LogInView logInView = new LogInView();
         LogInController logInController = new LogInController(logInView, clinicController);
-        frame.add(logInView.getPanel());
+        frame.add(logInView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }
@@ -73,7 +76,7 @@ public class RegisterPatientController implements Controller {
         NavigationView navigationView = new NavigationView();
         NavigationController navigationController =
                 new NavigationController(navigationView, clinicController);
-        frame.add(navigationView.getPanel());
+        frame.add(navigationView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }

@@ -17,10 +17,19 @@ public class MedicalHistoryView extends JPanel
         panel.setVisible(true);
     }
 
+    /**
+     * Updates the ScrollPane containing the table
+     * @param scrollPane - scrollPane containing the table
+     */
     public void setScrollPane(JScrollPane scrollPane) {
+        // TODO see if moving the buttons around can be removed
         panel.remove(this.scrollPane);
+        panel.remove(saveButton);
+        panel.remove(addMedication);
         this.scrollPane = scrollPane;
         panel.add(scrollPane);
+        panel.add(addMedication);
+        panel.add(saveButton);
     }
 
 

@@ -9,6 +9,7 @@ import edu.sjsu.cs.tinnitus.view.frames.VisitView;
 import edu.sjsu.cs.tinnitus.view.frames.util.AlertBox;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -26,6 +27,7 @@ public class LogInController implements Controller {
         this.logInView = logInView;
         this.clinicController = clinicController;
         initController();
+        clinicController.setHeaderContent("Log In");
     }
 
     @Override
@@ -53,7 +55,7 @@ public class LogInController implements Controller {
             VisitView visitView = new VisitView();
             VisitController visitController =
                     new VisitController(visit, visitView, clinicController);
-            frame.add(visitView.getPanel());
+            frame.add(visitView.getPanel(), BorderLayout.CENTER);
             frame.validate();
             frame.repaint();
         }
@@ -65,7 +67,7 @@ public class LogInController implements Controller {
         NavigationView navigationView = new NavigationView();
         NavigationController navigationController =
                 new NavigationController(navigationView, clinicController);
-        frame.add(navigationView.getPanel());
+        frame.add(navigationView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }

@@ -6,6 +6,7 @@ import edu.sjsu.cs.tinnitus.view.frames.PatientListView;
 import edu.sjsu.cs.tinnitus.view.frames.RegisterPatientView;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Controller for Navigation.
@@ -19,6 +20,7 @@ public class NavigationController implements Controller
         navigationView = nv;
         this.clinicController = clinicController;
         initController();
+        clinicController.setHeaderContent("Navigation");
 
     }
     
@@ -32,7 +34,7 @@ public class NavigationController implements Controller
         RegisterPatientView registerPatientView = new RegisterPatientView();
         RegisterPatientController registerPatientController =
                 new RegisterPatientController(clinicController, registerPatientView);
-        clinicController.getFrame().add(registerPatientView.getPanel());
+        clinicController.getFrame().add(registerPatientView.getPanel(), BorderLayout.CENTER);
         clinicController.getFrame().validate();
         clinicController.getFrame().repaint();
     }

@@ -7,6 +7,7 @@ import edu.sjsu.cs.tinnitus.view.frames.PatientListView;
 import edu.sjsu.cs.tinnitus.view.frames.PatientView;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Controller for communicating with PatientTable and PatientListView
@@ -24,6 +25,7 @@ public class PatientListController implements Controller {
         this.clinicController = clinicController;
         initTable();
         initController();
+        clinicController.setHeaderContent("All Patients");
 
     }
 
@@ -50,7 +52,7 @@ public class PatientListController implements Controller {
         NavigationView navigationView = new NavigationView();
         NavigationController navigationController =
                 new NavigationController(navigationView, clinicController);
-        frame.add(navigationView.getPanel());
+        frame.add(navigationView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }
@@ -64,7 +66,7 @@ public class PatientListController implements Controller {
         frame.remove(patientListView.getPanel());
         PatientView patientView = new PatientView();
         PatientController patientController = new PatientController(patient, patientView, clinicController);
-        frame.add(patientView.getPanel());
+        frame.add(patientView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }

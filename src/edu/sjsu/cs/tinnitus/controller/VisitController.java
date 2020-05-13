@@ -8,6 +8,8 @@ import edu.sjsu.cs.tinnitus.view.frames.VisitView;
 import edu.sjsu.cs.tinnitus.view.frames.util.AlertBox;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -21,6 +23,7 @@ public class VisitController implements Controller
         this.visitView = visitView;
         this.clinicController = clinicController;
         initController();
+        clinicController.setHeaderContent("Visit");
     }
 
 
@@ -30,7 +33,7 @@ public class VisitController implements Controller
         MedicalHistoryView medicalHistoryView = new MedicalHistoryView();
         MedicalHistoryController medicalHistoryController =
                 new MedicalHistoryController(medicalHistoryView, visit.getPatient().getMedicalHistory(), visit, clinicController);
-        frame.add(medicalHistoryView.getPanel());
+        frame.add(medicalHistoryView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }
@@ -48,7 +51,7 @@ public class VisitController implements Controller
         NavigationView navigationView = new NavigationView();
         NavigationController navigationController =
                 new NavigationController(navigationView, clinicController);
-        frame.add(navigationView.getPanel());
+        frame.add(navigationView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }
