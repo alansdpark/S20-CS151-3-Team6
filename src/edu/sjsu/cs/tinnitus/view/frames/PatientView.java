@@ -812,6 +812,42 @@ public class PatientView extends JPanel {
     }
 
     /**
+     * Getter for patientIdLabel
+     *
+     * @return patientIdLabel
+     */
+    public JLabel getPatientIdLabel() {
+        return patientIdLabel;
+    }
+
+    /**
+     * Setter for patientIdLabel
+     *
+     * @param patientIdLabel - patientIdLabel
+     */
+    public void setPatientIdLabel(JLabel patientIdLabel) {
+        this.patientIdLabel = patientIdLabel;
+    }
+
+    /**
+     * Getter for patientIdField
+     *
+     * @return patientIdField
+     */
+    public JTextField getPatientIdField() {
+        return patientIdField;
+    }
+
+    /**
+     * Setter for patientIdField
+     *
+     * @param patientIdField - patientIdField
+     */
+    public void setPatientIdField(JTextField patientIdField) {
+        this.patientIdField = patientIdField;
+    }
+
+    /**
      * Setter for scrollPane
      *
      * @param scrollPane - scrollPane
@@ -841,6 +877,7 @@ public class PatientView extends JPanel {
         occupationLabel = new JLabel("Occupation", SwingConstants.RIGHT);
         workStatusLabel = new JLabel("Work Status", SwingConstants.RIGHT);
         educationalDegreeLabel = new JLabel("Educational Degree", SwingConstants.RIGHT);
+        patientIdLabel = new JLabel("Patient ID", SwingConstants.RIGHT);
         
         tinnitusCategoryLabel = new JLabel("Tinnitus Category", SwingConstants.RIGHT);
         treatmentProtocolLabel = new JLabel("Treatment Protocol", SwingConstants.RIGHT);
@@ -863,6 +900,7 @@ public class PatientView extends JPanel {
         occupationField = new JTextField(10);
         workStatusField = new JTextField(10);
         educationalDegreeField = new JTextField(10);
+        patientIdField = new JTextField(10);
 
         tinnitusCategoryField = new JTextField(10);
         treatmentProtocolField = new JTextField(10);
@@ -891,6 +929,10 @@ public class PatientView extends JPanel {
         infoPanel.add(address1Field);
         infoPanel.add(insuranceNoLabel);
         infoPanel.add(insuranceNoField);
+        infoPanel.add(address2Label);
+        infoPanel.add(address2Field);
+        infoPanel.add(patientIdLabel);
+        infoPanel.add(patientIdField);
         infoPanel.add(cityLabel);
         infoPanel.add(cityField);
         infoPanel.add(occupationLabel);
@@ -942,6 +984,7 @@ public class PatientView extends JPanel {
     private JLabel occupationLabel;
     private JLabel workStatusLabel;
     private JLabel educationalDegreeLabel;
+    private JLabel patientIdLabel;
 
     private JLabel tinnitusCategoryLabel;
     private JLabel treatmentProtocolLabel;
@@ -963,6 +1006,7 @@ public class PatientView extends JPanel {
     private JTextField occupationField;
     private JTextField workStatusField;
     private JTextField educationalDegreeField;
+    private JTextField patientIdField;
 
     private JTextField tinnitusCategoryField;
     private JTextField treatmentProtocolField;

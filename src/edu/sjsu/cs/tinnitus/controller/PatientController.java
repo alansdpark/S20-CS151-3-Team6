@@ -115,6 +115,7 @@ public class PatientController implements Controller
         patientView.getTinnitusCategoryField().setText(patient.getTinnitusCategory().toString());
         patientView.getTreatmentProtocolField().setText(patient.getTinnitusCategory().toString());
         patientView.getNextVisitField().setText(patient.getNextVisit());
+        patientView.getPatientIdField().setText(patient.getPatientId().toString());
         //TODO REPEAT FOR ALL FIELDS
     }
 

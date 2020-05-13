@@ -38,7 +38,7 @@ public class Patient implements Serializable
         tinnitusCategory = -1;
         treatmentProtocol = -1;
         nextVisit = "";
-        
+
     }
 
     /**
