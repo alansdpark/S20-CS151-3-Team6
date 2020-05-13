@@ -15,7 +15,8 @@ public class MedicationView extends JPanel {
     {
         initComponents();
         addComponents();
-        panel.setVisible(true);
+        frame.pack();
+        frame.setVisible(true);
     }
 
     /**
@@ -361,25 +362,25 @@ public class MedicationView extends JPanel {
     }
 
     /**
-     * Getter for panel
+     * Getter for frame
      *
-     * @return panel
+     * @return frame
      */
-    public JPanel getPanel() {
-        return panel;
+    public JFrame getFrame() {
+        return frame;
     }
 
     /**
-     * Setter for panel
+     * Setter for frame
      *
-     * @param panel - panel
+     * @param frame - frame
      */
-    public void setPanel(JPanel panel) {
-        this.panel = panel;
+    public void setFrame(JFrame frame) {
+        this.frame = frame;
     }
-    
+
     private void initComponents(){
-        panel = new JPanel();
+        frame = new JFrame();
         nameField = new JTextField(10);
         genericField = new JTextField(10);
         doseField = new JTextField(10);
@@ -427,7 +428,7 @@ public class MedicationView extends JPanel {
 
         infoPanel.add(saveButton);
 
-        panel.add(infoPanel);
+        frame.add(infoPanel);
     }
 
     private JTextField nameField;
@@ -451,5 +452,5 @@ public class MedicationView extends JPanel {
     private JLabel inducesTinnitusLabel;
 
     private JButton saveButton;
-    private JPanel panel;
+    private JFrame frame;
 }

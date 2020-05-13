@@ -9,11 +9,6 @@ import java.awt.*;
 public class MedicationTesting {
 
     public static void main(String[] args){
-        MedicationView view = new MedicationView();
-        JFrame frame = new JFrame();
-        frame.add(view.getPanel());
-        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
-        frame.pack();
-        frame.setVisible(true);
+
     }
 }

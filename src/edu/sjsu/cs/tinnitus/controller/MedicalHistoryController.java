@@ -81,15 +81,10 @@ public class MedicalHistoryController implements Controller {
      * adds a new medication to the model
      */
     public void addMedication(){
-        JFrame frame = clinicController.getFrame();
-        frame.remove(medicalHistoryView.getPanel());
         Medication medication = new Medication();
         MedicationView medicationView = new MedicationView();
         MedicationController medicationController =
                 new MedicationController(medicalHistory, medicationView, medication, clinicController);
-        frame.add(medicationView.getPanel());
-        frame.validate();
-        frame.repaint();
     }
 
     public void initTable(){
