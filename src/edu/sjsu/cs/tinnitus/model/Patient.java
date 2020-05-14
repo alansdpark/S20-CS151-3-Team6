@@ -94,6 +94,7 @@ public class Patient implements Serializable
         this.visitList = visitList;
         this.medicalHistory = medicalHistory;
         this.patientId = -1;
+        this.audilogy = new Audiology();
     }
 
     /**
@@ -130,6 +131,10 @@ public class Patient implements Serializable
         this.phoneNumber = phoneNumber;
         this.ssn = ssn;
         this.insuranceNo = insuranceNo;
+
+        audilogy = new Audiology();
+        medicalHistory = new MedicalHistory();
+        visitList = new ArrayList<>();
     }
 
     /**
@@ -173,6 +178,9 @@ public class Patient implements Serializable
         this.occupation = occupation;
         this.workStatus = workStatus;
         this.educationalDegree = educationalDegree;
+
+        audilogy = new Audiology();
+        medicalHistory = new MedicalHistory();
         visitList = new ArrayList<>();
     }
 
@@ -581,6 +589,22 @@ public class Patient implements Serializable
         this.patientId = patientId;
     }
 
+    /**
+     * Getter for Audiology data
+     * @return audiology
+     */
+    public Audiology getAudilogy() {
+        return audilogy;
+    }
+
+    /**
+     * Setter for Audiology data
+     * @param audiology
+     */
+    public void setAudiology(Audiology audiology) {
+        this.audilogy = audiology;
+    }
+
     private String firstName;
     private String lastName;
     private String address1;
@@ -603,6 +627,7 @@ public class Patient implements Serializable
     private Integer treatmentProtocol;
     private String nextVisit;
 
+    private Audiology audilogy;
     private ArrayList<Visit> visitList;
     private MedicalHistory medicalHistory;
 }
