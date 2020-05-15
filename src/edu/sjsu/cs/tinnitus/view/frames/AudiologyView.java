@@ -21,8 +21,8 @@ public class AudiologyView extends JPanel
         comments = new JLabel();
         comments.setText("Additional Comments:");
         add(comments, BorderLayout.EAST);
-        additionalCommnents = new JTextArea();
-        add(additionalCommnents_area, BorderLayour.EAST);
+        additionalComments = new JTextArea();
+        add(additionalComments_area, BorderLayour.EAST);
         saveButton = new JButton();
         saveButton.setText("Save");
         add(saveButton, BorderLayout.EAST);
@@ -203,8 +203,423 @@ public class AudiologyView extends JPanel
     public JButton getSaveButton() {
         return saveButton;
     }
+    //PURETONE FOR THE LEFT EAR
 
+    public void setHz_250_field_pureTone_left(JTextField hz_250_field_pureTone_left) {
+        this.hz_250_field_pureTone_left = hz_250_field_pureTone_left;
+    }
 
+    public void setHz_500_field_pureTone_left(JTextField hz_500_field_pureTone_left) {
+        this.hz_500_field_pureTone_left = hz_500_field_pureTone_left;
+    }
+
+    public void setHz_1000_field_pureTone_left(JTextField hz_1000_field_pureTone_left) {
+        this.hz_1000_field_pureTone_left = hz_1000_field_pureTone_left;
+    }
+
+    public void setHz_2500_field_pureTone_left(JTextField hz_2500_field_pureTone_left) {
+        this.hz_2500_field_pureTone_left = hz_2500_field_pureTone_left;
+    }
+
+    public void setHz_5000_field_pureTone_left(JTextField hz_5000_field_pureTone_left) {
+        this.hz_5000_field_pureTone_left = hz_5000_field_pureTone_left;
+    }
+
+    public void setHz_7500_field_pureTone_left(JTextField hz_7500_field_pureTone_left) {
+        this.hz_7500_field_pureTone_left = hz_7500_field_pureTone_left;
+    }
+
+    public void setHz_10000_field_pureTone_left(JTextField hz_10000_field_pureTone_left) {
+        this.hz_10000_field_pureTone_left = hz_10000_field_pureTone_left;
+    }
+
+    public void setHz_12000_field_pureTone_left(JTextField hz_12000_field_pureTone_left) {
+        this.hz_12000_field_pureTone_left = hz_12000_field_pureTone_left;
+    }
+
+    /**
+     *  Getter for puretone on the left ear at 250Hz
+     * @return hz_250_field_puretone_left
+     */
+    public JTextField getHz_250_field_pureTone_left() {
+        return hz_250_field_pureTone_left;
+    }
+    /**
+     *  Getter for puretone on the left ear at 500Hz
+     * @return hz_500_field_puretone_left
+     */
+    public JTextField getHz_500_field_pureTone_left() {
+        return hz_500_field_pureTone_left;
+    }
+    /**
+     *  Getter for puretone on the left ear at 1000Hz
+     * @return hz_1000_field_puretone_left
+     */
+    public JTextField getHz_1000_field_pureTone_left() {
+        return hz_1000_field_pureTone_left;
+    }
+    /**
+     *  Getter for puretone on the left ear at 2500Hz
+     * @return hz_2500_field_puretone_left
+     */
+    public JTextField getHz_2500_field_pureTone_left() {
+        return hz_2500_field_pureTone_left;
+    }
+    /**
+     *  Getter for puretone on the left ear at 5000Hz
+     * @return hz_5000_field_puretone_left
+     */
+    public JTextField getHz_5000_field_pureTone_left() {
+        return hz_5000_field_pureTone_left;
+    }
+    /**
+     *  Getter for puretone on the left ear at 7500Hz
+     * @return hz_7500_field_puretone_left
+     */
+    public JTextField getHz_7500_field_pureTone_left() {
+        return hz_7500_field_pureTone_left;
+    }
+    /**
+     *  Getter for puretone on the left ear at 10,000Hz
+     * @return hz_10000_field_puretone_left
+     */
+    public JTextField getHz_10000_field_pureTone_left() {
+        return hz_10000_field_pureTone_left;
+    }
+    /**
+     *  Getter for puretone on the left ear at 12,000Hz
+     * @return hz_12000_field_puretone_left
+     */
+    public JTextField getHz_12000_field_pureTone_left() {
+        return hz_12000_field_pureTone_left;
+    }
+    //PURE TONE ON THE RIGHT EAR AT HZ
+    public void setHz_250_field_pureTone_right(JTextField hz_250_field_pureTone_right) {
+        this.hz_250_field_pureTone_right = hz_250_field_pureTone_right;
+    }
+
+    public void setHz_500_field_pureTone_right(JTextField hz_500_field_pureTone_right) {
+        this.hz_500_field_pureTone_right = hz_500_field_pureTone_right;
+    }
+
+    public void setHz_1000_field_pureTone_right(JTextField hz_1000_field_pureTone_right) {
+        this.hz_1000_field_pureTone_right = hz_1000_field_pureTone_right;
+    }
+
+    public void setHz_2500_field_pureTone_right(JTextField hz_2500_field_pureTone_right) {
+        this.hz_2500_field_pureTone_right = hz_2500_field_pureTone_right;
+    }
+
+    public void setHz_5000_field_pureTone_right(JTextField hz_5000_field_pureTone_right) {
+        this.hz_5000_field_pureTone_right = hz_5000_field_pureTone_right;
+    }
+
+    public void setHz_7500_field_pureTone_right(JTextField hz_7500_field_pureTone_right) {
+        this.hz_7500_field_pureTone_right = hz_7500_field_pureTone_right;
+    }
+
+    public void setHz_10000_field_pureTone_right(JTextField hz_10000_field_pureTone_right) {
+        this.hz_10000_field_pureTone_right = hz_10000_field_pureTone_right;
+    }
+
+    public void setHz_12000_field_pureTone_right(JTextField hz_12000_field_pureTone_right) {
+        this.hz_12000_field_pureTone_right = hz_12000_field_pureTone_right;
+    }
+
+    /**
+     *  Getter for puretone on the right ear at 250Hz
+     * @return hz_250_field_puretone_right
+     */
+    public JTextField getHz_250_field_pureTone_right() {
+        return hz_250_field_pureTone_right;
+    }
+    /**
+     *  Getter for puretone on the right ear at 500Hz
+     * @return hz_500_field_puretone_right
+     */
+    public JTextField getHz_500_field_pureTone_right() {
+        return hz_500_field_pureTone_right;
+    }
+    /**
+     *  Getter for puretone on the right ear at 1000Hz
+     * @return hz_1000_field_puretone_right
+     */
+    public JTextField getHz_1000_field_pureTone_right() {
+        return hz_1000_field_pureTone_right;
+    }
+    /**
+     *  Getter for puretone on the right ear at 2500Hz
+     * @return hz_2500_field_puretone_right
+     */
+    public JTextField getHz_2500_field_pureTone_right() {
+        return hz_2500_field_pureTone_right;
+    }
+    /**
+     *  Getter for puretone on the right ear at 5000Hz
+     * @return hz_5000_field_puretone_right
+     */
+    public JTextField getHz_5000_field_pureTone_right() {
+        return hz_5000_field_pureTone_right;
+    }
+    /**
+     *  Getter for puretone on the right ear at 7500Hz
+     * @return hz_7500_field_puretone_right
+     */
+    public JTextField getHz_7500_field_pureTone_right() {
+        return hz_7500_field_pureTone_right;
+    }
+    /**
+     *  Getter for puretone on the right ear at 10,000Hz
+     * @return hz_10000_field_puretone_right
+     */
+    public JTextField getHz_10000_field_pureTone_right() {
+        return hz_10000_field_pureTone_right;
+    }
+    /**
+     *  Getter for puretone on the right ear at 12,000Hz
+     * @return hz_12000_field_puretone_right
+     */
+    public JTextField getHz_12000_field_pureTone_right() {
+        return hz_12000_field_pureTone_right;
+    }
+    //LDL ON THE RIGHT EAR AT HZ
+
+    public void setHz_500_field_ldl_right(JTextField hz_500_field_ldl_right) {
+        this.hz_500_field_ldl_right = hz_500_field_ldl_right;
+    }
+    public void setHz_1000_field_ldl_right(JTextField hz_1000_field_ldl_right) {
+        this.hz_1000_field_ldl_right = hz_1000_field_ldl_right;
+    }
+    public void setHz_2500_field_ldl_right(JTextField hz_2500_field_ldl_right) {
+        this.hz_2500_field_ldl_right = hz_2500_field_ldl_right;
+    }
+    public void setHz_5000_field_ldl_right(JTextField hz_5000_field_ldl_right) {
+        this.hz_5000_field_ldl_right = hz_5000_field_ldl_right;
+    }
+
+    public void setHz_7500_field_ldl_right(JTextField hz_7500_field_ldl_right) {
+        this.hz_7500_field_ldl_right = hz_7500_field_ldl_right;
+    }
+
+    public void setHz_10000_field_ldl_right(JTextField hz_10000_field_ldl_right) {
+        this.hz_10000_field_ldl_right = hz_10000_field_ldl_right;
+    }
+
+    public void setHz_12000_field_ldl_right(JTextField hz_12000_field_ldl_right) {
+        this.hz_12000_field_ldl_right = hz_12000_field_ldl_right;
+    }
+
+    /**
+     *  Getter for ldl on the right ear at 500Hz
+     * @return hz_500_field_ldl_right
+     */
+    public JTextField getHz_500_field_ldl_right() {
+        return hz_500_field_ldl_right;
+    }
+    /**
+     *  Getter for ldl on the right ear at 1000Hz
+     * @return hz_1000_field_ldl_right
+     */
+    public JTextField getHz_1000_field_ldl_right() {
+        return hz_1000_field_ldl_right;
+    }
+    /**
+     *  Getter for ldl on the right ear at 2500Hz
+     * @return hz_2500_field_ldl_right
+     */
+    public JTextField getHz_2500_field_ldl_right() {
+        return hz_2500_field_ldl_right;
+    }
+    /**
+     *  Getter for ldl on the right ear at 5000Hz
+     * @return hz_5000_field_ldl_right
+     */
+    public JTextField getHz_5000_field_ldl_right() {
+        return hz_5000_field_ldl_right;
+    }
+    /**
+     *  Getter for ldl on the right ear at 7500Hz
+     * @return hz_7500_field_ldl_left
+     */
+    public JTextField getHz_7500_field_ldl_right() {
+        return hz_7500_field_ldl_right;
+    }
+    /**
+     *  Getter for ldl on the right ear at 10,000Hz
+     * @return hz_10000_field_ldl_right
+     */
+    public JTextField getHz_10000_field_ldl_right() {
+        return hz_10000_field_ldl_right;
+    }
+    /**
+     *  Getter for ldl on the right ear at 12000Hz
+     * @return hz_12000_field_ldl_right
+     */
+    public JTextField getHz_12000_field_ldl_right() {
+        return hz_12000_field_ldl_right;
+    }
+    //LDL ON THE LEFT EAR
+
+    public void setHz_500_field_ldl_left(JTextField hz_500_field_ldl_left) {
+        this.hz_500_field_ldl_left = hz_500_field_ldl_left;
+    }
+
+    public void setHz_1000_field_ldl_left(JTextField hz_1000_field_ldl_left) {
+        this.hz_1000_field_ldl_left = hz_1000_field_ldl_left;
+    }
+
+    public void setHz_2500_field_ldl_left(JTextField hz_2500_field_ldl_left) {
+        this.hz_2500_field_ldl_left = hz_2500_field_ldl_left;
+    }
+
+    public void setHz_5000_field_ldl_left(JTextField hz_5000_field_ldl_left) {
+        this.hz_5000_field_ldl_left = hz_5000_field_ldl_left;
+    }
+
+    public void setHz_7500_field_ldl_left(JTextField hz_7500_field_ldl_left) {
+        this.hz_7500_field_ldl_left = hz_7500_field_ldl_left;
+    }
+
+    public void setHz_10000_field_ldl_left(JTextField hz_10000_field_ldl_left) {
+        this.hz_10000_field_ldl_left = hz_10000_field_ldl_left;
+    }
+
+    public void setHz_12000_field_ldl_left(JTextField hz_12000_field_ldl_left) {
+        this.hz_12000_field_ldl_left = hz_12000_field_ldl_left;
+    }
+
+    /**
+     *  Getter for ldl on the left ear at 500Hz
+     * @return hz_500_field_ldl_left
+     */
+    public JTextField getHz_500_field_ldl_left() {
+        return hz_500_field_ldl_left;
+    }
+    /**
+     *  Getter for ldl on the left ear at 1000Hz
+     * @return hz_1000_field_ldl_left
+     */
+    public JTextField getHz_1000_field_ldl_left() {
+        return hz_1000_field_ldl_left;
+    }
+    /**
+     *  Getter for ldl on the left ear at 2500Hz
+     * @return hz_2500_field_ldl_left
+     */
+    public JTextField getHz_2500_field_ldl_left() {
+        return hz_2500_field_ldl_left;
+    }
+    /**
+     *  Getter for ldl on the left ear at 5000Hz
+     * @return hz_5000_field_ldl_left
+     */
+    public JTextField getHz_5000_field_ldl_left() {
+        return hz_5000_field_ldl_left;
+    }
+    /**
+     *  Getter for ldl on the left ear at 7500Hz
+     * @return hz_7500_field_ldl_left
+     */
+    public JTextField getHz_7500_field_ldl_left() {
+        return hz_7500_field_ldl_left;
+    }
+    /**
+     *  Getter for ldl on the left ear at 10000Hz
+     * @return hz_10000_field_ldl_left
+     */
+    public JTextField getHz_10000_field_ldl_left() {
+        return hz_10000_field_ldl_left;
+    }
+    /**
+     *  Getter for ldl on the left ear at 12000Hz
+     * @return hz_12000_field_ldl_left
+     */
+    public JTextField getHz_12000_field_ldl_left() {
+        return hz_12000_field_ldl_left;
+    }
+
+    /**
+     * Setter for 
+     * @param matchType_field
+     */
+    public void setMatchType_field(JTextField matchType_field) {
+        this.matchType_field = matchType_field;
+    }
+
+    public void setPitchMatch_field(JTextField pitchMatch_field) {
+        this.pitchMatch_field = pitchMatch_field;
+    }
+
+    public void setMinMaskRight_field(JTextField minMaskRight_field) {
+        this.minMaskRight_field = minMaskRight_field;
+    }
+
+    public void setMinMaskLeft_field(JTextField minMaskLeft_field) {
+        this.minMaskLeft_field = minMaskLeft_field;
+    }
+
+    public void setThresholdRight_field(JTextField thresholdRight_field) {
+        this.thresholdRight_field = thresholdRight_field;
+    }
+
+    public void setThresholdLeft_field(JTextField thresholdLeft_field) {
+        this.thresholdLeft_field = thresholdLeft_field;
+    }
+
+    /**
+     * Getter for the right ear threshold
+     * @return thresholdRight_field
+     */
+    public JTextField getThresholdRight_field() {
+        return thresholdRight_field;
+    }
+    /**
+     * Getter for the left ear threshold
+     * @return thresholdLeft_field
+     */
+    public JTextField getThresholdLeft_field() {
+        return thresholdLeft_field;
+    }
+
+    /**
+     * Getter for the Pitch Match
+     * @return pitchMatch_field
+     */
+    public JTextField getPitchMatch_field() {
+        return pitchMatch_field;
+    }
+
+    /**
+     * Getter for the Match Type
+     * @return matchType_field
+     */
+    public JTextField getMatchType_field() {
+        return matchType_field;
+    }
+
+    /**
+     * Getter for Minimun Masking for the Left Ear
+     * @return minMaskLeft_field
+     */
+    public JTextField getMinMaskLeft_field() {
+        return minMaskLeft_field;
+    }
+
+    /**
+     * Getter for the Minimun Masking for the Right Ear
+     * @return minMaskRight_field
+     */
+    public JTextField getMinMaskRight_field() {
+        return minMaskRight_field;
+    }
+
+    /**
+     * Getter for the Additional Comments
+     * @return additionalComments_area
+     */
+    public JTextArea getAdditionalComments_area() {
+        return additionalComments_area;
+    }
 
     /**
      * Removes the current stage of testing
@@ -332,7 +747,7 @@ public class AudiologyView extends JPanel
     private JTextField minMaskRight_field;
     private JTextField pitchMatch_field;
     private JTextField matchType_field;
-    private JTextArea additionalCommnents_area;
+    private JTextArea additionalComments_area;
 
 
     //Jbuttons based on Audiogram evaluation wireframe
