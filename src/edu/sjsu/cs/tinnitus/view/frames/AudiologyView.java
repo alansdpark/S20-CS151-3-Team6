@@ -205,34 +205,66 @@ public class AudiologyView extends JPanel
     }
     //PURETONE FOR THE LEFT EAR
 
+    /**
+     * Setter for the Left Ear Pure Tone at 250hz
+     * @param hz_250_field_pureTone_left
+     */
     public void setHz_250_field_pureTone_left(JTextField hz_250_field_pureTone_left) {
         this.hz_250_field_pureTone_left = hz_250_field_pureTone_left;
     }
 
+    /**
+     * Setter for the Left Ear Pure Tone at 500hz
+     * @param hz_500_field_pureTone_left
+     */
     public void setHz_500_field_pureTone_left(JTextField hz_500_field_pureTone_left) {
         this.hz_500_field_pureTone_left = hz_500_field_pureTone_left;
     }
 
+    /**
+     * Setter for the Left Ear Pure Tone at 1000hz
+     * @param hz_1000_field_pureTone_left
+     */
     public void setHz_1000_field_pureTone_left(JTextField hz_1000_field_pureTone_left) {
         this.hz_1000_field_pureTone_left = hz_1000_field_pureTone_left;
     }
 
+    /**
+     * Setter for the Left Ear Pure Tone at 2500hz
+     * @param hz_2500_field_pureTone_left
+     */
     public void setHz_2500_field_pureTone_left(JTextField hz_2500_field_pureTone_left) {
         this.hz_2500_field_pureTone_left = hz_2500_field_pureTone_left;
     }
 
+    /**
+     * Setter for the Left Ear Pure Tone at 5000hz
+     * @param hz_5000_field_pureTone_left
+     */
     public void setHz_5000_field_pureTone_left(JTextField hz_5000_field_pureTone_left) {
         this.hz_5000_field_pureTone_left = hz_5000_field_pureTone_left;
     }
 
+    /**
+     * Setter for the Left Ear Pure Tone at 7500hz
+     * @param hz_7500_field_pureTone_left
+     */
     public void setHz_7500_field_pureTone_left(JTextField hz_7500_field_pureTone_left) {
         this.hz_7500_field_pureTone_left = hz_7500_field_pureTone_left;
     }
 
+    /**
+     * Setter for the Left Ear Pure Tone at 10000hz
+     * @param hz_10000_field_pureTone_left
+     */
     public void setHz_10000_field_pureTone_left(JTextField hz_10000_field_pureTone_left) {
         this.hz_10000_field_pureTone_left = hz_10000_field_pureTone_left;
     }
 
+    /**
+     * Setter for the Left Ear Pure Tone at 12000hz
+     * @param hz_12000_field_pureTone_left
+     */
     public void setHz_12000_field_pureTone_left(JTextField hz_12000_field_pureTone_left) {
         this.hz_12000_field_pureTone_left = hz_12000_field_pureTone_left;
     }
@@ -294,34 +326,62 @@ public class AudiologyView extends JPanel
         return hz_12000_field_pureTone_left;
     }
     //PURE TONE ON THE RIGHT EAR AT HZ
+    /**
+     * Setter for the Right Ear Pure Tone at 250hz
+     * @param hz_250_field_pureTone_right
+     */
     public void setHz_250_field_pureTone_right(JTextField hz_250_field_pureTone_right) {
         this.hz_250_field_pureTone_right = hz_250_field_pureTone_right;
     }
-
+    /**
+     * Setter for the Right Ear Pure Tone at 500hz
+     * @param hz_500_field_pureTone_right
+     */
     public void setHz_500_field_pureTone_right(JTextField hz_500_field_pureTone_right) {
         this.hz_500_field_pureTone_right = hz_500_field_pureTone_right;
     }
-
+    /**
+     * Setter for the Right Ear Pure Tone at 1000hz
+     * @param hz_1000_field_pureTone_right
+     */
     public void setHz_1000_field_pureTone_right(JTextField hz_1000_field_pureTone_right) {
         this.hz_1000_field_pureTone_right = hz_1000_field_pureTone_right;
     }
-
+    /**
+     * Setter for the Right Ear Pure Tone at 2500hz
+     * @param hz_2500_field_pureTone_right
+     */
     public void setHz_2500_field_pureTone_right(JTextField hz_2500_field_pureTone_right) {
         this.hz_2500_field_pureTone_right = hz_2500_field_pureTone_right;
     }
-
+    /**
+     * Setter for the Right Ear Pure Tone at 5000hz
+     * @param hz_5000_field_pureTone_right
+     */
     public void setHz_5000_field_pureTone_right(JTextField hz_5000_field_pureTone_right) {
         this.hz_5000_field_pureTone_right = hz_5000_field_pureTone_right;
     }
 
+    /**
+     * Setter for the Right Ear Pure Tone at 7500hz
+     * @param hz_7500_field_pureTone_right
+     */
     public void setHz_7500_field_pureTone_right(JTextField hz_7500_field_pureTone_right) {
         this.hz_7500_field_pureTone_right = hz_7500_field_pureTone_right;
     }
 
+    /**
+     * Setter for the Right Ear Pure Tone at 10,000hz
+     * @param hz_10000_field_pureTone_right
+     */
     public void setHz_10000_field_pureTone_right(JTextField hz_10000_field_pureTone_right) {
         this.hz_10000_field_pureTone_right = hz_10000_field_pureTone_right;
     }
 
+    /**
+     * Setter for the Right Ear Pure Tone at 12,000hz
+     * @param hz_12000_field_pureTone_right
+     */
     public void setHz_12000_field_pureTone_right(JTextField hz_12000_field_pureTone_right) {
         this.hz_12000_field_pureTone_right = hz_12000_field_pureTone_right;
     }
@@ -384,27 +444,52 @@ public class AudiologyView extends JPanel
     }
     //LDL ON THE RIGHT EAR AT HZ
 
+    /**
+     * Setter for the Right LDL Tone at 250hz
+     * @param hz_500_field_ldl_right
+     */
     public void setHz_500_field_ldl_right(JTextField hz_500_field_ldl_right) {
         this.hz_500_field_ldl_right = hz_500_field_ldl_right;
     }
+    /**
+     * Setter for the Right LDL Tone at 1000hz
+     * @param hz_1000_field_ldl_right
+     */
     public void setHz_1000_field_ldl_right(JTextField hz_1000_field_ldl_right) {
         this.hz_1000_field_ldl_right = hz_1000_field_ldl_right;
     }
+    /**
+     * Setter for the Right LDL Tone at 2500hz
+     * @param hz_2500_field_ldl_right
+     */
     public void setHz_2500_field_ldl_right(JTextField hz_2500_field_ldl_right) {
         this.hz_2500_field_ldl_right = hz_2500_field_ldl_right;
     }
+    /**
+     * Setter for the Right LDL Tone at 5000hz
+     * @param hz_5000_field_ldl_right
+     */
     public void setHz_5000_field_ldl_right(JTextField hz_5000_field_ldl_right) {
         this.hz_5000_field_ldl_right = hz_5000_field_ldl_right;
     }
-
+    /**
+     * Setter for the Right LDL Tone at 7500hz
+     * @param hz_7500_field_ldl_right
+     */
     public void setHz_7500_field_ldl_right(JTextField hz_7500_field_ldl_right) {
         this.hz_7500_field_ldl_right = hz_7500_field_ldl_right;
     }
-
+    /**
+     * Setter for the Right LDL Tone at 10,000hz
+     * @param hz_10000_field_ldl_right
+     */
     public void setHz_10000_field_ldl_right(JTextField hz_10000_field_ldl_right) {
         this.hz_10000_field_ldl_right = hz_10000_field_ldl_right;
     }
-
+    /**
+     * Setter for the Right LDL Tone at 12,000hz
+     * @param hz_12000_field_ldl_right
+     */
     public void setHz_12000_field_ldl_right(JTextField hz_12000_field_ldl_right) {
         this.hz_12000_field_ldl_right = hz_12000_field_ldl_right;
     }
@@ -460,30 +545,58 @@ public class AudiologyView extends JPanel
     }
     //LDL ON THE LEFT EAR
 
+    /**
+     * Setter for the Left LDL Tone at 500hz
+     * @param hz_500_field_ldl_left
+     */
     public void setHz_500_field_ldl_left(JTextField hz_500_field_ldl_left) {
         this.hz_500_field_ldl_left = hz_500_field_ldl_left;
     }
 
+    /**
+     * Setter for the Left LDL Tone at 1000hz
+     * @param hz_1000_field_ldl_left
+     */
     public void setHz_1000_field_ldl_left(JTextField hz_1000_field_ldl_left) {
         this.hz_1000_field_ldl_left = hz_1000_field_ldl_left;
     }
 
+    /**
+     * Setter for the Left LDL Tone at 2500hz
+     * @param hz_2500_field_ldl_left
+     */
     public void setHz_2500_field_ldl_left(JTextField hz_2500_field_ldl_left) {
         this.hz_2500_field_ldl_left = hz_2500_field_ldl_left;
     }
 
+    /**
+     * Setter for the Left LDL Tone at 5000hz
+     * @param hz_5000_field_ldl_left
+     */
     public void setHz_5000_field_ldl_left(JTextField hz_5000_field_ldl_left) {
         this.hz_5000_field_ldl_left = hz_5000_field_ldl_left;
     }
 
+    /**
+     * Setter for the Left LDL Tone at 7500hz
+     * @param hz_7500_field_ldl_left
+     */
     public void setHz_7500_field_ldl_left(JTextField hz_7500_field_ldl_left) {
         this.hz_7500_field_ldl_left = hz_7500_field_ldl_left;
     }
 
+    /**
+     * Setter for the Left LDL Tone at 10,000hz
+     * @param hz_10000_field_ldl_left
+     */
     public void setHz_10000_field_ldl_left(JTextField hz_10000_field_ldl_left) {
         this.hz_10000_field_ldl_left = hz_10000_field_ldl_left;
     }
 
+    /**
+     * Setter for the Left LDL Tone at 12,000hz
+     * @param hz_12000_field_ldl_left
+     */
     public void setHz_12000_field_ldl_left(JTextField hz_12000_field_ldl_left) {
         this.hz_12000_field_ldl_left = hz_12000_field_ldl_left;
     }
@@ -539,29 +652,49 @@ public class AudiologyView extends JPanel
     }
 
     /**
-     * Setter for 
+     * Setter for Match Type
      * @param matchType_field
      */
     public void setMatchType_field(JTextField matchType_field) {
         this.matchType_field = matchType_field;
     }
 
+    /**
+     * Setter for Pitch Match
+     * @param pitchMatch_field
+     */
     public void setPitchMatch_field(JTextField pitchMatch_field) {
         this.pitchMatch_field = pitchMatch_field;
     }
 
+    /**
+     * Setter for Right Ear Minimum Masking Level
+     * @param minMaskRight_field
+     */
     public void setMinMaskRight_field(JTextField minMaskRight_field) {
         this.minMaskRight_field = minMaskRight_field;
     }
 
+    /**
+     * Setter for Left Ear Minimum Masking Level
+     * @param minMaskLeft_field
+     */
     public void setMinMaskLeft_field(JTextField minMaskLeft_field) {
         this.minMaskLeft_field = minMaskLeft_field;
     }
 
+    /**
+     * Setter for Right Ear Threshold
+     * @param thresholdRight_field
+     */
     public void setThresholdRight_field(JTextField thresholdRight_field) {
         this.thresholdRight_field = thresholdRight_field;
     }
 
+    /**
+     * Setter for Left Ear Threshold
+     * @param thresholdLeft_field
+     */
     public void setThresholdLeft_field(JTextField thresholdLeft_field) {
         this.thresholdLeft_field = thresholdLeft_field;
     }
