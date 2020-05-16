@@ -72,6 +72,9 @@ public class PatientListView {
         this.panel = panel;
     }
 
+    /**
+     *
+     */
     private void initComponents(){
         panel = new JPanel();
         patientTable = new JTable();
@@ -79,6 +82,9 @@ public class PatientListView {
         scrollPane = new JScrollPane(patientTable);
     }
 
+    /**
+     *
+     */
     private void addComponents(){
         //panel.add(scrollPane);
         //panel.add(saveButton);

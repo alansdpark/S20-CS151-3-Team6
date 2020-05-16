@@ -30,6 +30,9 @@ public class RegisterPatientController implements Controller {
         clinicController.setHeaderContent("Register Patient");
     }
 
+    /**
+     * Sets the action listeners to the buttons in RegisterPatientView
+     */
     @Override
     public void initController() {
         view.getSaveButton().addActionListener(e ->{

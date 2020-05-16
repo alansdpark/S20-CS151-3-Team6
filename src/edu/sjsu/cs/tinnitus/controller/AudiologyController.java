@@ -32,7 +32,7 @@ public class AudiologyController implements Controller
      */
     public AudiologyController(AudiologyView audiologyView, Visit visit, ClinicalController clinicalController)
     {
-        this.audiology = new Audiology();
+        this.audiology = visit.getAudiology();
         this.audiologyView = audiologyView;
         this.clinicalController = clinicalController;
         this.patient = null;
@@ -49,6 +49,18 @@ public class AudiologyController implements Controller
                 audiologyView.moveUpStage();
         });
         audiologyView.getSaveButton().addActionListener(e -> {
+            updateAudiology();
+            if(visit == null){
+                returnToPatient();
+            }
+            else{
+                returnToVisit();
+            }
+        });
+        audiologyView.getBackButton().addActionListener(e -> {
+            audiologyView.moveDownStage();
+        });
+        audiologyView.getCancelButton().addActionListener(e -> {
             if(visit == null){
                 returnToPatient();
             }
@@ -60,7 +72,7 @@ public class AudiologyController implements Controller
     }
 
     /**
-     *
+     * Loads pre-existing audiology data into audiologyView
      */
     public loadAudiology() {
         double[] pureToneLeft = audiology.getPureToneLeft();
@@ -115,7 +127,6 @@ public class AudiologyController implements Controller
      * Switches Control to VisitController
      */
     public void returnToVisit(){
-        updateAudiology();
         JFrame frame = clinicController.getFrame();
         frame.remove(audiologyView);
         VisitView view = new VisitView();
@@ -128,7 +139,6 @@ public class AudiologyController implements Controller
      * Switches control to PatientController
      */
     public void returnToPatient(){
-        updateAudiology();
         JFrame frame = clinicController.getFrame();
         frame.remove(audiologyView);
         PatientView view = new PatientView();

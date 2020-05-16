@@ -30,6 +30,9 @@ public class LogInController implements Controller {
         clinicController.setHeaderContent("Log In");
     }
 
+    /**
+     * Sets Action Listeners in the LogInView
+     */
     @Override
     public void initController() {
         logInView.getSaveButton().addActionListener(e -> {

@@ -82,6 +82,9 @@ public class NavigationController implements Controller
         clinicController.getFrame().dispose();
     }
 
+    /**
+     * Sets the action listeners in the NavigationView
+     */
     @Override
     public void initController() {
         navigationView.getExit().addActionListener(e ->{

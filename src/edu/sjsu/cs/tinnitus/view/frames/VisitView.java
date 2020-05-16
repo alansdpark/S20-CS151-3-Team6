@@ -146,6 +146,9 @@ public class VisitView {
         saveButton = new JButton("Save");
     }
 
+    /**
+     * Adds all the required components to the panel
+     */
     private void addComponents(){
         panel.add(questionarreButton);
         panel.add(audiologicalEvaluationButton);

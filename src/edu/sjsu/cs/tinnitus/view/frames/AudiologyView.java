@@ -23,12 +23,14 @@ public class AudiologyView extends JPanel
         add(comments, BorderLayout.EAST);
         additionalComments = new JTextArea();
         add(additionalComments_area, BorderLayour.EAST);
-        saveButton = new JButton();
-        saveButton.setText("Save");
+        saveButton = new JButton("Save");
         add(saveButton, BorderLayout.EAST);
-        nextButton = new JButton();
-        nextButton.setText("Next");
+        nextButton = new JButton("Next");
         add(nextButton, BorderLayout.EAST);
+        backButton = new JButton("Back");
+        add(backButton, BorderLayout.EAST);
+        cancelButton = new JButton("Cancel");
+        add(cancelButton, BorderLayout.EAST);
 
         //WEST
         //Stages
@@ -190,7 +192,7 @@ public class AudiologyView extends JPanel
 
     /**
      * Getter for Next JButton
-     * @return nextButton
+     * @return nextButton - JButton
      */
     public JButton getNextButton() {
         return nextButton;
@@ -198,10 +200,26 @@ public class AudiologyView extends JPanel
 
     /**
      * Getter for Save JButton
-     * @return saveButton
+     * @return saveButton - JButton
      */
     public JButton getSaveButton() {
         return saveButton;
+    }
+
+    /**
+     * Getter for the Back Button
+     * @return backButton - JButton
+     */
+    public JButton getBackButton() {
+        return backButton;
+    }
+
+    /**
+     * Getter for the Cancel Button
+     * @return cancelButton - JButton
+     */
+    public JButton getCancelButton() {
+        return cancelButton;
     }
     //PURETONE FOR THE LEFT EAR
 
@@ -886,6 +904,8 @@ public class AudiologyView extends JPanel
     //Jbuttons based on Audiogram evaluation wireframe
     private JButton saveButton;
     private JButton nextButton;
+    private JButton backButton;
+    private JButton cancelButton;
 
 
 

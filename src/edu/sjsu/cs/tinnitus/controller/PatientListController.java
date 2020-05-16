@@ -29,6 +29,9 @@ public class PatientListController implements Controller {
 
     }
 
+    /**
+     * Sets the actionListeners in patientListView
+     */
     @Override
     public void initController() {
 
@@ -90,6 +93,7 @@ public class PatientListController implements Controller {
         JTable table = new JTable(data, columnNames);
         patientListView.setPatientTable(table);
         JScrollPane scrollPane = new JScrollPane(table);
+        table.setFillsViewportHeight(true);
         patientListView.setScrollPane(scrollPane);
         clinicController.getFrame().validate();
         clinicController.getFrame().repaint();
