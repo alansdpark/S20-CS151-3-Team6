@@ -1,6 +1,5 @@
 package edu.sjsu.cs.tinnitus.view.frames;
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 /**
@@ -24,13 +23,13 @@ public class MedicalHistoryView extends JPanel
      */
     public void setScrollPane(JScrollPane scrollPane) {
         // TODO see if moving the buttons around can be removed
-       // panel.remove(this.scrollPane);
-        //panel.remove(saveButton);
-        //panel.remove(addMedication);
+        panel.remove(this.scrollPane);
+        panel.remove(saveButton);
+        panel.remove(addMedication);
         this.scrollPane = scrollPane;
-        panel.add(scrollPane, BorderLayout.CENTER);
-        //panel.add(addMedication, BorderLayout.SOUTH);
-        //panel.add(saveButton, BorderLayout.SOUTH);
+        panel.add(scrollPane);
+        panel.add(addMedication);
+        panel.add(saveButton);
     }
 
 
@@ -162,47 +161,26 @@ public class MedicalHistoryView extends JPanel
 
     private void initComponents(){
         panel = new JPanel();
-        medicalHistory = new JLabel("Medical History Description", SwingConstants.LEFT);
-        currentMedication = new JLabel(" Current Medication", SwingConstants.LEFT);
+        medicalHistory = new JLabel("Medical History", SwingConstants.RIGHT);
+        currentMedication = new JLabel(" Current Medication", SwingConstants.RIGHT);
 
         medicationTable = new JTable();
         medicalHistoryArea = new JTextArea();
-        medicalHistoryArea.setRows(10);
 
         addMedication = new JButton("Add New Medication");
         saveButton = new JButton("Save");
     }
 
     private void addComponents(){
-
-        panel.setLayout(new BorderLayout());
-        JPanel historyPanel = new JPanel(new BorderLayout());
-        historyPanel.add(medicalHistory, BorderLayout.NORTH);
-        historyPanel.add(medicalHistoryArea, BorderLayout.CENTER);
-        historyPanel.add(currentMedication, BorderLayout.SOUTH);
-        panel.add(historyPanel, BorderLayout.NORTH);
-
-        scrollPane = new JScrollPane(medicationTable);
-        panel.add(scrollPane, BorderLayout.CENTER);
-
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.add(addMedication);
-        buttonPanel.add(saveButton);
-        panel.add(buttonPanel, BorderLayout.SOUTH);
-
-
-        /**
+        panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
+       // panel.setLayout(new GridLayout(0,1,10,10));
         panel.add(medicalHistory);
         panel.add(medicalHistoryArea);
-
         panel.add(currentMedication);
         scrollPane = new JScrollPane(medicationTable);
         panel.add(scrollPane);
-
         panel.add(addMedication);
         panel.add(saveButton);
-         */
-
     }
 
     private JLabel medicalHistory;
