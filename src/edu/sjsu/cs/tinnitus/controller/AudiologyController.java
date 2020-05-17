@@ -14,11 +14,11 @@ public class AudiologyController implements Controller
      * @param patient
      * @param clinicalController
      */
-    public AudiologyController(AudiologyView audiologyView, Patient patient, ClinicalController clinicalController)
+    public AudiologyController(AudiologyView audiologyView, Patient patient, ClinicController clinicController)
     {
         this.audiology = patient.getAudiology();
         this.audiologyView = audiologyView;
-        this.clinicalController = clinicalController;
+        this.clinicController = clinicController;
         this.patient = patient;
         this.visit = null;
         loadAudiology();
@@ -30,18 +30,18 @@ public class AudiologyController implements Controller
      * @param visit
      * @param clinicalController
      */
-    public AudiologyController(AudiologyView audiologyView, Visit visit, ClinicalController clinicalController)
+    public AudiologyController(AudiologyView audiologyView, Visit visit, ClinicController clinicController)
     {
         this.audiology = visit.getAudiology();
         this.audiologyView = audiologyView;
-        this.clinicalController = clinicalController;
+        this.clinicController = clinicController;
         this.patient = null;
         this.visit = visit;
         initController();
     }
 
     /**
-     *
+     *Adds action listeners to the AudiologyView
      */
     @Override
     public void initController() {
@@ -74,7 +74,7 @@ public class AudiologyController implements Controller
     /**
      * Loads pre-existing audiology data into audiologyView
      */
-    public loadAudiology() {
+    public void loadAudiology() {
         double[] pureToneLeft = audiology.getPureToneLeft();
         double[] pureToneRight = audiology.getPureToneRight();
         double[] ldlLeft = audiology.getLdlLeft();
@@ -197,7 +197,7 @@ public class AudiologyController implements Controller
         audiology.setComments(audiologyView.getAdditionalCommnents_area().getText());
     }
 
-    private ClinicalController clinicalController;
+    private ClinicController clinicController;
     private Patient patient;
     private Visit visit;
     private Audiology audiology;
