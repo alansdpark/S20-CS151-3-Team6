@@ -259,6 +259,9 @@ public class PatientController implements Controller
         clinicController.getFrame().repaint();
     }
 
+    /**
+     * Sets the action listeners in the PatientView
+     */
     @Override
     public void initController() {
         patientView.getSaveButton().addActionListener(e ->{

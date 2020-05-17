@@ -668,6 +668,9 @@ public class RegisterPatientView extends JPanel
         this.backButton = backButton;
     }
 
+    /**
+     * Initializes the Components
+     */
     private void initComponents(){
         panel = new JPanel();
 
@@ -710,6 +713,9 @@ public class RegisterPatientView extends JPanel
         backButton = new JButton("Back");
     }
 
+    /**
+     * Adds the components to the infoPanel
+     */
     private void addComponents(){
 
         JPanel infoPanel = new JPanel();

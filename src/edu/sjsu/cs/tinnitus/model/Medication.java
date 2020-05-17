@@ -12,7 +12,14 @@ public class Medication implements Serializable {
      * Sets all values to 0 or ""
      */
     public Medication(){
-
+        name = "";
+        dose = 0;
+        duration = 0;
+        chemicalCategory = "";
+        action = "";
+        application = "";
+        usualDose = 0;
+        inducesTinnitus = false;
     }
 
     /**

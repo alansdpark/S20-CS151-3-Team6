@@ -48,6 +48,12 @@ public class PatientTable implements Serializable
         patients.add(patient);
     }
 
+    /**
+     *  Finds a patient based ont their patientID
+     * @param patientId
+     * @return patient - if patient with matching ID is found
+     * @return null - if no patient with matching ID is found
+     */
     public Patient findPatient(int patientId){
         for(Patient patient: patients){
             if(patient.getPatientId() == patientId){
@@ -57,6 +63,10 @@ public class PatientTable implements Serializable
         return null;
     }
 
+    /**
+     *  Getter for the highest patient ID value in the patients arraylist
+     * @return max - int
+     */
     public int getHighestId(){
         int max = -1;
         for(Patient patient: patients){

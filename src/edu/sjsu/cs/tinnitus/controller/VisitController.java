@@ -46,8 +46,18 @@ public class VisitController implements Controller
         frame.repaint();
     }
 
+    /**
+     * Switches control to audiologyController
+     */
     public void editAudiologicalEvaluation(){
         //TODO
+        JFrame frame = clinicController.getFrame();
+        frame.remove(visitView.getPanel());
+        AudiologyView audiologyView = new AudiologyView();
+        AudiologyController audiologyController = new AudiologyController();
+        frame.add(audiologyView, BorderLayout.CENTER);
+        frame.validate();
+        frame.repaint();
     }
 
     /**
@@ -78,6 +88,9 @@ public class VisitController implements Controller
         AlertBox alertBox = new AlertBox(errMsgs);
     }
 
+    /**
+     * Sets the action listeners for the buttons in the VisitView
+     */
     @Override
     public void initController() {
         visitView.getSaveButton().addActionListener(e ->{

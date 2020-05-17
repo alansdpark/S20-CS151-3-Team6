@@ -52,6 +52,9 @@ public class MedicalHistoryController implements Controller {
         clinicController.setHeaderContent("Medical History");
     }
 
+    /**
+     * Sets ActionListeners in MedicalHistoryView
+     */
     @Override
     public void initController() {
         medicalHistoryView.getSaveButton().addActionListener(e-> {
