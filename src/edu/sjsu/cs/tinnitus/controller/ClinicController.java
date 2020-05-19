@@ -17,6 +17,7 @@ public class ClinicController {
         patientTable = new PatientTable();
         getAllData();
         frame = new JFrame();
+        frame.setMinimumSize(new Dimension(800, 600));
         createHeader();
         NavigationView view = new NavigationView();
         NavigationController controller = new NavigationController(view, this);
