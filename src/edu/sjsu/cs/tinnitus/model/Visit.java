@@ -22,6 +22,7 @@ public class Visit implements Serializable {
     public Visit(Patient patient, String date) {
         this.patient = patient;
         this.date = date;
+        audiology = new Audiology();
     }
 
     /**

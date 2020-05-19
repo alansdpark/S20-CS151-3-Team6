@@ -1,14 +1,13 @@
 package edu.sjsu.cs.tinnitus.controller;
 
-import edu.sjsu.cs.tinnitus.model.PatientTable;
 import edu.sjsu.cs.tinnitus.model.Visit;
+import edu.sjsu.cs.tinnitus.view.frames.AudiologyView;
 import edu.sjsu.cs.tinnitus.view.frames.MedicalHistoryView;
 import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
 import edu.sjsu.cs.tinnitus.view.frames.VisitView;
 import edu.sjsu.cs.tinnitus.view.frames.util.AlertBox;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -54,8 +53,9 @@ public class VisitController implements Controller
         JFrame frame = clinicController.getFrame();
         frame.remove(visitView.getPanel());
         AudiologyView audiologyView = new AudiologyView();
-        AudiologyController audiologyController = new AudiologyController();
-        frame.add(audiologyView, BorderLayout.CENTER);
+        AudiologyController audiologyController =
+                new AudiologyController(audiologyView, visit, clinicController);
+        frame.add(audiologyView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
     }
