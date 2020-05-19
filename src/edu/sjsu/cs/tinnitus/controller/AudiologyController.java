@@ -4,6 +4,7 @@ import edu.sjsu.cs.tinnitus.controller.Controller;
 import edu.sjsu.cs.tinnitus.model.Audiology;
 import edu.sjsu.cs.tinnitus.model.Patient;
 import edu.sjsu.cs.tinnitus.model.Visit;
+import edu.sjsu.cs.tinnitus.view.frames.AudiologyGraphView;
 import edu.sjsu.cs.tinnitus.view.frames.AudiologyView;
 import edu.sjsu.cs.tinnitus.view.frames.PatientView;
 import edu.sjsu.cs.tinnitus.view.frames.VisitView;
@@ -31,6 +32,7 @@ public class AudiologyController implements Controller
         this.visit = visit;
         loadAudiology();
         initController();
+        clinicController.setHeaderContent("Audiology");
     }
 
     /**
@@ -62,7 +64,14 @@ public class AudiologyController implements Controller
     }
 
     public void goToGraph(){
-
+        JFrame frame = clinicController.getFrame();
+        frame.remove(audiologyView.getPanel());
+        AudiologyGraphView view = new AudiologyGraphView();
+        AudiologyGraphController audiologyGraphController =
+                new AudiologyGraphController(audiology, visit, view, clinicController);
+        frame.add(view.getPanel(), BorderLayout.CENTER);
+        frame.validate();
+        frame.repaint();
     }
 
     /**
