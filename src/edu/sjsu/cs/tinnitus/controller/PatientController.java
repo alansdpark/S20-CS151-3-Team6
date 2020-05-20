@@ -60,7 +60,7 @@ public class PatientController implements Controller
         savePatientInfo();
         frame.remove(patientView.getPanel());
         LogInView logInView = new LogInView();
-        LogInController logInController = new LogInController(logInView, clinicController);
+        LogInController logInController = new LogInController(logInView, patient, clinicController);
         frame.add(logInView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
