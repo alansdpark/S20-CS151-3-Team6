@@ -73,10 +73,13 @@ public class OverallTest
 		
 	}
 	
+	/**
+	 * Checks whether Clinic Controller is visible.
+	 */
 	@Test
 	public void testClinicController()
 	{
-		
+		assert(cc.getFrame().isVisible() == true);
 	}
 	
 	@Test
