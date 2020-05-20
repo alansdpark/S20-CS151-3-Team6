@@ -864,7 +864,7 @@ public class PatientView extends JPanel {
         firstNameLabel = new JLabel("First Name", SwingConstants.RIGHT);
         lastNameLabel = new JLabel("Last Name", SwingConstants.RIGHT);
         address1Label = new JLabel("Address 1", SwingConstants.RIGHT);
-        address2Label = new JLabel("Address 2", SwingConstants.RIGHT);
+        address2Label = new JLabel("Address 2*", SwingConstants.RIGHT);
         cityLabel = new JLabel("City", SwingConstants.RIGHT);
         stateLabel = new JLabel("State", SwingConstants.RIGHT);
         zipCodeLabel = new JLabel("Zip Code", SwingConstants.RIGHT);

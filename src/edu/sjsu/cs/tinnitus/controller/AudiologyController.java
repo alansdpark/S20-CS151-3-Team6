@@ -105,21 +105,21 @@ public class AudiologyController implements Controller
         audiologyView.getHz_12000_field_pureTone_right().setText((Double.toString(pureToneRight[7])));
         //ldl left
 
-        audiologyView.setHz_500_field_ldl_left(new JTextField(Double.toString(ldlLeft[0])));
-        audiologyView.setHz_1000_field_ldl_left(new JTextField(Double.toString(ldlLeft[1])));
-        audiologyView.setHz_2500_field_ldl_left(new JTextField(Double.toString(ldlLeft[2])));
-        audiologyView.setHz_5000_field_ldl_left(new JTextField(Double.toString(ldlLeft[3])));
-        audiologyView.setHz_7500_field_ldl_left(new JTextField(Double.toString(ldlLeft[4])));
-        audiologyView.setHz_10000_field_ldl_left(new JTextField(Double.toString(ldlLeft[5])));
-        audiologyView.setHz_12000_field_ldl_left(new JTextField(Double.toString(ldlLeft[6])));
+        audiologyView.getHz_500_field_ldl_left().setText(Double.toString(ldlLeft[0]));
+        audiologyView.getHz_1000_field_ldl_left().setText(Double.toString(ldlLeft[1]));
+        audiologyView.getHz_2500_field_ldl_left().setText(Double.toString(ldlLeft[2]));
+        audiologyView.getHz_5000_field_ldl_left().setText(Double.toString(ldlLeft[3]));
+        audiologyView.getHz_7500_field_ldl_left().setText(Double.toString(ldlLeft[4]));
+        audiologyView.getHz_10000_field_ldl_left().setText(Double.toString(ldlLeft[5]));
+        audiologyView.getHz_12000_field_ldl_left().setText(Double.toString(ldlLeft[6]));
         //ldl right
-        audiologyView.setHz_500_field_ldl_right(new JTextField(Double.toString(ldlRight[0])));
-        audiologyView.setHz_1000_field_ldl_right(new JTextField(Double.toString(ldlRight[1])));
-        audiologyView.setHz_2500_field_ldl_right(new JTextField(Double.toString(ldlRight[2])));
-        audiologyView.setHz_5000_field_ldl_right(new JTextField(Double.toString(ldlRight[3])));
-        audiologyView.setHz_7500_field_ldl_right(new JTextField(Double.toString(ldlRight[4])));
-        audiologyView.setHz_10000_field_ldl_right(new JTextField(Double.toString(ldlRight[5])));
-        audiologyView.setHz_12000_field_ldl_right(new JTextField(Double.toString(ldlRight[6])));
+        audiologyView.getHz_500_field_ldl_right().setText(Double.toString(ldlRight[0]));
+        audiologyView.getHz_1000_field_ldl_right().setText(Double.toString(ldlRight[1]));
+        audiologyView.getHz_2500_field_ldl_right().setText(Double.toString(ldlRight[2]));
+        audiologyView.getHz_5000_field_ldl_right().setText(Double.toString(ldlRight[3]));
+        audiologyView.getHz_7500_field_ldl_right().setText(Double.toString(ldlRight[4]));
+        audiologyView.getHz_10000_field_ldl_right().setText(Double.toString(ldlRight[5]));
+        audiologyView.getHz_12000_field_ldl_right().setText(Double.toString(ldlRight[6]));
 
         //misc
         audiologyView.getThresholdLeft_field().setText((Double.toString(audiology.getThresholdLeft())));

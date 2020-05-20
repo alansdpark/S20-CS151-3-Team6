@@ -68,7 +68,7 @@ public class MedicalHistoryController implements Controller {
         medicalHistoryView.getAddMedication().addActionListener(e->{
             addMedication();
         });
-        
+
     }
 
     /**
