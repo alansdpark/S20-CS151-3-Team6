@@ -5,11 +5,15 @@ import edu.sjsu.cs.tinnitus.view.frames.PatientListView;
 import edu.sjsu.cs.tinnitus.view.frames.RegisterPatientView;
 
 import javax.swing.*;
+
+import org.junit.Test;
+
 import java.awt.*;
 
 public class PatientListTesting {
 
-    public static void main(String[] args){
+	@Test
+    public void patientListTest(){
         PatientListView view = new PatientListView();
         JFrame frame = new JFrame();
         frame.add(view.getPanel());

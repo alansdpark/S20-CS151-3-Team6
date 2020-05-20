@@ -5,21 +5,19 @@ import edu.sjsu.cs.tinnitus.controller.NavigationController;
 import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
 
 import javax.swing.*;
+
+import org.junit.Test;
+
 import java.awt.*;
 
 public class NavigationTesting {
 
-    public static void main(String[] args){
-        /**
-        JFrame frame = new JFrame();
-        NavigationView view = new NavigationView();
-        NavigationController controller = new NavigationController(view, clinicController);
-        frame.add(view.getPanel());
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
-        frame.setVisible(true);
-         */
+	/**
+	 * Opens up the clinic client, first screen is the navigation menu.
+	 */
+	@Test
+    public void navigationTest(){
         ClinicController clinic = new ClinicController();
+        System.out.println();
     }
 }

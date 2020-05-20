@@ -4,11 +4,15 @@ import edu.sjsu.cs.tinnitus.view.frames.MedicalHistoryView;
 import edu.sjsu.cs.tinnitus.view.frames.RegisterPatientView;
 
 import javax.swing.*;
+
+import org.junit.Test;
+
 import java.awt.*;
 
 public class MedicalHistoryTesting {
 
-    public static void main(String[] args){
+	@Test
+    public void MedicalHistoryTest(){
         MedicalHistoryView view = new MedicalHistoryView();
         JFrame frame = new JFrame();
         frame.add(view.getPanel());

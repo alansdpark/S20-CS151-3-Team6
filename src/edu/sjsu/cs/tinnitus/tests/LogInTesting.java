@@ -5,11 +5,15 @@ import edu.sjsu.cs.tinnitus.view.frames.LogInView;
 import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
 
 import javax.swing.*;
+
+import org.junit.Test;
+
 import java.awt.*;
 
 public class LogInTesting {
 
-    public static void main(String[] args){
+	@Test
+    public void loginTest(){
         JFrame frame = new JFrame();
         LogInView view = new LogInView();
         frame.add(view.getPanel());

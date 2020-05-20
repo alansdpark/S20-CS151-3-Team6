@@ -5,12 +5,14 @@ import edu.sjsu.cs.tinnitus.view.frames.AudiologyView;
 
 import javax.swing.*;
 
+import org.junit.Test;
+
 public class AudiologyTesting {
 
-    public static void main(String[] args){
+	@Test
+    public void AudiologyTest(){
         JFrame frame = new JFrame();
         AudiologyView av = new AudiologyView();
-       // AudiologyController ac = new AudiologyController(av, )
         frame.add(av.getPanel());
         frame.pack();
         frame.setVisible(true);

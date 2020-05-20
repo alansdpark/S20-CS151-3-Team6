@@ -80,8 +80,8 @@ public class AudiologyController implements Controller
     public void loadAudiology() {
         double[] pureToneLeft = audiology.getPureToneLeft();
         double[] pureToneRight = audiology.getPureToneRight();
-        double[] ldlLeft = audiology.getLdlLeft();
-        double[] ldlRight = audiology.getLdlRight();
+       // double[] ldlLeft = audiology.getLdlLeft();
+        //double[] ldlRight = audiology.getLdlRight();
         //pure tone left
         audiologyView.getHz_250_field_pureTone_left().setText((Double.toString(pureToneLeft[0])));
         audiologyView.getHz_500_field_pureTone_left().setText((Double.toString(pureToneLeft[1])));
@@ -101,6 +101,7 @@ public class AudiologyController implements Controller
         audiologyView.getHz_10000_field_pureTone_right().setText((Double.toString(pureToneRight[6])));
         audiologyView.getHz_12000_field_pureTone_right().setText((Double.toString(pureToneRight[7])));
         //ldl left
+        /**
         audiologyView.setHz_500_field_ldl_left(new JTextField(Double.toString(ldlLeft[0])));
         audiologyView.setHz_1000_field_ldl_left(new JTextField(Double.toString(ldlLeft[1])));
         audiologyView.setHz_2500_field_ldl_left(new JTextField(Double.toString(ldlLeft[2])));
@@ -150,6 +151,7 @@ public class AudiologyController implements Controller
                     Double.parseDouble(audiologyView.getHz_10000_field_pureTone_right().getText()),
                     Double.parseDouble(audiologyView.getHz_12000_field_pureTone_right().getText())
             }; // 250, 500, 1000, 2500, 5000, 7500, 10000, 12000
+            /**
             double[] ldlLeft = {Double.parseDouble(audiologyView.getHz_500_field_ldl_left().getText()),
                     Double.parseDouble(audiologyView.getHz_1000_field_ldl_left().getText()),
                     Double.parseDouble(audiologyView.getHz_2500_field_ldl_left().getText()),
@@ -166,11 +168,11 @@ public class AudiologyController implements Controller
                     Double.parseDouble(audiologyView.getHz_10000_field_ldl_right().getText()),
                     Double.parseDouble(audiologyView.getHz_12000_field_ldl_right().getText())
             }; // 500, 1000, 2500, 5000, 7500, 10000, 12000
-
+             */
             audiology.setPureToneLeft(pureToneLeft);
             audiology.setPureToneRight(pureToneRight);
-            audiology.setLdlLeft(ldlLeft);
-            audiology.setLdlRight(ldlRight);
+            //audiology.setLdlLeft(ldlLeft);
+            //audiology.setLdlRight(ldlRight);
             audiology.setThresholdLeft(Double.parseDouble(audiologyView.getThresholdLeft_field().getText()));
             audiology.setThresholdRight(Double.parseDouble(audiologyView.getThresholdRight_field().getText()));
             audiology.setMinMaskLeft(Double.parseDouble(audiologyView.getMinMaskLeft_field().getText()));

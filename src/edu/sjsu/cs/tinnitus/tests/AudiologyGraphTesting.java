@@ -3,13 +3,16 @@ package edu.sjsu.cs.tinnitus.tests;
 import edu.sjsu.cs.tinnitus.view.frames.AudiologyGraph;
 
 import javax.swing.*;
+
+import org.junit.Test;
+
 import java.awt.*;
 import java.util.ArrayList;
 
 public class AudiologyGraphTesting {
 
-
-    public static void main(String[] args){
+	@Test
+    public void testAudiologyGraph(){
 
         double[] db = {40, 20, 12, 32, 50 , 20, 80, 9};
         ArrayList<Point> pointList = new ArrayList<>();
@@ -45,9 +48,5 @@ public class AudiologyGraphTesting {
         frame.validate();
         frame.repaint();
         frame.setVisible(true);
-
-
-
     }
-
 }
