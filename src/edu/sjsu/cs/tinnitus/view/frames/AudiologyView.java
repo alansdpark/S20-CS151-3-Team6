@@ -8,6 +8,9 @@ import java.awt.*;
  */
 public class AudiologyView
 {
+	/**
+	 * Constructor
+	 */
     public AudiologyView()
     {
 
@@ -195,6 +198,9 @@ public class AudiologyView
          */
     }
 
+    /**
+     * Initiates components onto JPanel view.
+     */
     public void initComponents(){
         //EAST
         panel = new JPanel();

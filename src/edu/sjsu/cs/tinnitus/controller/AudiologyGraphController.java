@@ -35,6 +35,9 @@ public class AudiologyGraphController implements Controller {
         clinicController.setHeaderContent("Audiology Graph");
     }
 
+    /**
+     * Initiates this controller.
+     */
     @Override
     public void initController() {
         audiologyGraphView.getBackButton().addActionListener(e -> {
@@ -42,6 +45,10 @@ public class AudiologyGraphController implements Controller {
         });
     }
 
+    /**
+     * Adds data to the audiology graph.
+     * Includes left and right ears.
+     */
     public void addData(){
         ArrayList<Point> left = createArrayList(audiology.getPureToneLeft());
         ArrayList<Point> right = createArrayList(audiology.getPureToneRight());
@@ -49,6 +56,11 @@ public class AudiologyGraphController implements Controller {
         audiologyGraphView.getAudiologyGraph().setRightEar(right);
     }
 
+    /**
+     * Creates graph points.
+     * @param arr
+     * @return
+     */
     public ArrayList<Point> createArrayList(double[] arr){
         ArrayList<Point> pointList = new ArrayList<>();
         pointList.add(new Point(250, (int)arr[0]));
@@ -63,6 +75,9 @@ public class AudiologyGraphController implements Controller {
         return pointList;
     }
 
+    /**
+     * Changes panel to Audiology View.
+     */
     public void goToAudiology(){
         JFrame frame = clinicController.getFrame();
         frame.remove(audiologyGraphView.getPanel());

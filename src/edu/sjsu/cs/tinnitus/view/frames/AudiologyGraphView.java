@@ -5,9 +5,14 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * View for Audiology Graph.
+ */
 public class AudiologyGraphView {
 
-
+	/**
+	 * Constructor
+	 */
     public AudiologyGraphView() {
         initComponents();
         addComponents();
@@ -15,6 +20,9 @@ public class AudiologyGraphView {
 
     }
 
+    /**
+     * Initiates all part of this JPanel.
+     */
     public void initComponents(){
         panel = new JPanel(new BorderLayout());
         audiologyGraph = new AudiologyGraph();
@@ -28,6 +36,9 @@ public class AudiologyGraphView {
 
     }
 
+    /**
+     * Adds all J components to view panel.
+     */
     public void addComponents(){
         panel.add(audiologyGraph, BorderLayout.CENTER);
         key.add(rightLabel);

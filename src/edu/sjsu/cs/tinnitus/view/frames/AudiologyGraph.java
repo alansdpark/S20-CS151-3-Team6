@@ -6,8 +6,14 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Audiology graph.
+ */
 public class AudiologyGraph extends JPanel {
 
+	/**
+	 * Audiology Graph Controller
+	 */
     public void AudiologyGraph(){
         backButton = new JButton("Back");
         leftEar = new ArrayList<>();
