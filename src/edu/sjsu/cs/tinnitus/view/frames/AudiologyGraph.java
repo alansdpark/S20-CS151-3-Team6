@@ -84,13 +84,8 @@ public class AudiologyGraph extends JPanel {
         rightEar = convertArrayScale(rightEar);
 
         super.paintComponent(g);
-        realWidth = getWidth();
-        realHeight = getHeight();
         Graphics2D g2 = (Graphics2D)g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-        //double xScale = ((double) getWidth() - 2 * BORDER_GAP) / (leftEar.size() - 1);
-       // double yScale = ((double) getHeight() - 2 * BORDER_GAP) / (MAX_SCORE - 1);
 
         // create x and y axes
         g2.drawLine(BORDER_GAP, getHeight() - BORDER_GAP, BORDER_GAP, BORDER_GAP);
@@ -178,43 +173,6 @@ public class AudiologyGraph extends JPanel {
 
         }
         return arrToReturn;
-    }
-
-
-    /**
-     * Getter for realWidth
-     *
-     * @return realWidth
-     */
-    public int getRealWidth() {
-        return realWidth;
-    }
-
-    /**
-     * Setter for realWidth
-     *
-     * @param realWidth - realWidth
-     */
-    public void setRealWidth(int realWidth) {
-        this.realWidth = realWidth;
-    }
-
-    /**
-     * Getter for realHeight
-     *
-     * @return realHeight
-     */
-    public int getRealHeight() {
-        return realHeight;
-    }
-
-    /**
-     * Setter for realHeight
-     *
-     * @param realHeight - realHeight
-     */
-    public void setRealHeight(int realHeight) {
-        this.realHeight = realHeight;
     }
 
     /**
@@ -310,6 +268,4 @@ public class AudiologyGraph extends JPanel {
     private static final int X_HATCH_CNT = 12;
     private ArrayList<Point> rightEar;
     private ArrayList<Point> leftEar;
-    private int realWidth;
-    private int realHeight;
 }
