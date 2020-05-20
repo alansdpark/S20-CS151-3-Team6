@@ -1,10 +1,15 @@
 package edu.sjsu.cs.tinnitus.tests;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class OverallTest
 {
-	
+	@Before
+	public void initTests()
+	{
+		
+	}
 	
 	@Test
 	public void testAudiologyGraph()
