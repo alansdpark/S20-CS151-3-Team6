@@ -14,17 +14,30 @@ import edu.sjsu.cs.tinnitus.view.frames.AudiologyGraph;
 import edu.sjsu.cs.tinnitus.view.frames.AudiologyGraphView;
 import edu.sjsu.cs.tinnitus.view.frames.AudiologyView;
 import edu.sjsu.cs.tinnitus.view.frames.LogInView;
+import edu.sjsu.cs.tinnitus.view.frames.MedicalHistoryView;
+import edu.sjsu.cs.tinnitus.view.frames.MedicationView;
+import edu.sjsu.cs.tinnitus.view.frames.NavigationView;
+import edu.sjsu.cs.tinnitus.view.frames.PatientListView;
+import edu.sjsu.cs.tinnitus.view.frames.PatientView;
+import edu.sjsu.cs.tinnitus.view.frames.RegisterPatientView;
+import edu.sjsu.cs.tinnitus.view.frames.VisitView;
 
 public class OverallTest
 {
 	ClinicController cc;
 	
+	/**
+	 * Constructor for all tests.
+	 */
 	@Before
 	public void initTests()
 	{
 		cc = new ClinicController();
 	}
 	
+	/**
+	 * Tests the audiology graph.
+	 */
 	@Test
 	public void testAudiologyGraph()
 	{
@@ -69,6 +82,9 @@ public class OverallTest
         }
 	}
 	
+	/**
+	 * Tests audiology view.
+	 */
 	@Test
 	public void testAudiology()
 	{
@@ -112,42 +128,56 @@ public class OverallTest
 	@Test
 	public void testMedicalHistory()
 	{
-		
+		MedicalHistoryView mhv = new MedicalHistoryView();
+		cc.getFrame().setContentPane(mhv.getPanel());
+		assert (cc.getFrame().getContentPane() == mhv.getPanel());
 	}
 	
 	@Test
 	public void testMedication()
 	{
-		
+		MedicationView mv = new MedicationView();
+		cc.getFrame().setContentPane(mv);
+		assert(cc.getFrame().getContentPane() == mv);
 	}
 	
 	@Test
 	public void testNavigation()
 	{
-		
+		NavigationView nv = new NavigationView();
+		cc.getFrame().setContentPane(nv.getPanel());
+		assert(cc.getFrame().getContentPane() == nv.getPanel());
 	}
 	
 	@Test
 	public void testPatientList()
 	{
-		
+		PatientListView plv = new PatientListView();
+		cc.getFrame().setContentPane(plv.getPanel());
+		assert(cc.getFrame().getContentPane() == plv.getPanel());
 	}
 	
 	@Test
 	public void testPatient()
 	{
-		
+		PatientView pv = new PatientView();
+		cc.getFrame().setContentPane(pv.getPanel());
+		assert(cc.getFrame().getContentPane() == pv.getPanel());
 	}
 	
 	@Test
 	public void testRegister()
 	{
-		
+		RegisterPatientView rpv = new RegisterPatientView();
+		cc.getFrame().setContentPane(rpv.getPanel());
+		assert(cc.getFrame().getContentPane() == rpv.getPanel());
 	}
 	
 	@Test
 	public void testVisits()
 	{
-		
+		VisitView vv = new VisitView();
+		cc.getFrame().setContentPane(vv.getPanel());
+		assert(cc.getFrame().getContentPane() == vv.getPanel());
 	}
 }
