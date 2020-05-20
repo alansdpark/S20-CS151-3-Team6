@@ -24,7 +24,7 @@ import edu.sjsu.cs.tinnitus.view.frames.VisitView;
 
 public class OverallTest
 {
-	ClinicController cc;
+	ClinicController cc; // Basic Client
 	
 	/**
 	 * Constructor for all tests.
@@ -133,6 +133,9 @@ public class OverallTest
 		assert (cc.getFrame().getContentPane() == mhv.getPanel());
 	}
 	
+	/**
+	 * Tests Medication View
+	 */
 	@Test
 	public void testMedication()
 	{
@@ -141,6 +144,9 @@ public class OverallTest
 		assert(cc.getFrame().getContentPane() == mv);
 	}
 	
+	/**
+	 * Tests Navigation View
+	 */
 	@Test
 	public void testNavigation()
 	{
@@ -149,6 +155,9 @@ public class OverallTest
 		assert(cc.getFrame().getContentPane() == nv.getPanel());
 	}
 	
+	/**
+	 * Tests Patient List View
+	 */
 	@Test
 	public void testPatientList()
 	{
@@ -157,6 +166,9 @@ public class OverallTest
 		assert(cc.getFrame().getContentPane() == plv.getPanel());
 	}
 	
+	/**
+	 * Tests Patient View
+	 */
 	@Test
 	public void testPatient()
 	{
@@ -165,6 +177,9 @@ public class OverallTest
 		assert(cc.getFrame().getContentPane() == pv.getPanel());
 	}
 	
+	/**
+	 * Tests Register Patient View
+	 */
 	@Test
 	public void testRegister()
 	{
@@ -173,6 +188,9 @@ public class OverallTest
 		assert(cc.getFrame().getContentPane() == rpv.getPanel());
 	}
 	
+	/**
+	 * Tests Visit View
+	 */
 	@Test
 	public void testVisits()
 	{
