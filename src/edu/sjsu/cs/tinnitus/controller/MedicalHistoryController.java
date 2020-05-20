@@ -68,12 +68,7 @@ public class MedicalHistoryController implements Controller {
         medicalHistoryView.getAddMedication().addActionListener(e->{
             addMedication();
         });
-        //TODO this only works once
-        medicalHistoryView.getMedicationTable().getSelectionModel().addListSelectionListener( e->{
-            int row = e.getFirstIndex();
-            goToMedication(medicalHistory.getMedHistoryTable().getMedicationList().get(row));
-
-        });
+        
     }
 
     /**
@@ -151,7 +146,6 @@ public class MedicalHistoryController implements Controller {
         medicalHistoryView.setMedicationTable(table);
         JScrollPane scrollPane = new JScrollPane(table);
         medicalHistoryView.setScrollPane(scrollPane);
-        //initController();           // must call init controller again to update the table
         clinicController.getFrame().validate();
         clinicController.getFrame().repaint();
     }
