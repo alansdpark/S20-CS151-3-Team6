@@ -72,7 +72,8 @@ public class OverallTest
 	public void testAudiology()
 	{
 		AudiologyView av = new AudiologyView();
-		
+		cc.getFrame().setContentPane(av.getPanel());
+		assert(cc.getFrame().getContentPane() == av.getPanel()); // Checks to see if set to correct content pane.
 	}
 	
 	/**
