@@ -22,6 +22,9 @@ import edu.sjsu.cs.tinnitus.view.frames.PatientView;
 import edu.sjsu.cs.tinnitus.view.frames.RegisterPatientView;
 import edu.sjsu.cs.tinnitus.view.frames.VisitView;
 
+/**
+ * Testing various components of client with JUnit
+ */
 public class OverallTest
 {
 	ClinicController cc; // Basic Client
