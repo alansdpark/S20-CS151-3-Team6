@@ -12,6 +12,7 @@ import org.junit.Test;
 import edu.sjsu.cs.tinnitus.controller.ClinicController;
 import edu.sjsu.cs.tinnitus.view.frames.AudiologyGraph;
 import edu.sjsu.cs.tinnitus.view.frames.AudiologyGraphView;
+import edu.sjsu.cs.tinnitus.view.frames.AudiologyView;
 
 public class OverallTest
 {
@@ -52,8 +53,7 @@ public class OverallTest
         AudiologyGraph agv = new AudiologyGraph();
         agv.setLeftEar(pointList);
         agv.setRightEar(pointList2);
-        
-//        cc.getFrame().setContentPane(agv);
+
         for (int i = 0; i < agv.getLeftEar().size(); i++)
         {
         	assert(agv.getLeftEar().get(i) == pointList.get(i));
@@ -69,6 +69,7 @@ public class OverallTest
 	@Test
 	public void testAudiology()
 	{
+		AudiologyView av = new AudiologyView();
 		
 	}
 	
