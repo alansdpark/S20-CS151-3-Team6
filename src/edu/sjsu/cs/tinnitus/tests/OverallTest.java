@@ -74,6 +74,15 @@ public class OverallTest
 	}
 	
 	/**
+	 * Tests whether JUnit tests are working. SHOULD BE FALSE!!
+	 */
+	@Test
+	public void testFalse()
+	{
+		assert(cc.getFrame().isVisible() == false);
+	}
+	
+	/**
 	 * Checks whether Clinic Controller is visible.
 	 */
 	@Test
@@ -82,12 +91,18 @@ public class OverallTest
 		assert(cc.getFrame().isVisible() == true);
 	}
 	
+	/**
+	 * Tests login
+	 */
 	@Test
 	public void testLogIn()
 	{
 		
 	}
 	
+	/**
+	 * Tests Medical History.
+	 */
 	@Test
 	public void testMedicalHistory()
 	{
