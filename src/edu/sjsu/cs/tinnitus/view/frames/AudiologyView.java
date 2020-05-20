@@ -218,7 +218,7 @@ public class AudiologyView
 
     public void initStageOne(){
         stageOne = new JPanel();
-        stageOne.setLayout(new GridLayout(9, 3, 10, 5));
+        stageOne.setLayout(new GridLayout(9, 5, 10, 5));
 
         hz_250 = new JLabel();
         hz_250.setText("250Hz");
@@ -330,30 +330,48 @@ public class AudiologyView
         stageOne.add(new JLabel("Frequency", SwingConstants.RIGHT));
         stageOne.add(new JLabel("Pure Tone Left(dB)"));
         stageOne.add(new JLabel("Pure Tone Right(dB)"));
+        stageOne.add(new JLabel("LDL Left(dB)"));
+        stageOne.add(new JLabel("LDL Right(dB)"));
         stageOne.add(hz_250);
         stageOne.add(hz_250_field_pureTone_left);
         stageOne.add(hz_250_field_pureTone_right);
+        stageOne.add(new JLabel());
+        stageOne.add(new JLabel());
         stageOne.add(hz_500);
         stageOne.add(hz_500_field_pureTone_left);
         stageOne.add(hz_500_field_pureTone_right);
+        stageOne.add(hz_500_field_ldl_left);
+        stageOne.add(hz_500_field_ldl_right);
         stageOne.add(hz_1000);
         stageOne.add(hz_1000_field_pureTone_left);
         stageOne.add(hz_1000_field_pureTone_right);
+        stageOne.add(hz_1000_field_ldl_left);
+        stageOne.add(hz_1000_field_ldl_right);
         stageOne.add(hz_2500);
         stageOne.add(hz_2500_field_pureTone_left);
         stageOne.add(hz_2500_field_pureTone_right);
+        stageOne.add(hz_2500_field_ldl_left);
+        stageOne.add(hz_2500_field_ldl_right);
         stageOne.add(hz_5000);
         stageOne.add(hz_5000_field_pureTone_left);
         stageOne.add(hz_5000_field_pureTone_right);
+        stageOne.add(hz_5000_field_ldl_left);
+        stageOne.add(hz_5000_field_ldl_right);
         stageOne.add(hz_7500);
         stageOne.add(hz_7500_field_pureTone_left);
         stageOne.add(hz_7500_field_pureTone_right);
+        stageOne.add(hz_7500_field_ldl_left);
+        stageOne.add(hz_7500_field_ldl_right);
         stageOne.add(hz_10000);
         stageOne.add(hz_10000_field_pureTone_left);
         stageOne.add(hz_10000_field_pureTone_right);
+        stageOne.add(hz_10000_field_ldl_left);
+        stageOne.add(hz_10000_field_ldl_right);
         stageOne.add(hz_12000);
         stageOne.add(hz_12000_field_pureTone_left);
         stageOne.add(hz_12000_field_pureTone_right);
+        stageOne.add(hz_12000_field_ldl_left);
+        stageOne.add(hz_12000_field_ldl_right);
     }
 
     public void addStageTwoComponents(){
