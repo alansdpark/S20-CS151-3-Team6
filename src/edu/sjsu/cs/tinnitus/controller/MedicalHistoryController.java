@@ -131,8 +131,8 @@ public class MedicalHistoryController implements Controller {
     public void initTable(){
         ArrayList<Medication> medicationList = medicalHistory.getMedHistoryTable().getMedicationList();
         Object[][] data = new Object[medicationList.size()][9];
-        String [] columnNames = {"Name","Generic Name", "Dose", "Duration", "Chemical Category",
-                                "Action", "Application", "Usual Dose", "Induces Tinnitus?"};
+        String [] columnNames = {"Name","Generic Name", "Dose(mg)", "Duration(days)", "Chemical Category",
+                                "Action", "Application", "Usual Dose(mg)", "Induces Tinnitus?"};
         int i = 0;
         for(Medication medication: medicationList){
             data[i][0] = medication.getName();

@@ -396,12 +396,12 @@ public class MedicationView extends JPanel {
 
         nameLabel = new JLabel("Name", SwingConstants.RIGHT);
         genericLabel = new JLabel("Generic", SwingConstants.RIGHT);
-        doseLabel = new JLabel("Dose (capsules)", SwingConstants.RIGHT);
+        doseLabel = new JLabel("Dose (mg)", SwingConstants.RIGHT);
         durationLabel = new JLabel("Duration (days)", SwingConstants.RIGHT);
         chemicalCategoryLabel = new JLabel("Chemical Category", SwingConstants.RIGHT);
         actionLabel = new JLabel("Action", SwingConstants.RIGHT);
         applicationLabel = new JLabel("Application", SwingConstants.RIGHT);
-        usualDoseLabel = new JLabel("Usual Dose (capsules)", SwingConstants.RIGHT);
+        usualDoseLabel = new JLabel("Usual Dose (mg)", SwingConstants.RIGHT);
         inducesTinnitusLabel = new JLabel("Induces Tinnitus", SwingConstants.RIGHT);
 
         header = new JLabel("Medication");

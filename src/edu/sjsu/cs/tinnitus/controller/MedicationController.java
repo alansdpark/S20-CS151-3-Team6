@@ -132,10 +132,9 @@ public class MedicationController implements Controller
         medication.setAction(action);
         medication.setApplication(application);
         medication.setUsualDose(Double.parseDouble(usualDose));
-        medication.setInducesTinnitus(Boolean.parseBoolean(inducesTinnitus));       // may not work
+        medication.setInducesTinnitus(Boolean.parseBoolean(inducesTinnitus));
         return true;
 
-        //medicalHistory.getMedHistoryTable().addToMedicationList(medication);
     }
 
     /**
