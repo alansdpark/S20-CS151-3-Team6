@@ -12,8 +12,7 @@ import java.util.ArrayList;
 public class AudiologyGraphTesting {
 
 	@Test
-    public void testAudiologyGraph(){
-
+    public void testAudiologyGraph() {
         double[] db = {40, 20, 12, 32, 50 , 20, 80, 9};
         ArrayList<Point> pointList = new ArrayList<>();
         pointList.add(new Point(1000, 25));
