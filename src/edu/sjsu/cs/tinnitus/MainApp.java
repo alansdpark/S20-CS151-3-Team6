@@ -21,16 +21,6 @@ public class MainApp
      */
     public static void main(String[] args)
     {
-        /**
-        // Starts with the navigation view.
-        JFrame window = new JFrame("Team 6 - Project 3 (Audiology)");
-        NavigationView navigationView = new NavigationView();
-        window.setContentPane(navigationView.getPanel());
-        window.setSize(1024, 748);
-		window.setResizable(false);
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setVisible(true);
-         */
         ClinicController clinic = new ClinicController();
     }
 }

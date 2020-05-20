@@ -16,7 +16,7 @@ public class ClinicController {
     public ClinicController() {
         patientTable = new PatientTable();
         getAllData();
-        frame = new JFrame();
+        frame = new JFrame("Clinic Client");
         frame.setMinimumSize(new Dimension(800, 600));
         createHeader();
         NavigationView view = new NavigationView();

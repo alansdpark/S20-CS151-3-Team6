@@ -11,9 +11,19 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * Controller for Audiology Graph.
+ */
 public class AudiologyGraphController implements Controller {
 
 
+	/**
+	 * Constructor
+	 * @param audiology
+	 * @param visit
+	 * @param audiologyGraphView
+	 * @param clinicController
+	 */
     public AudiologyGraphController(Audiology audiology, Visit visit, AudiologyGraphView audiologyGraphView,
                                     ClinicController clinicController) {
         this.audiology = audiology;
