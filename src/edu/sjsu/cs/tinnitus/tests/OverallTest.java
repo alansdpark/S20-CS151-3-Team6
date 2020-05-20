@@ -23,7 +23,7 @@ import edu.sjsu.cs.tinnitus.view.frames.RegisterPatientView;
 import edu.sjsu.cs.tinnitus.view.frames.VisitView;
 
 /**
- * Testing various components of client with JUnit
+ * Testing various components of client with JUnit.
  */
 public class OverallTest
 {
