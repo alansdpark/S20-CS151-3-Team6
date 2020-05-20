@@ -14,7 +14,6 @@ public class PatientListView {
      */
     public PatientListView() {
         initComponents();
-        addComponents();
         panel.setVisible(true);
     }
 
@@ -73,22 +72,13 @@ public class PatientListView {
     }
 
     /**
-     *
+     * Initializes the components
      */
     private void initComponents(){
         panel = new JPanel();
         patientTable = new JTable();
         saveButton = new JButton("Save");
         scrollPane = new JScrollPane(patientTable);
-    }
-
-    /**
-     *
-     */
-    private void addComponents(){
-        //panel.add(scrollPane);
-        //panel.add(saveButton);
-        //TODO FIGURE OUT WHY THIS NEEDS TO BE UPDATED THROUGH THE SETTER
     }
 
 
