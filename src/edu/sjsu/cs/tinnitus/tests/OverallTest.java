@@ -54,16 +54,18 @@ public class OverallTest
         agv.setLeftEar(pointList);
         agv.setRightEar(pointList2);
 
+        cc.getFrame().setContentPane(agv);
+        assert(cc.getFrame().getContentPane() == agv); // Checks to see if set to correct content pane.
+        
         for (int i = 0; i < agv.getLeftEar().size(); i++)
         {
-        	assert(agv.getLeftEar().get(i) == pointList.get(i));
+        	assert(agv.getLeftEar().get(i) == pointList.get(i)); // Checks whether same points on panel as added.
         }
         
         for (int i = 0; i < agv.getRightEar().size(); i++)
         {
-        	assert(agv.getRightEar().get(i) == pointList2.get(i));
+        	assert(agv.getRightEar().get(i) == pointList2.get(i)); // Checks whether same points on panel as added.
         }
-        
 	}
 	
 	@Test
