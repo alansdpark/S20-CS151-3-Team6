@@ -121,6 +121,12 @@ public class AudiologyGraph extends JPanel {
         printLine(rightEar, g2, false);
     }
 
+    /**
+     * Prints a line for either leftEar or Right Ear
+     * @param graphPoints - data for the location of the points
+     * @param g2 - graphics
+     * @param isLeft - boolean for either left or right ear data
+     */
     public void printLine(ArrayList<Point> graphPoints, Graphics2D g2, boolean isLeft){
         Color graphColor = Color.BLACK;
         if(isLeft) {
@@ -151,6 +157,11 @@ public class AudiologyGraph extends JPanel {
         }
     }
 
+    /**
+     * Converts the scale to fit on the graph
+     * @param arr - arraylist of data points to scale
+     * @return - correctly scaled arrayList
+     */
     public ArrayList<Point> convertArrayScale(ArrayList<Point> arr){
         ArrayList<Point> arrToReturn = new ArrayList<>();
         int width = getWidth() - 2 * BORDER_GAP;

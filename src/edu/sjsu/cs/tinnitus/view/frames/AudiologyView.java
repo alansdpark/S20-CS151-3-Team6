@@ -13,189 +13,10 @@ public class AudiologyView
 	 */
     public AudiologyView()
     {
-
         initComponents();
         addComponents();
         panel.setVisible(true);
 
-
-        //NORTH
-
-
-        /**
-        //EAST
-        comments = new JLabel();
-        comments.setText("Additional Comments:");
-        add(comments, BorderLayout.EAST);
-        additionalComments_area = new JTextArea();
-        add(additionalComments_area, BorderLayout.EAST);
-        saveButton = new JButton("Save");
-        add(saveButton, BorderLayout.EAST);
-        nextButton = new JButton("Next");
-        add(nextButton, BorderLayout.EAST);
-        backButton = new JButton("Back");
-        add(backButton, BorderLayout.EAST);
-        cancelButton = new JButton("Cancel");
-        add(cancelButton, BorderLayout.EAST);
-
-        //WEST
-        //Stages
-        stageOne = new JPanel();
-        stageOne.setLayout(new GridLayout(9, 3));
-        stageTwo = new JPanel();
-        stageTwo.setLayout(new GridLayout(8,3));
-        stageThree = new JPanel();
-        stageThree.setLayout(new GridLayout(3, 5));
-        //ear Labels
-        leftEar = new JLabel();
-        leftEar.setText("Left Ear");
-        rightEar = new JLabel();
-        rightEar.setText("Right Ear");
-        //hz labels
-        frequency = new JLabel();
-        frequency.setText("frequency (Hz)");
-        hz_250 = new JLabel();
-        hz_250.setText("250Hz");
-        hz_500 = new JLabel();
-        hz_500.setText("500Hz");
-        hz_1000 = new JLabel();
-        hz_1000.setText("1000Hz");
-        hz_2500 = new JLabel();
-        hz_2500.setText("2500Hz");
-        hz_5000 = new JLabel();
-        hz_5000.setText("5000Hz");
-        hz_7500 = new JLabel();
-        hz_7500.setText("7500Hz");
-        hz_10000 = new JLabel();
-        hz_10000.setText("10000Hz");
-        hz_12000 = new JLabel();
-        hz_12000.setText("12000Hz");
-        //misc labels
-        threshold = new JLabel();
-        threshold.setText("Threshold");
-        minMask = new JLabel();
-        minMask.setText("Min. Masking Level");
-        pitchMatch = new JLabel();
-        pitchMatch.setText("Pitch Match");
-        matchType = new JLabel();
-        matchType.setText("Match Type");
-        // The empty label is to fill a spot in the grid layout
-        JLabel emptyLabel = new JLabel();
-        // User enters patients results for Left Ear Pure Tone Audiogram
-        hz_250_field_pureTone_left = new JTextField();
-        hz_500_field_pureTone_left = new JTextField();
-        hz_1000_field_pureTone_left = new JTextField();
-        hz_2500_field_pureTone_left = new JTextField();
-        hz_5000_field_pureTone_left = new JTextField();
-        hz_7500_field_pureTone_left = new JTextField();
-        hz_10000_field_pureTone_left = new JTextField();
-        hz_12000_field_pureTone_left = new JTextField();
-        // User enters patients results for Right Ear Pure Tone Audiogram
-        hz_250_field_pureTone_right = new JTextField();
-        hz_500_field_pureTone_right = new JTextField();
-        hz_1000_field_pureTone_right = new JTextField();
-        hz_2500_field_pureTone_right = new JTextField();
-        hz_5000_field_pureTone_right = new JTextField();
-        hz_7500_field_pureTone_right = new JTextField();
-        hz_10000_field_pureTone_right = new JTextField();
-        hz_12000_field_pureTone_right = new JTextField();
-        // User enters patients results for Left Ear LDL Audiogram
-        hz_500_field_ldl_left = new JTextField();
-        hz_1000_field_ldl_left = new JTextField();
-        hz_2500_field_ldl_left = new JTextField();
-        hz_5000_field_ldl_left = new JTextField();
-        hz_7500_field_ldl_left = new JTextField();
-        hz_10000_field_ldl_left = new JTextField();
-        hz_12000_field_ldl_left = new JTextField();
-        // User enters patients results for Right Ear LDL Audiogram
-        hz_500_field_ldl_right = new JTextField();
-        hz_1000_field_ldl_right = new JTextField();
-        hz_2500_field_ldl_right = new JTextField();
-        hz_5000_field_ldl_right = new JTextField();
-        hz_7500_field_ldl_right = new JTextField();
-        hz_10000_field_ldl_right = new JTextField();
-        hz_12000_field_ldl_right = new JTextField();
-        //User enters Patients threshold for left and right ear respectively
-        thresholdLeft_field = new JTextField();
-        thresholdRight_field = new JTextField();
-        //User enters Patients minimum masking level for the left and right ear respectively
-        minMaskLeft_field = new JTextField();
-        minMaskRight_field = new JTextField();
-        //User enters
-        pitchMatch_field = new JTextField();
-        matchType_field = new JTextField();
-
-        //STAGE ONE
-        stageOne.add(frequency);
-        stageOne.add(leftEar);
-        stageOne.add(rightEar);
-        stageOne.add(hz_250);
-        stageOne.add(hz_250_field_pureTone_left);
-        stageOne.add(hz_250_field_pureTone_right);
-        stageOne.add(hz_500);
-        stageOne.add(hz_500_field_pureTone_left);
-        stageOne.add(hz_500_field_pureTone_right);
-        stageOne.add(hz_1000);
-        stageOne.add(hz_1000_field_pureTone_left);
-        stageOne.add(hz_1000_field_pureTone_right);
-        stageOne.add(hz_2500);
-        stageOne.add(hz_2500_field_pureTone_left);
-        stageOne.add(hz_2500_field_pureTone_right);
-        stageOne.add(hz_5000);
-        stageOne.add(hz_5000_field_pureTone_left);
-        stageOne.add(hz_5000_field_pureTone_right);
-        stageOne.add(hz_7500);
-        stageOne.add(hz_7500_field_pureTone_left);
-        stageOne.add(hz_7500_field_pureTone_right);
-        stageOne.add(hz_10000);
-        stageOne.add(hz_10000_field_pureTone_left);
-        stageOne.add(hz_10000_field_pureTone_right);
-        stageOne.add(hz_12000);
-        stageOne.add(hz_12000_field_pureTone_left);
-        stageOne.add(hz_12000_field_pureTone_right);
-        //STAGE TWO
-        stageTwo.add(frequency);
-        stageTwo.add(leftEar);
-        stageTwo.add(rightEar);
-        stageTwo.add(hz_500);
-        stageTwo.add(hz_500_field_ldl_left);
-        stageTwo.add(hz_500_field_ldl_right);
-        stageTwo.add(hz_1000);
-        stageTwo.add(hz_1000_field_ldl_left);
-        stageTwo.add(hz_1000_field_ldl_right);
-        stageTwo.add(hz_2500);
-        stageTwo.add(hz_2500_field_ldl_left);
-        stageTwo.add(hz_2500_field_ldl_right);
-        stageTwo.add(hz_5000);
-        stageTwo.add(hz_5000_field_ldl_left);
-        stageTwo.add(hz_5000_field_ldl_right);
-        stageTwo.add(hz_7500);
-        stageTwo.add(hz_7500_field_ldl_left);
-        stageTwo.add(hz_7500_field_ldl_right);
-        stageTwo.add(hz_10000);
-        stageTwo.add(hz_10000_field_ldl_left);
-        stageTwo.add(hz_10000_field_ldl_right);
-        stageTwo.add(hz_12000);
-        stageTwo.add(hz_12000_field_ldl_left);
-        stageTwo.add(hz_12000_field_ldl_right);
-        //STAGE THREE
-        stageThree.add(emptyLabel);
-        stageThree.add(leftEar);
-        stageThree.add(rightEar);
-        stageThree.add(emptyLabel);
-        stageThree.add(emptyLabel);
-        stageThree.add(threshold);
-        stageThree.add(thresholdLeft_field);
-        stageThree.add(thresholdRight_field);
-        stageThree.add(pitchMatch);
-        stageThree.add(pitchMatch_field);
-        stageThree.add(minMask);
-        stageThree.add(minMaskLeft_field);
-        stageThree.add(minMaskRight_field);
-        stageThree.add(matchType);
-        stageThree.add(matchType_field);
-        stage = 2;
-         */
     }
 
     /**
@@ -216,6 +37,10 @@ public class AudiologyView
 
     }
 
+    /**
+     * Initializes the components for stage one components
+     * These are the components on the left side of the screen
+     */
     public void initStageOne(){
         stageOne = new JPanel();
         stageOne.setLayout(new GridLayout(9, 5, 10, 5));
@@ -280,6 +105,10 @@ public class AudiologyView
         hz_12000_field_ldl_right = new JTextField(5);
     }
 
+    /**
+     * Initializes the components for stage two
+     * these are the components on the right side of the screen
+     */
     public void initStageTwo(){
         stageTwo = new JPanel();
         stageTwo.setLayout(new GridLayout(3,4));
@@ -299,6 +128,9 @@ public class AudiologyView
         matchType_field = new JTextField(5);
     }
 
+    /**
+     * Adds all the components to panel
+     */
     public void addComponents(){
         addStageOneComponents();
         addStageTwoComponents();
@@ -326,6 +158,9 @@ public class AudiologyView
         commentsPanel.add(buttonPanel, BorderLayout.SOUTH);
     }
 
+    /**
+     * Adds components for to the stage one panel
+     */
     public void addStageOneComponents(){
         stageOne.add(new JLabel("Frequency", SwingConstants.RIGHT));
         stageOne.add(new JLabel("Pure Tone Left(dB)"));
@@ -374,6 +209,9 @@ public class AudiologyView
         stageOne.add(hz_12000_field_ldl_right);
     }
 
+    /**
+     * Adds components to the stage two panel
+     */
     public void addStageTwoComponents(){
         stageTwo.add(thresholdLeft);
         stageTwo.add(thresholdLeft_field);
@@ -400,9 +238,6 @@ public class AudiologyView
     }
 
 
-
-
-    //PURETONE FOR THE LEFT EAR
 
     /**
      * Setter for the Left Ear Pure Tone at 250hz
