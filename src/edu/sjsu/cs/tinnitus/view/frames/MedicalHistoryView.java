@@ -23,14 +23,8 @@ public class MedicalHistoryView extends JPanel
      * @param scrollPane - scrollPane containing the table
      */
     public void setScrollPane(JScrollPane scrollPane) {
-        // TODO see if moving the buttons around can be removed
-       // panel.remove(this.scrollPane);
-        //panel.remove(saveButton);
-        //panel.remove(addMedication);
         this.scrollPane = scrollPane;
         panel.add(scrollPane, BorderLayout.CENTER);
-        //panel.add(addMedication, BorderLayout.SOUTH);
-        //panel.add(saveButton, BorderLayout.SOUTH);
     }
 
 
@@ -190,18 +184,6 @@ public class MedicalHistoryView extends JPanel
         buttonPanel.add(saveButton);
         panel.add(buttonPanel, BorderLayout.SOUTH);
 
-
-        /**
-        panel.add(medicalHistory);
-        panel.add(medicalHistoryArea);
-
-        panel.add(currentMedication);
-        scrollPane = new JScrollPane(medicationTable);
-        panel.add(scrollPane);
-
-        panel.add(addMedication);
-        panel.add(saveButton);
-         */
 
     }
 
