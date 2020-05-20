@@ -31,6 +31,21 @@ public class LogInController implements Controller {
     }
 
     /**
+     * Constructs a Log In Controller with a patient already set
+     * @param logInView - log in view
+     * @param patient - patient to log in
+     * @param clinicController - clinic controller
+     */
+    public LogInController(LogInView logInView, Patient patient, ClinicController clinicController) {
+        this.logInView = logInView;
+        this.patient = patient;
+        this.clinicController = clinicController;
+        initController();
+        setPatientInfo();
+        clinicController.setHeaderContent("Log In");
+    }
+
+    /**
      * Sets Action Listeners in the LogInView
      */
     @Override
@@ -42,6 +57,11 @@ public class LogInController implements Controller {
         logInView.getBackButton().addActionListener(e ->{
             back();
         });
+    }
+
+    public void setPatientInfo(){
+        logInView.getPatientIdField().setText(patient.getPatientId().toString());
+        logInView.getPatientIdField().setEditable(false);
     }
 
     /**

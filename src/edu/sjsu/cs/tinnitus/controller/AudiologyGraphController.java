@@ -32,7 +32,7 @@ public class AudiologyGraphController implements Controller {
         this.visit = visit;
         addData();
         initController();
-        clinicController.setHeaderContent("Audiology Graph");
+        clinicController.setHeaderContent("Pure Tone Audiology Graph");
     }
 
     /**

@@ -63,6 +63,9 @@ public class AudiologyController implements Controller
         frame.repaint();
     }
 
+    /**
+     * Switches control to the view of the Pure Tone Graph
+     */
     public void goToGraph(){
         JFrame frame = clinicController.getFrame();
         frame.remove(audiologyView.getPanel());

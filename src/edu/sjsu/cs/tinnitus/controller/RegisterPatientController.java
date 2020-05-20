@@ -68,7 +68,7 @@ public class RegisterPatientController implements Controller {
         JFrame frame = clinicController.getFrame();
         frame.remove(view.getPanel());
         LogInView logInView = new LogInView();
-        LogInController logInController = new LogInController(logInView, clinicController);
+        LogInController logInController = new LogInController(logInView, patient, clinicController);
         frame.add(logInView.getPanel(), BorderLayout.CENTER);
         frame.validate();
         frame.repaint();
@@ -101,7 +101,7 @@ public class RegisterPatientController implements Controller {
      * @return - returns true of the patient is successfully created
      */
     public boolean addPatient(){
-        Patient patient = new Patient();
+         patient = new Patient();
         //get inputs
          String firstName = view.getFirstNameField().getText();
          String lastName = view.getLastNameField().getText();
@@ -219,5 +219,6 @@ public class RegisterPatientController implements Controller {
 
     private ClinicController clinicController;
     private RegisterPatientView view;
+    private Patient patient;
 
 }
