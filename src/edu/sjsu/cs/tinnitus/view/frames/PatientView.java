@@ -874,9 +874,9 @@ public class PatientView extends JPanel {
         phoneNumberLabel = new JLabel("Phone Number", SwingConstants.RIGHT);
         ssnLabel = new JLabel("SSN", SwingConstants.RIGHT);
         insuranceNoLabel = new JLabel("Insurance No.", SwingConstants.RIGHT);
-        occupationLabel = new JLabel("Occupation", SwingConstants.RIGHT);
-        workStatusLabel = new JLabel("Work Status", SwingConstants.RIGHT);
-        educationalDegreeLabel = new JLabel("Educational Degree", SwingConstants.RIGHT);
+        occupationLabel = new JLabel("Occupation*", SwingConstants.RIGHT);
+        workStatusLabel = new JLabel("Work Status*", SwingConstants.RIGHT);
+        educationalDegreeLabel = new JLabel("Educational Degree*", SwingConstants.RIGHT);
         patientIdLabel = new JLabel("Patient ID", SwingConstants.RIGHT);
         
         tinnitusCategoryLabel = new JLabel("Tinnitus Category", SwingConstants.RIGHT);
@@ -960,6 +960,7 @@ public class PatientView extends JPanel {
         infoPanel.add(medicalHistoryButton);
         infoPanel.add(newVisitButton);
         infoPanel.add(saveButton);
+        infoPanel.add(new JLabel("* Optional"));
 
         panel.add(infoPanel);
         scrollPane = new JScrollPane(visitTable);

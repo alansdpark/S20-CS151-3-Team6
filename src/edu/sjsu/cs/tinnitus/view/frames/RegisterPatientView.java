@@ -704,9 +704,9 @@ public class RegisterPatientView extends JPanel
         phoneNumberLabel = new JLabel("Phone Number", SwingConstants.RIGHT);
         ssnLabel = new JLabel("SSN", SwingConstants.RIGHT);
         insuranceNoLabel = new JLabel("Insurance No.", SwingConstants.RIGHT);
-        occupationLabel = new JLabel("Occupation", SwingConstants.RIGHT);
-        workStatusLabel = new JLabel("Work Status",SwingConstants.RIGHT);
-        educationalDegreeLabel = new JLabel("Educational Degree", SwingConstants.RIGHT);
+        occupationLabel = new JLabel("Occupation*", SwingConstants.RIGHT);
+        workStatusLabel = new JLabel("Work Status*",SwingConstants.RIGHT);
+        educationalDegreeLabel = new JLabel("Educational Degree*", SwingConstants.RIGHT);
 
         saveButton = new JButton("Save");
         initialVisitButtion = new JButton("Initial Visit");
@@ -756,6 +756,7 @@ public class RegisterPatientView extends JPanel
         infoPanel.add(initialVisitButtion);
         infoPanel.add(saveButton);
         infoPanel.add(backButton);
+        infoPanel.add(new JLabel("* Optional"));
 
         panel.add(infoPanel);
 

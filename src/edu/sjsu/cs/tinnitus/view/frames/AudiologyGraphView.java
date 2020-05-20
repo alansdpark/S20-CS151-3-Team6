@@ -27,11 +27,10 @@ public class AudiologyGraphView {
         panel = new JPanel(new BorderLayout());
         audiologyGraph = new AudiologyGraph();
         backButton = new JButton("Back");
-        key = new JPanel();
+        key = new JPanel(new GridLayout(5, 1, 10, 10));
         rightLabel = new JLabel("Right Ear: BLUE");
         leftLabel = new JLabel("Left Ear: GREEN");
-        rightLabel.setVerticalAlignment(SwingConstants.CENTER);
-        leftLabel.setVerticalAlignment(SwingConstants.CENTER);
+
 
 
     }
@@ -41,6 +40,7 @@ public class AudiologyGraphView {
      */
     public void addComponents(){
         panel.add(audiologyGraph, BorderLayout.CENTER);
+        key.add(new JLabel("KEY"));
         key.add(rightLabel);
         key.add(leftLabel);
         panel.add(key, BorderLayout.EAST);
