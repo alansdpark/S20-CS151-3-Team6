@@ -13,6 +13,7 @@ import edu.sjsu.cs.tinnitus.controller.ClinicController;
 import edu.sjsu.cs.tinnitus.view.frames.AudiologyGraph;
 import edu.sjsu.cs.tinnitus.view.frames.AudiologyGraphView;
 import edu.sjsu.cs.tinnitus.view.frames.AudiologyView;
+import edu.sjsu.cs.tinnitus.view.frames.LogInView;
 
 public class OverallTest
 {
@@ -95,12 +96,14 @@ public class OverallTest
 	}
 	
 	/**
-	 * Tests login
+	 * Tests login view.
 	 */
 	@Test
 	public void testLogIn()
 	{
-		
+		LogInView liv = new LogInView();
+		cc.getFrame().setContentPane(liv.getPanel());
+		assert(cc.getFrame().getContentPane() == liv.getPanel());
 	}
 	
 	/**
