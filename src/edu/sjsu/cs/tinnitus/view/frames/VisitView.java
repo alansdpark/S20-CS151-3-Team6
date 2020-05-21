@@ -2,8 +2,14 @@ package edu.sjsu.cs.tinnitus.view.frames;
 
 import javax.swing.*;
 
+/**
+ * View class for Visit.
+ */
 public class VisitView {
 
+    /**
+     * Constructor
+     */
     public VisitView() {
         initComponents();
         addComponents();
