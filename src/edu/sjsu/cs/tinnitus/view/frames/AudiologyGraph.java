@@ -79,7 +79,6 @@ public class AudiologyGraph extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
-
         leftEar = convertArrayScale(leftEar);
         rightEar = convertArrayScale(rightEar);
 
@@ -109,8 +108,6 @@ public class AudiologyGraph extends JPanel {
             int y1 = y0 + GRAPH_POINT_WIDTH;
             g2.drawLine(x0, y0, x1, y1);
             g2.drawString((i+1)*1000 + "Hz", x0 - BORDER_GAP , y0);
-
-
         }
         printLine(leftEar, g2, true);
         printLine(rightEar, g2, false);

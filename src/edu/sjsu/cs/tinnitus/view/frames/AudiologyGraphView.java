@@ -1,9 +1,8 @@
 package edu.sjsu.cs.tinnitus.view.frames;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
-import java.util.ArrayList;
+
 
 /**
  * View for Audiology Graph.
@@ -30,9 +29,6 @@ public class AudiologyGraphView {
         key = new JPanel(new GridLayout(5, 1, 10, 10));
         rightLabel = new JLabel("Right Ear: BLUE");
         leftLabel = new JLabel("Left Ear: GREEN");
-
-
-
     }
 
     /**

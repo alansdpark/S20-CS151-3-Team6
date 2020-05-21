@@ -23,6 +23,7 @@ public class MedicalHistoryView extends JPanel
      * @param scrollPane - scrollPane containing the table
      */
     public void setScrollPane(JScrollPane scrollPane) {
+        panel.remove(this.scrollPane);
         this.scrollPane = scrollPane;
         panel.add(scrollPane, BorderLayout.CENTER);
     }
@@ -154,6 +155,9 @@ public class MedicalHistoryView extends JPanel
         this.saveButton = saveButton;
     }
 
+    /**
+     * Initializes all components
+     */
     private void initComponents(){
         panel = new JPanel();
         medicalHistory = new JLabel("Medical History Description", SwingConstants.LEFT);
@@ -167,8 +171,10 @@ public class MedicalHistoryView extends JPanel
         saveButton = new JButton("Save");
     }
 
+    /**
+     * Adds the components to the panel
+     */
     private void addComponents(){
-
         panel.setLayout(new BorderLayout());
         JPanel historyPanel = new JPanel(new BorderLayout());
         historyPanel.add(medicalHistory, BorderLayout.NORTH);
@@ -183,8 +189,6 @@ public class MedicalHistoryView extends JPanel
         buttonPanel.add(addMedication);
         buttonPanel.add(saveButton);
         panel.add(buttonPanel, BorderLayout.SOUTH);
-
-
     }
 
     private JLabel medicalHistory;
